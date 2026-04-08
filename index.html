@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blanc Agency — We Build the Fun Stuff</title>
+    <meta
+      name="description"
+      content="Blanc Agency crafts bold, interactive web experiences — from viral referral platforms to community-driven questionnaire tools. Let's build something unforgettable."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ─── NAVIGATION ─────────────────────────────────────── -->
+    <nav class="nav" id="nav">
+      <div class="nav__inner container">
+        <a href="#" class="nav__logo" aria-label="Blanc Agency home">
+          <span class="logo-blanc">BLANC</span>
+          <span class="logo-dot">●</span>
+        </a>
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__links" id="navLinks" role="list">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li>
+            <a href="#contact" class="btn btn--nav">Let's Talk</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ─── HERO ───────────────────────────────────────────── -->
+    <header class="hero" id="hero">
+      <div class="hero__bg-grid" aria-hidden="true"></div>
+      <div class="hero__noise" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+        <div class="hero__badge reveal">
+          <span class="badge-dot"></span>Available for new projects
+        </div>
+
+        <h1 class="hero__headline reveal">
+          We build<br />
+          <span class="hero__headline--highlight">the fun stuff.</span>
+        </h1>
+
+        <p class="hero__sub reveal">
+          Blanc Agency crafts bold, interactive web experiences that engage real
+          communities — viral referral platforms, smart questionnaire tools, and
+          anything wildly customisable in between.
+        </p>
+
+        <div class="hero__cta reveal">
+          <a href="#contact" class="btn btn--primary">Start a project</a>
+          <a href="#work" class="btn btn--ghost">See our work ↓</a>
+        </div>
+
+        <div class="hero__stats reveal">
+          <div class="stat">
+            <span class="stat__num" data-target="12">0</span>
+            <span class="stat__label">Projects shipped</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-target="3">0</span>
+            <span class="stat__label">Community tools live</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-target="100">0</span>
+            <span class="stat__label">% Custom-built</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span>scroll</span>
+        <svg width="14" height="24" viewBox="0 0 14 24" fill="none">
+          <rect x="1" y="1" width="12" height="22" rx="6" stroke="currentColor" stroke-width="1.5"/>
+          <circle class="scroll-dot" cx="7" cy="7" r="2.5" fill="currentColor"/>
+        </svg>
+      </div>
+    </header>
+
+    <!-- ─── MARQUEE ────────────────────────────────────────── -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Interactive Web Apps</span><span class="mx">✦</span>
+        <span>Referral Systems</span><span class="mx">✦</span>
+        <span>Questionnaire Tools</span><span class="mx">✦</span>
+        <span>QR Campaign Platforms</span><span class="mx">✦</span>
+        <span>Community Engagement</span><span class="mx">✦</span>
+        <span>Custom UI/UX</span><span class="mx">✦</span>
+        <!-- duplicate for seamless loop -->
+        <span>Interactive Web Apps</span><span class="mx">✦</span>
+        <span>Referral Systems</span><span class="mx">✦</span>
+        <span>Questionnaire Tools</span><span class="mx">✦</span>
+        <span>QR Campaign Platforms</span><span class="mx">✦</span>
+        <span>Community Engagement</span><span class="mx">✦</span>
+        <span>Custom UI/UX</span><span class="mx">✦</span>
+      </div>
+    </div>
+
+    <!-- ─── SERVICES ──────────────────────────────────────── -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__tag">What we do</p>
+          <h2 class="section__title">
+            Weird briefs.<br />Great results.
+          </h2>
+        </div>
+
+        <div class="services__grid">
+          <div class="service-card reveal" data-delay="0">
+            <div class="service-card__icon">🎯</div>
+            <h3>Interactive Questionnaires</h3>
+            <p>
+              Branching logic, smart scoring, beautiful UX. We turn dry surveys
+              into experiences people actually finish — and share.
+            </p>
+          </div>
+          <div class="service-card reveal" data-delay="100">
+            <div class="service-card__icon">🔗</div>
+            <h3>Referral & QR Systems</h3>
+            <p>
+              Viral loops built from scratch. Unique QR codes, friend-sharing
+              mechanics, reward tracking — we've shipped it all.
+            </p>
+          </div>
+          <div class="service-card reveal" data-delay="200">
+            <div class="service-card__icon">💡</div>
+            <h3>Community Platforms</h3>
+            <p>
+              Sensitive topics need thoughtful tech. We build confidential,
+              accessible tools for underserved communities with care.
+            </p>
+          </div>
+          <div class="service-card reveal" data-delay="300">
+            <div class="service-card__icon">🎨</div>
+            <h3>Custom Web Experiences</h3>
+            <p>
+              No templates. No cookie-cutter. If you can dream it up (or can't
+              quite describe it), we'll figure it out and build it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FEATURED WORK ─────────────────────────────────── -->
+    <section class="work section" id="work">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__tag">Featured project</p>
+          <h2 class="section__title">
+            One example of<br />what we mean.
+          </h2>
+        </div>
+
+        <div class="case-study reveal">
+          <div class="case-study__meta">
+            <span class="tag">Health Tech</span>
+            <span class="tag">Referral System</span>
+            <span class="tag">Community Tool</span>
+          </div>
+
+          <div class="case-study__layout">
+            <div class="case-study__text">
+              <h3 class="case-study__title">
+                HIV Risk Assessment &amp; QR Referral Platform
+              </h3>
+              <p class="case-study__desc">
+                A confidential, mobile-first questionnaire for a high-risk focus
+                community. Participants complete a risk assessment, book a blood
+                test, and — upon completion — receive <strong>three unique QR
+                codes</strong> to pass on to friends. Each referral unlocks a
+                <strong>RM 50 reward</strong> for the friend, creating a
+                peer-driven health-awareness loop.
+              </p>
+
+              <ul class="case-study__highlights">
+                <li>
+                  <span class="highlight-icon">✔</span>
+                  Branching questionnaire with personalised risk scoring
+                </li>
+                <li>
+                  <span class="highlight-icon">✔</span>
+                  Automated QR code generation per participant
+                </li>
+                <li>
+                  <span class="highlight-icon">✔</span>
+                  Real-time referral tracking dashboard
+                </li>
+                <li>
+                  <span class="highlight-icon">✔</span>
+                  End-to-end confidentiality by design
+                </li>
+              </ul>
+            </div>
+
+            <div class="case-study__visual" aria-hidden="true">
+              <div class="mockup">
+                <div class="mockup__screen">
+                  <div class="mockup__bar"></div>
+                  <div class="mockup__content">
+                    <div class="mockup__question">
+                      <div class="mockup__q-line w-80"></div>
+                      <div class="mockup__q-line w-60"></div>
+                    </div>
+                    <div class="mockup__options">
+                      <div class="mockup__option mockup__option--selected">Option A</div>
+                      <div class="mockup__option">Option B</div>
+                      <div class="mockup__option">Option C</div>
+                    </div>
+                    <div class="mockup__progress">
+                      <div class="mockup__progress-bar" style="width:65%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mockup__qr-grid">
+                  <div class="mockup__qr" data-index="1">
+                    <div class="qr-inner">
+                      <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel dark"></div>
+                      <div class="qr-pixel dark"></div><div class="qr-pixel"></div><div class="qr-pixel dark"></div>
+                      <div class="qr-pixel"></div><div class="qr-pixel dark"></div><div class="qr-pixel dark"></div>
+                    </div>
+                    <span>Friend #1</span>
+                  </div>
+                  <div class="mockup__qr" data-index="2">
+                    <div class="qr-inner">
+                      <div class="qr-pixel dark"></div><div class="qr-pixel"></div><div class="qr-pixel dark"></div>
+                      <div class="qr-pixel"></div><div class="qr-pixel dark"></div><div class="qr-pixel"></div>
+                      <div class="qr-pixel dark"></div><div class="qr-pixel dark"></div><div class="qr-pixel"></div>
+                    </div>
+                    <span>Friend #2</span>
+                  </div>
+                  <div class="mockup__qr" data-index="3">
+                    <div class="qr-inner">
+                      <div class="qr-pixel"></div><div class="qr-pixel dark"></div><div class="qr-pixel"></div>
+                      <div class="qr-pixel dark"></div><div class="qr-pixel dark"></div><div class="qr-pixel dark"></div>
+                      <div class="qr-pixel dark"></div><div class="qr-pixel"></div><div class="qr-pixel dark"></div>
+                    </div>
+                    <span>Friend #3</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── HOW WE WORK ───────────────────────────────────── -->
+    <section class="process section" id="process">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__tag">How it works</p>
+          <h2 class="section__title">From weird idea<br />to live product.</h2>
+        </div>
+
+        <ol class="process__steps">
+          <li class="process__step reveal" data-delay="0">
+            <span class="step-num">01</span>
+            <div>
+              <h4>Tell us the wild idea</h4>
+              <p>No brief is too niche. We love the ones that are hard to explain.</p>
+            </div>
+          </li>
+          <li class="process__step reveal" data-delay="100">
+            <span class="step-num">02</span>
+            <div>
+              <h4>We scope &amp; prototype</h4>
+              <p>Fast wireframes, clear cost, no surprises. You see it before we build it.</p>
+            </div>
+          </li>
+          <li class="process__step reveal" data-delay="200">
+            <span class="step-num">03</span>
+            <div>
+              <h4>Build &amp; iterate</h4>
+              <p>Agile sprints. You stay in the loop. We ship when it's right.</p>
+            </div>
+          </li>
+          <li class="process__step reveal" data-delay="300">
+            <span class="step-num">04</span>
+            <div>
+              <h4>Launch &amp; hand over</h4>
+              <p>Live on your domain. Clean code. We train your team and stay on call.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT ──────────────────────────────────────────── -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="about__inner reveal">
+          <div class="about__text">
+            <p class="section__tag">About Blanc</p>
+            <h2 class="section__title">
+              A one-person shop<br />with no off switch.
+            </h2>
+            <p>
+              Blanc Agency is a solo freelance studio. I take on projects that
+              push the boundaries of what a website can be — not just pretty
+              pages, but <em>functional tools</em> that create real-world impact
+              for real communities.
+            </p>
+            <p>
+              My sweet spot? Projects that sit at the intersection of
+              <strong>tech, human behaviour, and social good</strong>. If you've
+              got a brief that makes most agencies say "we don't do that", I'm
+              probably the right call.
+            </p>
+            <a href="#contact" class="btn btn--primary">Work with me</a>
+          </div>
+          <div class="about__accent" aria-hidden="true">
+            <div class="accent-card">
+              <span class="accent-card__emoji">🤙</span>
+              <p>"The weirder the brief,<br />the more I'm in."</p>
+              <span class="accent-card__name">— Blanc Agency</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ────────────────────────────────────────── -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="contact__inner reveal">
+          <p class="section__tag">Get in touch</p>
+          <h2 class="section__title">
+            Got a fun idea?<br />
+            <span class="hero__headline--highlight">Let's build it.</span>
+          </h2>
+
+          <form class="contact__form" id="contactForm" novalidate>
+            <div class="form__row">
+              <div class="form__group">
+                <label for="name">Your name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your full name"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <label for="email">Email address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="hello@example.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form__group">
+              <label for="project">Tell me about the project</label>
+              <textarea
+                id="project"
+                name="project"
+                rows="5"
+                placeholder="I have this wild idea where…"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              Send it over →
+            </button>
+            <p class="form__note">No spam. Straight to my inbox. I reply fast.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FOOTER ─────────────────────────────────────────── -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <a href="#" class="nav__logo" aria-label="Blanc Agency home">
+          <span class="logo-blanc">BLANC</span>
+          <span class="logo-dot">●</span>
+        </a>
+        <p class="footer__copy">
+          © <span id="year"></span> Blanc Agency. All rights reserved.
+        </p>
+        <div class="footer__links">
+          <a href="mailto:hello@blancagency.my">hello@blancagency.my</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
