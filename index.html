@@ -86,20 +86,23 @@
         <p class="contact-desc">
           Tell us about your vision and we'll get back to you within 24 hours.
         </p>
+        <div class="form-success" data-fs-success>✓ Message sent! We'll be in touch soon.</div>
+        <div class="form-error" data-fs-error></div>
         <form class="contact-form" id="contactForm">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="e.g. Ahmad Fariz" required />
+              <input type="text" id="name" name="name" placeholder="e.g. Ahmad Fariz" required data-fs-field />
             </div>
             <div class="form-group">
               <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="hello@yourcompany.com" required />
+              <input type="email" id="email" name="email" placeholder="hello@yourcompany.com" required data-fs-field />
+              <span data-fs-error="email"></span>
             </div>
           </div>
           <div class="form-group">
             <label for="service">Service Interested In</label>
-            <select id="service" name="service">
+            <select id="service" name="service" data-fs-field>
               <option value="">Select a service...</option>
               <option>Brand Identity</option>
               <option>Web & Digital</option>
@@ -110,15 +113,20 @@
           </div>
           <div class="form-group">
             <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..." required data-fs-field></textarea>
+            <span data-fs-error="message"></span>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">
+          <button type="submit" class="btn btn-primary btn-full" data-fs-submit-btn>
             <span>Send Message</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/></svg>
           </button>
-          <p class="form-success" id="formSuccess">✓ Message sent! We'll be in touch soon.</p>
-          <p class="form-error" id="formError">✕ Something went wrong. Please try again.</p>
         </form>
+
+        <script>
+          window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+          formspree('initForm', { formElement: '#contactForm', formId: 'xjgpzpal' });
+        </script>
+        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
       </div>
     </div>
   </section>

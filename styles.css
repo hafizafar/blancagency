@@ -718,26 +718,38 @@ h1, h2, h3, h4 { font-family: 'Inter', sans-serif; line-height: 1.12; font-weigh
   box-shadow: 0 0 0 3px rgba(124,109,250,0.15);
 }
 .form-group textarea { resize: vertical; min-height: 110px; }
-.form-success {
+
+/* Formspree SDK — success/error banners (hidden until SDK toggles them) */
+.form-success,
+[data-fs-success] {
   display: none;
   text-align: center;
-  margin-top: 16px;
+  margin-bottom: 16px;
   color: var(--accent-3);
   font-weight: 600;
   font-size: 0.9rem;
   animation: fade-in 0.4s ease;
 }
-.form-error {
-  display: none;
+.form-error,
+[data-fs-error]:not(:empty) {
+  display: block;
   text-align: center;
-  margin-top: 16px;
+  margin-bottom: 16px;
   color: var(--accent-2);
   font-weight: 600;
   font-size: 0.9rem;
   animation: fade-in 0.4s ease;
 }
-.form-success.visible { display: block; }
-.form-error.visible   { display: block; }
+[data-fs-error]:empty { display: none; }
+/* Field-level inline errors */
+span[data-fs-error]:not(:empty) {
+  display: block;
+  text-align: left;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  color: var(--accent-2);
+}
+/* SDK shows success div when succeeded */
 @keyframes fade-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ---------- FOOTER ---------- */

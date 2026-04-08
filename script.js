@@ -183,47 +183,6 @@
   statNums.forEach(el => observer.observe(el));
 }());
 
-/* ---- Contact Form (Formspree) ---- */
-(function () {
-  const form = document.getElementById('contactForm');
-  const success = document.getElementById('formSuccess');
-  const error = document.getElementById('formError');
-  if (!form) return;
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    btn.disabled = true;
-    btn.querySelector('span').textContent = 'Sending…';
-    success.classList.remove('visible');
-    error.classList.remove('visible');
-
-    try {
-      const res = await fetch('https://formspree.io/f/xjgpzpal', {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(form),
-      });
-
-      if (res.ok) {
-        form.reset();
-        success.classList.add('visible');
-        setTimeout(() => success.classList.remove('visible'), 5000);
-      } else {
-        error.classList.add('visible');
-        setTimeout(() => error.classList.remove('visible'), 5000);
-      }
-    } catch (err) {
-      console.error('Form submission error:', err);
-      error.classList.add('visible');
-      setTimeout(() => error.classList.remove('visible'), 5000);
-    }
-
-    btn.disabled = false;
-    btn.querySelector('span').textContent = 'Send Message';
-  });
-}());
-
 /* ---- Smooth scroll for anchor links ---- */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
