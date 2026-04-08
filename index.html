@@ -3,41 +3,257 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blanc Agency — We Build What Inspires</title>
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- ── Primary SEO ─────────────────────────────────────────────────────── -->
+  <title>Blanc Agency — Premium Creative Agency | Brand Identity, Web Design & Motion</title>
+  <meta name="description" content="Blanc Agency is a boutique premium creative agency in Kuala Lumpur crafting iconic brand identities, bespoke web experiences, and cinematic motion design for ambitious, high-end brands worldwide." />
+  <meta name="keywords" content="premium creative agency, luxury brand identity, bespoke web design, high-end digital agency, boutique branding studio, brand strategy Malaysia, web design Kuala Lumpur, motion design agency, cinematic brand film, premium UX design, creative agency KL, award-winning brand design, digital experience studio, high-end web development, brand positioning, visual identity design, creative direction, typography design, luxury marketing, growth marketing agency" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Blanc Agency" />
+  <link rel="canonical" href="https://blancagency.co/" />
+
+  <!-- ── Open Graph (Facebook / LinkedIn) ───────────────────────────────── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://blancagency.co/" />
+  <meta property="og:site_name" content="Blanc Agency" />
+  <meta property="og:title" content="Blanc Agency — We Build What Inspires" />
+  <meta property="og:description" content="Boutique creative studio crafting premium brand identities, bespoke websites, and motion design for brands that refuse to be ordinary." />
+  <meta property="og:image" content="https://blancagency.co/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Blanc Agency — Premium Creative Studio" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- ── Twitter Card ────────────────────────────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@blancagency" />
+  <meta name="twitter:title" content="Blanc Agency — Premium Creative Agency" />
+  <meta name="twitter:description" content="Boutique creative studio crafting premium brand identities, bespoke websites, and motion design for brands that refuse to be ordinary." />
+  <meta name="twitter:image" content="https://blancagency.co/og-image.jpg" />
+
+  <!-- ── Geo & Local SEO ─────────────────────────────────────────────────── -->
+  <meta name="geo.region" content="MY-14" />
+  <meta name="geo.placename" content="Kuala Lumpur" />
+  <meta name="geo.position" content="3.1390;101.6869" />
+  <meta name="ICBM" content="3.1390, 101.6869" />
+
+  <!-- ── JSON-LD Structured Data ────────────────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://blancagency.co/#organization",
+        "name": "Blanc Agency",
+        "alternateName": ["Blanc Creative", "Blanc Studio"],
+        "url": "https://blancagency.co/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://blancagency.co/logo.png",
+          "width": 200,
+          "height": 60
+        },
+        "description": "Blanc Agency is a boutique premium creative agency specialising in brand identity, bespoke web design, motion design, and growth marketing for ambitious brands.",
+        "foundingDate": "2024",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kuala Lumpur",
+          "addressCountry": "MY"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "availableLanguage": ["English", "Malay"]
+        },
+        "sameAs": [
+          "https://www.instagram.com/blancagency",
+          "https://www.linkedin.com/company/blancagency",
+          "https://twitter.com/blancagency"
+        ],
+        "knowsAbout": [
+          "Brand Identity Design",
+          "Visual Identity Systems",
+          "Web Design",
+          "UX/UI Design",
+          "Motion Design",
+          "Brand Strategy",
+          "Digital Marketing",
+          "Content Creation"
+        ],
+        "slogan": "We Build What Inspires"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://blancagency.co/#website",
+        "url": "https://blancagency.co/",
+        "name": "Blanc Agency",
+        "publisher": { "@id": "https://blancagency.co/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://blancagency.co/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://blancagency.co/#webpage",
+        "url": "https://blancagency.co/",
+        "name": "Blanc Agency — Premium Creative Agency | Brand Identity, Web Design & Motion",
+        "description": "Blanc Agency is a boutique premium creative agency in Kuala Lumpur crafting iconic brand identities, bespoke web experiences, and cinematic motion design.",
+        "isPartOf": { "@id": "https://blancagency.co/#website" },
+        "about": { "@id": "https://blancagency.co/#organization" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://blancagency.co/og-image.jpg"
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://blancagency.co/#service",
+        "name": "Blanc Agency",
+        "url": "https://blancagency.co/",
+        "image": "https://blancagency.co/og-image.jpg",
+        "priceRange": "$$$",
+        "currenciesAccepted": "MYR, USD",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kuala Lumpur",
+          "addressCountry": "MY"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Creative Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Brand Identity Design",
+                "description": "Comprehensive visual identity systems including logo design, typography, colour systems, and brand guidelines for premium brands."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Bespoke Web Design & Development",
+                "description": "High-performance, design-led websites and digital experiences engineered for conversion and built to leave an impression."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Motion Design & Film",
+                "description": "Cinematic brand films, animated logos, social motion content, and video production that captures brand essence in motion."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Growth Marketing",
+                "description": "Strategic digital marketing, content strategy, and campaign execution designed to scale premium brands with precision."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What kind of clients does Blanc Agency work with?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We partner with ambitious founders, established businesses, and creative visionaries who value craft, strategy, and long-term brand equity over cheap, templated solutions. Our clients are typically in lifestyle, tech, hospitality, fashion, and professional services sectors."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the typical investment for a branding or web project?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every project is scoped individually to match your ambition. We work in the premium tier — clients who understand that world-class creative is an investment, not an expense. Reach out to discuss your project and receive a tailored proposal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a brand identity or website project take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full brand identity project typically takes 4–8 weeks. A bespoke website design and development engagement runs 8–16 weeks depending on scope. We prioritise quality and intention — we don't rush craft."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Blanc Agency work with international clients?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. While we're based in Kuala Lumpur, Malaysia, we collaborate with clients globally. Our remote workflow is refined and seamless — timezone differences have never been a barrier to producing outstanding work."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes Blanc Agency different from other creative agencies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We are a boutique studio — not a production factory. Every project is led by senior creatives, every decision is intentional, and every output is built to endure. We don't do generic. We build iconic."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ── Preload & Performance ───────────────────────────────────────────── -->
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="preload" href="script.js" as="script" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- ── Favicons ────────────────────────────────────────────────────────── -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0a0a0f" />
 </head>
 <body>
 
   <!-- Custom cursor -->
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
 
   <!-- Canvas background -->
-  <canvas id="bg-canvas"></canvas>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <!-- NAV -->
-  <nav class="nav" id="nav">
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="#" class="logo">
+      <a href="/" class="logo" aria-label="Blanc Agency — Home">
         <span class="logo-b">B</span>lanc
       </a>
-      <ul class="nav-links">
+      <ul class="nav-links" role="list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">Process</a></li>
         <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero" id="home">
+  <section class="hero" id="home" aria-labelledby="hero-heading">
     <div class="hero-content">
       <div class="hero-badge reveal-up">
-        <span class="badge-dot"></span>
+        <span class="badge-dot" aria-hidden="true"></span>
         Available for projects
       </div>
-      <h1 class="hero-title">
+      <h1 class="hero-title" id="hero-heading">
         <span class="line reveal-up delay-1">We craft</span>
         <span class="line reveal-up delay-2">
           <em class="gradient-text">digital</em>
@@ -45,22 +261,25 @@
         <span class="line reveal-up delay-3">experiences.</span>
       </h1>
       <p class="hero-sub reveal-up delay-4">
-        We build iconic digital work — where colour, rhythm, and motion speak the way music does. Brand identity, web design, and motion that makes people feel something.
+        Blanc Agency is a boutique premium creative studio based in Kuala Lumpur. We build iconic brand identities, bespoke websites, and cinematic motion design for ambitious brands that refuse to be ordinary. Colour, rhythm, and intention — engineered to make people feel something.
       </p>
       <div class="hero-actions reveal-up delay-5">
         <a href="#contact" class="btn btn-primary">
           <span>Start a Project</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#services" class="btn btn-ghost">
+          <span>Our Services</span>
         </a>
       </div>
     </div>
-    <div class="hero-visual">
+    <div class="hero-visual" aria-hidden="true">
       <div class="hero-orb orb-1"></div>
       <div class="hero-orb orb-2"></div>
       <div class="hero-orb orb-3"></div>
       <div class="floating-card card-1 reveal-right delay-3">
         <div class="card-icon">✦</div>
-        <p>Brand Strategy</p>
+        <p>Brand Identity</p>
       </div>
       <div class="floating-card card-2 reveal-right delay-4">
         <div class="card-icon">◈</div>
@@ -68,23 +287,233 @@
       </div>
       <div class="floating-card card-3 reveal-right delay-5">
         <div class="card-icon">⬡</div>
-        <p>Content Creation</p>
+        <p>Motion & Film</p>
       </div>
     </div>
   </section>
 
+  <!-- SERVICES -->
+  <section class="services section" id="services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-label reveal-up">What We Do</div>
+      <h2 class="section-title reveal-up" id="services-heading">
+        Premium creative services<br/>
+        <em class="gradient-text">built to endure.</em>
+      </h2>
+      <p class="section-desc reveal-up">
+        We don't offer templated packages or cookie-cutter deliverables. Every engagement is a bespoke partnership — designed around your specific brand ambition and audience.
+      </p>
+      <div class="services-grid">
+
+        <article class="service-card reveal-up delay-1">
+          <div class="service-icon" aria-hidden="true">✦</div>
+          <h3>Brand Identity Design</h3>
+          <p>Full-spectrum visual identity systems — logo design, typography hierarchies, colour palettes, brand guidelines, and the strategic narrative that ties it all together. We build brands that carry weight.</p>
+          <ul class="service-list" aria-label="Brand identity deliverables">
+            <li>Logo &amp; Visual Identity System</li>
+            <li>Typography &amp; Colour Strategy</li>
+            <li>Brand Guidelines &amp; Style Guide</li>
+            <li>Packaging &amp; Collateral Design</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal-up delay-2">
+          <div class="service-icon" aria-hidden="true">◈</div>
+          <h3>Bespoke Web Design &amp; Development</h3>
+          <p>High-performance, design-led websites that convert. We combine award-calibre aesthetics with technical precision — no themes, no shortcuts. Every pixel is intentional, every interaction is considered.</p>
+          <ul class="service-list" aria-label="Web design deliverables">
+            <li>UX Strategy &amp; Wireframing</li>
+            <li>Custom UI Design</li>
+            <li>Front-End Development</li>
+            <li>Performance &amp; SEO Optimisation</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal-up delay-3">
+          <div class="service-icon" aria-hidden="true">⬡</div>
+          <h3>Motion Design &amp; Film</h3>
+          <p>Cinematic brand films, animated identities, social motion content, and video production that captures the essence of a brand in motion. We turn ideas into moving experiences.</p>
+          <ul class="service-list" aria-label="Motion design deliverables">
+            <li>Brand Film &amp; Commercials</li>
+            <li>Animated Logo &amp; Motion Identity</li>
+            <li>Social Video Content</li>
+            <li>Product &amp; Campaign Films</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal-up delay-4">
+          <div class="service-icon" aria-hidden="true">⊕</div>
+          <h3>Growth Marketing &amp; Strategy</h3>
+          <p>We don't just build beautiful things — we make them perform. Our growth marketing service blends brand strategy with digital precision to acquire the right customers at scale.</p>
+          <ul class="service-list" aria-label="Marketing deliverables">
+            <li>Brand Positioning &amp; Messaging</li>
+            <li>Content Strategy &amp; Production</li>
+            <li>Paid Media &amp; Campaign Management</li>
+            <li>Analytics &amp; Performance Reporting</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / WHY US -->
+  <section class="about section" id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-text">
+          <div class="section-label reveal-up">Why Blanc</div>
+          <h2 class="section-title reveal-up" id="about-heading">
+            Built for brands<br/>
+            <em class="gradient-text">that demand more.</em>
+          </h2>
+          <p class="reveal-up">
+            We exist for the visionary — the founder who knows that design is not decoration, it is differentiation. The creative director who refuses to compromise. The brand that would rather wait for something exceptional than settle for something fast.
+          </p>
+          <p class="reveal-up">
+            Blanc Agency is a boutique studio based in Kuala Lumpur, working with select clients globally. Our small, senior team means you get focused expertise, not a junior team running through a process. Every project is treated as the most important one on our roster.
+          </p>
+          <div class="about-stats reveal-up">
+            <div class="stat">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Bespoke — no templates, ever</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">48h</span>
+              <span class="stat-label">Average first-response time</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">5★</span>
+              <span class="stat-label">Client satisfaction rating</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-pillars reveal-up delay-2" aria-label="Our values">
+          <div class="pillar">
+            <span class="pillar-icon" aria-hidden="true">◎</span>
+            <strong>Craft Over Speed</strong>
+            <p>We take the time required to get it right. Quality is non-negotiable.</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon" aria-hidden="true">◉</span>
+            <strong>Strategy Meets Aesthetics</strong>
+            <p>Every design decision is grounded in brand strategy and audience insight.</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon" aria-hidden="true">◌</span>
+            <strong>Long-Term Thinking</strong>
+            <p>We build brand equity that compounds. Not trends that expire.</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon" aria-hidden="true">◍</span>
+            <strong>Radical Transparency</strong>
+            <p>No surprises. Clear communication, honest timelines, real outcomes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process section" id="process" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-label reveal-up">How We Work</div>
+      <h2 class="section-title reveal-up" id="process-heading">
+        A deliberate process.<br/>
+        <em class="gradient-text">Exceptional results.</em>
+      </h2>
+      <p class="section-desc reveal-up">
+        Our four-phase engagement model is designed to eliminate guesswork, maximise alignment, and deliver creative that exceeds expectations — consistently.
+      </p>
+      <ol class="process-steps" aria-label="Our creative process">
+        <li class="process-step reveal-up delay-1">
+          <span class="step-num" aria-hidden="true">01</span>
+          <div class="step-body">
+            <h3>Discover &amp; Define</h3>
+            <p>We begin with a deep-dive into your brand, market, competitors, and audience. We ask the questions others skip. This phase produces a strategic creative brief that every downstream decision maps to.</p>
+          </div>
+        </li>
+        <li class="process-step reveal-up delay-2">
+          <span class="step-num" aria-hidden="true">02</span>
+          <div class="step-body">
+            <h3>Concept &amp; Create</h3>
+            <p>Our senior creatives develop original concepts grounded in strategy. We present two distinct creative directions — not endless iterations — so decisions are clear, considered, and informed.</p>
+          </div>
+        </li>
+        <li class="process-step reveal-up delay-3">
+          <span class="step-num" aria-hidden="true">03</span>
+          <div class="step-body">
+            <h3>Refine &amp; Perfect</h3>
+            <p>With a chosen direction, we refine to precision. Copy, colour, spacing, motion — every detail is scrutinised. We don't ship work we're not proud of. Period.</p>
+          </div>
+        </li>
+        <li class="process-step reveal-up delay-4">
+          <span class="step-num" aria-hidden="true">04</span>
+          <div class="step-body">
+            <h3>Launch &amp; Scale</h3>
+            <p>We deliver production-ready assets, provide onboarding on implementation, and remain available post-launch. For long-term partners, we offer ongoing retainer arrangements.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq section" id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-label reveal-up">Common Questions</div>
+      <h2 class="section-title reveal-up" id="faq-heading">
+        Frequently asked<br/>
+        <em class="gradient-text">questions.</em>
+      </h2>
+      <dl class="faq-list reveal-up">
+
+        <div class="faq-item">
+          <dt>What kind of clients does Blanc Agency work with?</dt>
+          <dd>We partner with ambitious founders, established businesses, and creative visionaries who value craft, strategy, and long-term brand equity over cheap, templated solutions. Our clients are typically in lifestyle, tech, hospitality, fashion, and professional services sectors.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>What is the typical investment for a branding or web project?</dt>
+          <dd>Every project is scoped individually to match your ambition. We work in the premium tier — clients who understand that world-class creative is an investment, not an expense. Reach out to discuss your project and receive a tailored proposal.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>How long does a brand identity or website project take?</dt>
+          <dd>A full brand identity project typically takes 4–8 weeks. A bespoke website design and development engagement runs 8–16 weeks depending on scope. We prioritise quality and intention — we don't rush craft.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>Does Blanc Agency work with international clients?</dt>
+          <dd>Yes. While we're based in Kuala Lumpur, Malaysia, we collaborate with clients globally. Our remote workflow is refined and seamless — timezone differences have never been a barrier to producing outstanding work.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>What makes Blanc Agency different from other creative agencies?</dt>
+          <dd>We are a boutique studio — not a production factory. Every project is led by senior creatives, every decision is intentional, and every output is built to endure. We don't do generic. We build iconic.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>Do you offer ongoing retainer arrangements?</dt>
+          <dd>Yes. After an initial project, select clients can engage us on a monthly retainer for continued brand management, content creation, and digital growth support. Retainer relationships are limited to ensure service quality.</dd>
+        </div>
+
+      </dl>
+    </div>
+  </section>
+
   <!-- CONTACT -->
-  <section class="contact section" id="contact">
+  <section class="contact section" id="contact" aria-labelledby="contact-heading">
     <div class="container">
       <div class="contact-inner reveal-up">
-        <div class="contact-bg-glow"></div>
+        <div class="contact-bg-glow" aria-hidden="true"></div>
         <div class="section-label">Get In Touch</div>
-        <h2 class="section-title">
+        <h2 class="section-title" id="contact-heading">
           Got a project in mind?<br/>
           <em class="gradient-text">Let's build it.</em>
         </h2>
         <p class="contact-desc">
-          Tell us about your vision and we'll get back to you within 24 hours.
+          Tell us about your vision and we'll get back to you within 24 hours. We work with a select number of clients at any given time — if you're reading this, now is the time to reach out.
         </p>
         <div class="form-success" data-fs-success>✓ Message sent! We'll be in touch soon.</div>
         <div class="form-error" data-fs-error></div>
@@ -132,10 +561,10 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="footer-bottom">
-      <span>© 2026 Blanc Agency. All rights reserved.</span>
-      <span>Made with ♥ in KL</span>
+      <span>© 2026 <a href="/" aria-label="Blanc Agency homepage">Blanc Agency</a>. All rights reserved. Premium Creative Agency, Kuala Lumpur.</span>
+      <span>Made with ♥ in KL — <a href="#contact">Start a project →</a></span>
     </div>
   </footer>
 
