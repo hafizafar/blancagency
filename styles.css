@@ -231,17 +231,12 @@ h1, h2, h3, h4 { font-family: 'Inter', sans-serif; line-height: 1.12; font-weigh
 .nav-mobile a:hover { color: var(--text); }
 .nav-mobile.open { display: flex; }
 
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .menu-toggle { display: flex; }
-}
-
 /* ---------- HERO ---------- */
 .hero {
-  min-height: 100dvh;
+  height: 100dvh;
   display: flex;
   align-items: center;
-  padding: 120px 24px 80px;
+  padding: 100px 24px 60px;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -291,7 +286,7 @@ h1, h2, h3, h4 { font-family: 'Inter', sans-serif; line-height: 1.12; font-weigh
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 64px;
+  margin-bottom: 0;
 }
 .hero-stats {
   display: flex;
@@ -746,7 +741,7 @@ h1, h2, h3, h4 { font-family: 'Inter', sans-serif; line-height: 1.12; font-weigh
 @keyframes fade-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ---------- FOOTER ---------- */
-.footer { background: var(--bg-2); border-top: 1px solid var(--border); padding-top: 64px; position: relative; z-index: 1; }
+.footer { background: var(--bg-2); border-top: 1px solid var(--border); position: relative; z-index: 1; }
 .footer-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-bottom: 48px; align-items: start; }
 @media (max-width: 640px) { .footer-inner { grid-template-columns: 1fr; } }
 .footer-brand .logo { display: inline-block; margin-bottom: 12px; }
