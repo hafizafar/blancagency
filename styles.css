@@ -178,13 +178,22 @@ h1, h2, h3, h4 { font-family: 'Inter', sans-serif; line-height: 1.12; font-weigh
   color: var(--text);
   text-decoration: none;
   letter-spacing: -0.04em;
+  display: inline-flex;
+  align-items: center;
 }
-.logo-b {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  /* Invert the black logo to white for the dark background */
+  filter: invert(1) brightness(2);
+  transition: filter 0.3s, opacity 0.3s;
 }
+.logo:hover .logo-img {
+  filter: invert(1) brightness(2) drop-shadow(0 0 12px rgba(124,109,250,0.7));
+  opacity: 0.9;
+}
+/* .logo-b removed — replaced with image logo */
 .nav-links {
   display: flex;
   list-style: none;
@@ -362,7 +371,37 @@ h1, h2, h3, h4 { font-family: 'Inter', sans-serif; line-height: 1.12; font-weigh
   50% { transform: translateY(-10px); }
 }
 
-/* Scroll indicator */
+/* Hero logo showcase */
+.hero-logo-showcase {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 28px;
+  padding: 36px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 80px rgba(124,109,250,0.2), 0 24px 64px rgba(0,0,0,0.5);
+  animation: logo-breathe 6s ease-in-out infinite;
+}
+.hero-logo-img {
+  width: 180px;
+  height: auto;
+  display: block;
+  filter: invert(1) brightness(2);
+}
+@keyframes logo-breathe {
+  0%, 100% { box-shadow: 0 0 80px rgba(124,109,250,0.2), 0 24px 64px rgba(0,0,0,0.5); }
+  50% { box-shadow: 0 0 120px rgba(124,109,250,0.35), 0 0 40px rgba(250,109,142,0.15), 0 24px 64px rgba(0,0,0,0.5); }
+}
+
+
 .scroll-indicator {
   position: absolute;
   bottom: 40px;
@@ -780,6 +819,16 @@ span[data-fs-error]:not(:empty) {
   gap: 16px;
   flex-wrap: wrap;
 }
+.footer-logo-img {
+  height: 22px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  filter: invert(1) brightness(1.5);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.footer-logo-img:hover { opacity: 1; }
 
 /* ---------- SCROLL REVEAL ANIMATIONS ---------- */
 .reveal-up, .reveal-right {
