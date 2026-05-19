@@ -1,39 +1,33 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Labuan Bajo 2027 — Komodo Trip Gila-Gila Private Boat</title>
-  <meta name="description" content="Landing page standalone untuk trip private Komodo / Labuan Bajo September 2027. Bahasa Pasar, penuh hype, private boat, dan Formspree RSVP." />
+  <title>Labuan Bajo 2027 - Inner Circle Plan</title>
+  <meta name="description" content="Private Labuan Bajo / Komodo inner-circle plan for September 2027." />
   <meta name="robots" content="noindex, nofollow" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg: #f8f4ec;
-      --paper: #fffdf8;
-      --navy: #071a2d;
-      --navy-2: #0d2b46;
-      --teal: #10b7c9;
-      --aqua: #59d7e6;
-      --gold: #c9a86a;
-      --gold-2: #e3c88b;
-      --sand: #ead8b3;
-      --text: #14273c;
+      --marine-900: #061a2d;
+      --marine-800: #0c2a44;
+      --marine-700: #174466;
+      --sand-100: #f6efe2;
+      --sand-200: #ebdbc0;
+      --gold-400: #c4a56b;
+      --gold-300: #dfc18d;
+      --offwhite: #fffdf8;
+      --ink: #15283d;
       --muted: #5f7287;
-      --line: rgba(7,26,45,.09);
-      --shadow: 0 20px 60px rgba(7,26,45,.14);
-      --shadow-soft: 0 10px 30px rgba(7,26,45,.08);
-      --r-sm: 14px;
-      --r-md: 22px;
-      --r-lg: 30px;
-      --r-xl: 40px;
-      --font-head: 'Space Grotesk', sans-serif;
-      --font-body: 'Inter', sans-serif;
-      --ease: cubic-bezier(.16,1,.3,1);
+      --line: rgba(6, 26, 45, 0.1);
+      --radius: 22px;
+      --shadow: 0 20px 50px rgba(6, 26, 45, 0.12);
+      --font-head: "Space Grotesk", sans-serif;
+      --font-body: "Inter", sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -41,151 +35,28 @@
     body {
       margin: 0;
       font-family: var(--font-body);
-      color: var(--text);
+      color: var(--ink);
       background:
-        radial-gradient(circle at 20% 10%, rgba(89,215,230,.14), transparent 30%),
-        radial-gradient(circle at 80% 0%, rgba(201,168,106,.16), transparent 26%),
-        linear-gradient(180deg, #fdfaf4 0%, #f7f1e6 100%);
-      overflow-x: hidden;
+        radial-gradient(circle at 20% 0%, rgba(223, 193, 141, 0.28), transparent 34%),
+        radial-gradient(circle at 85% 10%, rgba(23, 68, 102, 0.12), transparent 26%),
+        var(--offwhite);
       line-height: 1.65;
     }
-    img { display: block; width: 100%; height: auto; }
-    a { color: inherit; text-decoration: none; }
-    button, input, textarea, select { font: inherit; }
-    ::selection { background: rgba(16,183,201,.18); }
-
-    .container { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; }
-    .section { padding: 92px 0; }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: .55rem;
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--teal);
-    }
-    .eyebrow::before {
-      content: '';
-      width: 22px;
-      height: 1.5px;
-      background: currentColor;
-      display: inline-block;
-    }
-    .title {
-      font-family: var(--font-head);
-      font-size: clamp(2rem, 4vw, 3.7rem);
-      line-height: 1.04;
-      letter-spacing: -.04em;
-      margin: .7rem 0 1rem;
-      color: var(--navy);
-    }
-    .lead {
-      font-size: 1.04rem;
-      color: var(--muted);
-      max-width: 66ch;
-      margin: 0;
-    }
-    .accent {
-      color: var(--gold);
-    }
-    .accent2 {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--aqua) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: .65rem;
-      padding: .92rem 1.25rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-weight: 800;
-      transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease), border-color .35s var(--ease);
-      cursor: pointer;
-      white-space: nowrap;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-2) 100%);
-      color: var(--navy);
-      box-shadow: 0 12px 28px rgba(201,168,106,.32);
-    }
-    .btn-secondary {
-      background: rgba(255,255,255,.08);
-      color: #fff;
-      border-color: rgba(255,255,255,.14);
-      backdrop-filter: blur(10px);
-    }
-    .btn-secondary:hover { background: rgba(255,255,255,.12); }
-
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 50;
-      padding: 1rem 0;
-      transition: background .35s var(--ease), box-shadow .35s var(--ease), padding .35s var(--ease);
-    }
-    .nav.scrolled {
-      background: rgba(7,26,45,.9);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 1px 0 rgba(255,255,255,.06);
-      padding: .75rem 0;
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: .1rem;
-      color: #fff;
-      font-weight: 800;
-      letter-spacing: -.03em;
-    }
-    .brand small {
-      font-weight: 600;
-      color: rgba(255,255,255,.55);
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      font-size: .68rem;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      color: rgba(255,255,255,.72);
-      font-size: .92rem;
-      font-weight: 600;
-    }
-    .nav-links a:hover { color: var(--gold-2); }
-    .nav-cta { color: var(--navy) !important; }
 
     .hero {
       position: relative;
-      min-height: 100vh;
+      min-height: 72vh;
       display: grid;
-      align-items: center;
+      align-items: end;
       color: #fff;
       overflow: hidden;
-      isolation: isolate;
-      background: var(--navy);
+      background: var(--marine-900);
     }
     .hero::before {
-      content: '';
+      content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(7,26,45,.18) 0%, rgba(7,26,45,.55) 46%, rgba(7,26,45,.92) 100%);
+      background: linear-gradient(180deg, rgba(6, 26, 45, 0.18) 0%, rgba(6, 26, 45, 0.8) 100%);
       z-index: 1;
     }
     .hero-bg {
@@ -197,898 +68,356 @@
     .hero-inner {
       position: relative;
       z-index: 2;
-      padding: 9rem 0 5rem;
+      width: min(980px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 6rem 0 3rem;
     }
-    .hero-card {
-      width: min(860px, 100%);
-      background: rgba(7,26,45,.42);
-      border: 1px solid rgba(255,255,255,.1);
-      backdrop-filter: blur(14px);
-      box-shadow: var(--shadow);
-      border-radius: var(--r-xl);
-      padding: clamp(1.4rem, 4vw, 2.2rem);
-    }
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: .55rem;
-      padding: .45rem .85rem;
+    .eyebrow {
+      display: inline-block;
+      padding: 0.35rem 0.8rem;
       border-radius: 999px;
-      background: rgba(201,168,106,.12);
-      border: 1px solid rgba(201,168,106,.28);
-      color: var(--gold-2);
-      font-size: .72rem;
+      font-size: 0.72rem;
       font-weight: 800;
-      letter-spacing: .14em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 1rem;
+      background: rgba(196, 165, 107, 0.18);
+      border: 1px solid rgba(223, 193, 141, 0.45);
+      color: var(--gold-300);
+      margin-bottom: 0.8rem;
     }
-    .hero-pill .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--gold-2);
-      box-shadow: 0 0 0 6px rgba(201,168,106,.14);
-    }
-    .hero h1 {
+    h1 {
       margin: 0;
       font-family: var(--font-head);
-      font-size: clamp(2.5rem, 7vw, 5.5rem);
-      line-height: .95;
-      letter-spacing: -.05em;
-      max-width: 12ch;
+      font-size: clamp(2.2rem, 6.7vw, 4.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      max-width: 13ch;
     }
-    .hero .sub {
-      margin: 1rem 0 1.5rem;
+    .hero-sub {
+      margin: 1rem 0 0;
       max-width: 62ch;
-      color: rgba(255,255,255,.8);
-      font-size: 1.02rem;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1rem;
     }
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .75rem;
-      margin: 1.4rem 0 1.8rem;
+
+    .container {
+      width: min(980px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2.4rem 0 4rem;
     }
-    .chip {
-      padding: .62rem .9rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.09);
-      color: rgba(255,255,255,.88);
-      font-size: .84rem;
+
+    .flow {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .step {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.25rem 1.1rem;
+      box-shadow: 0 10px 28px rgba(6, 26, 45, 0.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .step::after {
+      content: "";
+      position: absolute;
+      right: -44px;
+      top: -44px;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196, 165, 107, 0.2), transparent 70%);
+      pointer-events: none;
+    }
+    .step h2 {
+      margin: 0 0 0.45rem;
+      font-family: var(--font-head);
+      font-size: clamp(1.18rem, 3vw, 1.48rem);
+      letter-spacing: -0.02em;
+      color: var(--marine-900);
+    }
+    .step h2 strong {
       font-weight: 700;
     }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .8rem;
-      margin-top: 1rem;
-    }
-    .hero-note {
-      margin-top: 1rem;
-      font-size: .86rem;
-      color: rgba(255,255,255,.68);
-    }
-
-    .stats {
-      background: var(--navy);
-      border-top: 1px solid rgba(255,255,255,.06);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      padding: 1.1rem 0;
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: .9rem;
-    }
-    .stat {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.06);
-      border-radius: var(--r-md);
-      padding: .95rem 1rem;
-      color: #fff;
-    }
-    .stat strong {
-      display: block;
-      font-family: var(--font-head);
-      font-size: 1.35rem;
-      color: var(--gold-2);
-      line-height: 1;
-      margin-bottom: .25rem;
-    }
-    .stat span { color: rgba(255,255,255,.56); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .panel {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--r-xl);
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-    }
-    .panel-pad { padding: clamp(1.4rem, 3vw, 2.2rem); }
-    .kicker {
-      display: inline-flex;
-      padding: .28rem .68rem;
-      border-radius: 999px;
-      background: rgba(16,183,201,.09);
-      color: var(--teal);
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      margin-bottom: .8rem;
-    }
-
-    .glass-list {
-      margin: 1.3rem 0 0;
-      padding: 0;
-      display: grid;
-      gap: .85rem;
-    }
-    .glass-list li {
-      display: flex;
-      gap: .75rem;
-      align-items: flex-start;
-      color: var(--text);
-      font-weight: 600;
-    }
-    .glass-list li::before {
-      content: '✓';
-      flex: 0 0 auto;
-      color: var(--teal);
-      font-weight: 900;
-    }
-
-    .mood-image {
-      position: relative;
-      min-height: 540px;
-      background: #dbe7ef;
-    }
-    .mood-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      min-height: 540px;
-    }
-    .mood-tag {
-      position: absolute;
-      left: 1rem;
-      bottom: 1rem;
-      background: rgba(7,26,45,.76);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,.1);
-      padding: .7rem .9rem;
-      border-radius: 16px;
-      max-width: 240px;
-      backdrop-filter: blur(10px);
-    }
-    .mood-tag strong { display: block; color: var(--gold-2); margin-bottom: .2rem; }
-
-    .section-head {
-      max-width: 760px;
-      margin: 0 auto 2rem;
-      text-align: center;
-    }
-
-    .damage-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .damage-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      padding: 1.25rem;
-      box-shadow: var(--shadow-soft);
-    }
-    .damage-card h3 {
-      font-family: var(--font-head);
-      font-size: 1.1rem;
-      margin: 0 0 .45rem;
-      color: var(--navy);
-    }
-    .damage-card p {
+    .step p {
       margin: 0;
-      color: var(--text);
-      font-weight: 600;
-      line-height: 1.7;
-    }
-    .damage-card em {
-      font-style: normal;
-      color: var(--gold);
-      font-weight: 900;
+      color: var(--ink);
+      font-size: 0.99rem;
     }
 
-    .points-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .point-card {
-      border-radius: var(--r-xl);
-      overflow: hidden;
-      position: relative;
-      min-height: 300px;
-      box-shadow: var(--shadow);
-      background: var(--navy);
-    }
-    .point-card.big { min-height: 380px; }
-    .point-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: .88;
-      transform: scale(1.03);
-      transition: transform .7s var(--ease), opacity .7s var(--ease);
-    }
-    .point-card:hover img { transform: scale(1.08); opacity: 1; }
-    .point-copy {
-      position: absolute;
-      inset: auto 0 0 0;
-      padding: 1rem 1rem 1.2rem;
-      background: linear-gradient(180deg, transparent 0%, rgba(7,26,45,.84) 40%, rgba(7,26,45,.96) 100%);
-      color: #fff;
-    }
-    .point-copy .tag {
-      display: inline-flex;
-      padding: .25rem .55rem;
-      border-radius: 999px;
-      font-size: .68rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--gold-2);
-      background: rgba(201,168,106,.12);
-      border: 1px solid rgba(201,168,106,.26);
-      margin-bottom: .5rem;
-    }
-    .point-copy h3 {
-      font-family: var(--font-head);
-      font-size: 1.2rem;
-      margin: 0 0 .3rem;
-      line-height: 1.1;
-    }
-    .point-copy p {
-      margin: 0;
-      color: rgba(255,255,255,.72);
-      font-size: .93rem;
-      line-height: 1.55;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 1rem;
-      margin-top: 2rem;
-      position: relative;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 18px;
-      top: 10px;
-      bottom: 10px;
-      width: 2px;
-      background: linear-gradient(180deg, var(--teal), var(--gold));
-      opacity: .35;
-    }
-    .phase {
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 1rem;
-      align-items: start;
-    }
-    .phase .dot {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--navy);
-      border: 3px solid var(--teal);
-      color: var(--gold-2);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      position: relative;
-      z-index: 1;
-      margin-top: .15rem;
-    }
-    .phase-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      padding: 1.15rem 1.2rem;
-      box-shadow: var(--shadow-soft);
-    }
-    .phase-card h3 {
-      margin: 0 0 .25rem;
-      font-family: var(--font-head);
-      font-size: 1.05rem;
-      color: var(--navy);
-    }
-    .phase-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: .96rem;
-    }
-    .phase-badge {
+    .damage-note {
+      margin-top: 0.75rem;
       display: inline-block;
-      margin-top: .65rem;
-      font-size: .7rem;
-      font-weight: 900;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--teal);
+      background: rgba(23, 68, 102, 0.08);
+      border: 1px solid rgba(23, 68, 102, 0.16);
+      color: var(--marine-700);
+      border-radius: 12px;
+      padding: 0.45rem 0.65rem;
+      font-weight: 700;
+      font-size: 0.8rem;
     }
 
-    .downloads {
+    .masonry {
+      margin-top: 1rem;
       display: grid;
-      gap: .9rem;
-      margin-top: 1.4rem;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0.75rem;
     }
-    .download-link {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem 1.05rem;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: var(--shadow-soft);
-      transition: transform .35s var(--ease), border-color .35s var(--ease);
-    }
-    .download-link:hover { transform: translateY(-2px); border-color: rgba(16,183,201,.35); }
-    .download-link strong { display: block; color: var(--navy); margin-bottom: .15rem; }
-    .download-link span { color: var(--muted); font-size: .92rem; }
-    .download-link .arrow { color: var(--gold); font-weight: 900; }
-
-    .form-wrap {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--r-xl);
-      padding: clamp(1.3rem, 3vw, 2rem);
+    .tile {
+      border-radius: 16px;
+      overflow: hidden;
       box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.35);
+      position: relative;
+      min-height: 180px;
+      background: var(--marine-800);
+    }
+    .tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.03) contrast(1.02);
+    }
+    .tile-1 { grid-column: span 7; min-height: 260px; }
+    .tile-2 { grid-column: span 5; min-height: 260px; }
+    .tile-3 { grid-column: span 4; min-height: 200px; }
+    .tile-4 { grid-column: span 4; min-height: 200px; }
+    .tile-5 { grid-column: span 4; min-height: 200px; }
+
+    .spec-links {
+      margin-top: 0.75rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+    .spec-links a {
+      display: block;
+      background: var(--sand-100);
+      border: 1px solid rgba(196, 165, 107, 0.35);
+      border-radius: 12px;
+      color: var(--marine-900);
+      font-weight: 600;
+      padding: 0.62rem 0.78rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .spec-links a:hover {
+      transform: translateY(-1px);
+      background: var(--sand-200);
+    }
+
+    .form-box {
+      margin-top: 0.85rem;
+      background: linear-gradient(165deg, #ffffff 0%, #f9f4ea 100%);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1rem;
     }
     [data-fs-success] {
       display: none;
-      margin-bottom: 1rem;
-      padding: .95rem 1rem;
-      border-radius: 16px;
-      background: rgba(16,185,129,.08);
-      border: 1px solid rgba(16,185,129,.22);
-      color: #0f8a5b;
+      margin-bottom: 0.8rem;
+      background: rgba(16, 185, 129, 0.09);
+      border: 1px solid rgba(16, 185, 129, 0.23);
+      color: #0f8e5f;
+      border-radius: 10px;
+      padding: 0.65rem 0.75rem;
+      font-size: 0.9rem;
       font-weight: 700;
     }
     [data-fs-error]:not(:empty) {
       display: block;
-      margin-bottom: 1rem;
-      padding: .85rem 1rem;
-      border-radius: 16px;
-      background: rgba(220,38,38,.06);
-      color: #dc2626;
+      margin-bottom: 0.8rem;
+      background: rgba(220, 38, 38, 0.07);
+      border: 1px solid rgba(220, 38, 38, 0.2);
+      color: #c92a2a;
+      border-radius: 10px;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.86rem;
       font-weight: 600;
-      font-size: .92rem;
     }
-    .form-row {
+    .form-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
+      gap: 0.75rem;
     }
-    .form-group {
-      display: grid;
-      gap: .45rem;
-      margin-bottom: 1rem;
-    }
-    .form-group label {
-      font-size: .84rem;
+    .group { display: grid; gap: 0.35rem; }
+    .group label {
+      font-size: 0.77rem;
       font-weight: 800;
-      color: var(--navy);
+      letter-spacing: 0.03em;
+      color: var(--marine-900);
+      text-transform: uppercase;
     }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+    .group input,
+    .group textarea,
+    .group select {
       width: 100%;
-      border: 1.5px solid #d8e1ea;
+      border: 1.4px solid #d8e0e8;
+      border-radius: 12px;
+      padding: 0.72rem 0.8rem;
+      font: inherit;
+      color: var(--ink);
       background: #fff;
-      border-radius: 16px;
-      padding: .92rem 1rem;
-      color: var(--text);
-      transition: border-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
     }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
+    .group input:focus,
+    .group textarea:focus,
+    .group select:focus {
       outline: none;
-      border-color: rgba(16,183,201,.6);
-      box-shadow: 0 0 0 4px rgba(16,183,201,.11);
+      border-color: rgba(23, 68, 102, 0.55);
+      box-shadow: 0 0 0 3px rgba(23, 68, 102, 0.1);
     }
-    .form-group textarea { min-height: 130px; resize: vertical; }
-    .hint {
-      margin: .35rem 0 0;
-      color: var(--muted);
-      font-size: .82rem;
-      line-height: 1.5;
-    }
+    .group.full { grid-column: 1 / -1; }
+    .group textarea { min-height: 110px; resize: vertical; }
 
-    .submit-btn {
+    .cta {
       width: 100%;
-      padding: 1rem 1.15rem;
       border: none;
-      border-radius: 18px;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+      border-radius: 13px;
+      padding: 0.9rem 1rem;
+      margin-top: 0.3rem;
+      background: linear-gradient(135deg, var(--marine-900) 0%, var(--marine-700) 100%);
       color: #fff;
       font-weight: 800;
-      letter-spacing: .01em;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: .55rem;
+      font-size: 0.97rem;
       cursor: pointer;
-      box-shadow: 0 12px 30px rgba(7,26,45,.2);
-      transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 11px 24px rgba(6, 26, 45, 0.2);
     }
-    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(7,26,45,.24); }
-    .submit-btn svg { width: 18px; height: 18px; }
+    .cta:hover { transform: translateY(-1px); }
 
     .footer {
-      padding: 3rem 0 2rem;
-      color: rgba(255,255,255,.72);
-      background: var(--navy);
-      border-top: 1px solid rgba(255,255,255,.06);
-    }
-    .footer-inner {
-      display: grid;
-      gap: 1rem;
-      justify-items: center;
+      margin-top: 2rem;
       text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
     }
-    .footer-inner strong {
-      font-family: var(--font-head);
-      color: #fff;
-      font-size: 1.2rem;
-    }
-    .footer-inner p { margin: 0; max-width: 54ch; }
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 1.2rem;
-      justify-content: center;
-      font-size: .88rem;
-      color: rgba(255,255,255,.5);
-    }
-    .footer-links a:hover { color: var(--gold-2); }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity .75s var(--ease), transform .75s var(--ease);
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-    .d1 { transition-delay: .1s; }
-    .d2 { transition-delay: .2s; }
-    .d3 { transition-delay: .3s; }
-    .d4 { transition-delay: .4s; }
-
-    @media (max-width: 980px) {
-      .grid-2,
-      .stats-grid,
-      .damage-grid,
-      .points-grid,
-      .form-row { grid-template-columns: 1fr; }
-      .hero h1 { max-width: 14ch; }
-      .hero-inner { padding-top: 8rem; }
-      .nav-links { display: none; }
-      .mood-image img, .mood-image { min-height: 420px; }
-      .point-card.big, .point-card { min-height: 280px; }
-    }
-    @media (max-width: 680px) {
-      .section { padding: 74px 0; }
-      .container { width: min(100% - 1.1rem, 1180px); }
-      .hero-card { border-radius: 28px; }
-      .hero h1 { font-size: clamp(2.2rem, 11vw, 4rem); }
-      .hero .sub { font-size: .98rem; }
-      .hero-badges { gap: .55rem; }
-      .chip { font-size: .76rem; }
-      .title { font-size: clamp(1.8rem, 8vw, 3rem); }
-      .lead { font-size: .98rem; }
-      .download-link { align-items: flex-start; flex-direction: column; }
+    @media (max-width: 820px) {
+      .hero { min-height: 64vh; }
+      .form-grid { grid-template-columns: 1fr; }
+      .tile-1,
+      .tile-2,
+      .tile-3,
+      .tile-4,
+      .tile-5 { grid-column: span 12; min-height: 210px; }
     }
   </style>
 </head>
 <body>
-  <nav class="nav" id="nav" aria-label="Main navigation">
-    <div class="container nav-inner">
-      <div class="brand">
-        Labuan Bajo 2027
-        <small>private boat chaos</small>
-      </div>
-      <div class="nav-links">
-        <a href="#damage">The Damage</a>
-        <a href="#vibe">Vibe</a>
-        <a href="#fleet">Fleet Options</a>
-        <a href="#rsvp" class="btn btn-primary nav-cta">Count me in</a>
-      </div>
-    </div>
-  </nav>
-
-  <header class="hero" id="top">
+  <header class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
-    <div class="container hero-inner">
-      <div class="hero-card reveal">
-        <div class="hero-pill"><span class="dot"></span> September 2027 · 4-day block, jangan sia-sia</div>
-        <h1>
-          Trip ni bukan main-main.
-          <span class="accent2">Sail Komodo dengan geng sendiri</span>.
-        </h1>
-        <p class="sub">
-          Bayangkan dia macam WhatsApp pukul 12 malam tapi versi mewah: <strong>"eh korang, jom buat benda padu ni"</strong>. September 2027 ni memang runway paling ngam. Simpan duit elok-elok, tak payah panik, lepas tu boom terus lari ke laut.
-        </p>
-        <div class="hero-badges" aria-label="Trip highlights">
-          <span class="chip">Malaysia Day jatuh Khamis</span>
-          <span class="chip">Cuti 1 hari saja</span>
-          <span class="chip">Private boat, no random people</span>
-          <span class="chip">Glass-ocean visibility</span>
-        </div>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#rsvp">Aku nak slot</a>
-          <a class="btn btn-secondary" href="#damage">Skim cash dulu</a>
-        </div>
-        <p class="hero-note">PS: page ni memang khas untuk orang yang jenis suka plan awal tapi jalan tetap gempak.</p>
-      </div>
+    <div class="hero-inner">
+      <span class="eyebrow">Inner circle briefing</span>
+      <h1>Labuan Bajo 2027, and yes this plan is ridiculous in the best way.</h1>
+      <p class="hero-sub">You came here for the storyline, so I removed the noise and arranged this like a proper mission briefing from that one overexcited friend who keeps saying, "trust me bro, this is genius".</p>
     </div>
   </header>
 
-  <section class="stats" aria-label="Trip quick facts">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat reveal"><strong>10 pax</strong><span>kalau ngam-ngam full squad</span></div>
-        <div class="stat reveal d1"><strong>8 pax</strong><span>kalau group kecik sikit</span></div>
-        <div class="stat reveal d2"><strong>4 hari</strong><span>cuti hack level dewa</span></div>
-        <div class="stat reveal d3"><strong>Sep 2027</strong><span>runway financial paling santai</span></div>
-      </div>
-    </div>
-  </section>
+  <main class="container">
+    <section class="flow" aria-label="Chronological plan">
+      <article class="step">
+        <h2><strong>1. The Hook</strong></h2>
+        <p>Simple: we inner-circle hijack a 34m yacht for September 2027, cap it at 10 pax, and refuse to layani random strangers because this trip is for our own chaos, our own jokes, and our own soundtrack, not some awkward tourism group project.</p>
+      </article>
 
-  <section class="section" id="vibe">
-    <div class="container">
-      <div class="grid-2">
-        <div class="panel panel-pad reveal">
-          <div class="kicker">Kenapa September 2027 ni padu gila</div>
-          <h2 class="title">The 2027 Runway memang sengaja kita pilih. Bukan random.</h2>
-          <p class="lead">
-            Sebab dia bagi semua orang ruang bernafas. Yang gaji belum besar, yang cashflow tiap bulan memang suka buat drama, semua boleh kumpul slow-slow. Tak ada stress, tak ada “eh kenapa tiba-tiba kena bayar banyak ni?”. Kita jalan <strong>kalau perlu</strong>, bukan main rampas akaun bank orang.
-          </p>
-          <ul class="glass-list">
-            <li>Saving runway panjang sampai September 2027. Kau sempat siap-siap tanpa koyak.</li>
-            <li>Tak payah lump-sum jump scare. Kutip organik ikut deadline booking betul-betul.</li>
-            <li>Deposit boat, flight promo, benda penting saja. Yang lain as-and-when.</li>
-          </ul>
-        </div>
-        <div class="panel mood-image reveal d1">
-          <img src="./assets/Sora-Liveaboard-1.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: luxury liveaboard di laut tenang" />
-          <div class="mood-tag">
-            <strong>Gambar hiasan sahaja</strong>
-            untuk set up visual vibe trip. Memang nak bagi kau terus rasa macam, “ok ni aku boleh join”.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <article class="step">
+        <h2><strong>2. Why September 2027</strong></h2>
+        <p>This date is strategic gila because it gives everyone a long savings runway even with managed paychecks, and we collect organically in staggered chunks only when real deadlines appear, so rilek, no lump-sum jump scare at all.</p>
+      </article>
 
-  <section class="section" id="damage">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">The Damage</div>
-        <h2 class="title">Benda paling orang terus tanya: habis berapa?</h2>
-        <p class="lead">
-          Senang cerita, ini breakdown dia. Kita bagi direct, tak payah putar belit macam sales agent. Yang penting kau boleh fikir awal-awal, plan makan gaji, plan simpan, plan ugut kawan baik sekali.
-        </p>
-      </div>
-      <div class="damage-grid">
-        <div class="damage-card reveal">
-          <h3>Kalau squad ngam-ngam 10 orang</h3>
-          <p>Harga sewa boat jatuh dalam <em>RM1,680.50</em> seorang. Ini kira versi ramai-ramai, paling sedap untuk rasa boat ni milik kita sendiri.</p>
-        </div>
-        <div class="damage-card reveal d1">
-          <h3>Kalau group kecik sikit 8 orang</h3>
-          <p>Harga sewa boat jatuh dalam <em>RM2,100.60</em> seorang. Still padu. Still private. Cuma jangan datang bawa 3 orang member yang entah-kenapa selalu hilang.</p>
-        </div>
-        <div class="damage-card reveal d2">
-          <h3>Anggaran total door-to-door</h3>
-          <p>Siap masuk flight AirAsia direct sendiri, entrance park fees, dengan hotel malam pertama share berdua: safe range lebih kurang <em>RM3,200 ke RM3,700 total</em>.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <article class="step">
+        <h2><strong>3. The 1-Day Leave Hack</strong></h2>
+        <p>Malaysia Day 2027 lands on Thursday, so you take Friday off and magically unlock four premium days like a legal cheat code, which means maximum ocean time with minimum annual leave damage, thank you calendar gods.</p>
+      </article>
 
-  <section class="section">
-    <div class="container">
-      <div class="grid-2">
-        <div class="panel panel-pad reveal">
-          <div class="kicker">The Fleet Options</div>
-          <h2 class="title">Download official boat specs kalau korang sejenis nerd.</h2>
-          <p class="lead">
-            Aku sayang orang yang suka baca spec sheet. Serius. Lagi cepat kau tengok options ni, lagi cepat kau boleh cakap, “ok, ni yang paling ngam dengan vibe kita.”
-          </p>
-          <div class="downloads" aria-label="Boat specification downloads">
-            <a class="download-link" href="./assets/PRIVATE BOAT CHARTER LIST 2026.pdf" download>
-              <div>
-                <strong>Option 1: Tara Boat Charter List</strong>
-                <span>Kalau jenis suka compare semua details sebelum buat keputusan.</span>
+      <article class="step">
+        <h2><strong>4. The Glass-Ocean Visibility</strong></h2>
+        <p>September sea conditions are calm and gila clear, so vertical visibility for freediving looks unreal in person, and yes I am absolutely breaking the fourth wall here to tell you this is where everyone pretends to be a NatGeo main character.</p>
+      </article>
+
+      <article class="step">
+        <h2><strong>5. The Whale Migration Highway</strong></h2>
+        <p>We track the migration lane for Blue and Sperm whales on a flexible private itinerary, so instead of rushing like tourist checklist mode, we can actually pivot timing when the ocean decides to show off.</p>
+      </article>
+
+      <article class="step">
+        <h2><strong>6. The Ghost Park Advantage</strong></h2>
+        <p>We run a 24-pax-capable yacht with just 10 max, then hit sites around 2:30 PM after day tourists balik mainland, so we get quieter water, cleaner vibe, and that rare feeling like the whole park forgot to be crowded.</p>
+      </article>
+
+      <article class="step">
+        <h2><strong>7. The Damage</strong></h2>
+        <p>Numbers direct: if 10 pax then <strong>RM1,680.50</strong> each for boat share, if 8 pax then <strong>RM2,100.60</strong> each, and realistic total trip range is <strong>RM3,200 to RM3,700</strong>, which is honestly wild value for a private ocean run this premium.</p>
+        <span class="damage-note">(Quick heads up: All the photos arranged below are strictly gambar hiasan sahaja to set the visual vibe and trip mood board!)</span>
+
+        <div class="masonry" aria-label="Decorative mood board images">
+          <figure class="tile tile-1"><img src="./assets/Phinisi.jpg" alt="Gambar hiasan sahaja: phinisi sailing scene" /></figure>
+          <figure class="tile tile-2"><img src="./assets/Sora-Liveaboard-1.webp" alt="Gambar hiasan sahaja: luxury liveaboard exterior" /></figure>
+          <figure class="tile tile-3"><img src="./assets/Sora-Liveaboard-2.webp" alt="Gambar hiasan sahaja: deck and ocean mood" /></figure>
+          <figure class="tile tile-4"><img src="./assets/Sora-Liveaboard-3.webp" alt="Gambar hiasan sahaja: private boat atmosphere" /></figure>
+          <figure class="tile tile-5"><img src="./assets/Freediving.webp" alt="Gambar hiasan sahaja: freediving visual vibe" /></figure>
+        </div>
+      </article>
+
+      <article class="step">
+        <h2><strong>8. Download official boat specs if you're a nerd</strong></h2>
+        <p>Download official boat specs if you're a nerd, because yes I support responsible overthinking before fun: check the files, compare details, then come back and tell me this plan is not elite-level efficient.</p>
+        <div class="spec-links" aria-label="Boat spec downloads">
+          <a href="./assets/SOE BESAR VANREI 2026.pdf">Option 1: Soe Besar Vanrei Brochure</a>
+          <a href="./assets/PRIVATE BOAT CHARTER LIST 2026.pdf">Option 2: Tara Boat Charter List</a>
+          <a href="./assets/PRIVATE TRIP ELRORA 2026.pdf">Option 3: Elrora Liveaboard Spec Sheet</a>
+        </div>
+      </article>
+
+      <article class="step" id="rsvp">
+        <h2><strong>9. Call to Action</strong></h2>
+        <p>If your brain already said "ok fine, this is a smart plan", just drop your details below so we can track the squad momentum early and keep this whole thing tidy before it becomes another chaotic group chat saga.</p>
+        <div class="form-box">
+          <div data-fs-success>Nice. You are in the loop now.</div>
+          <div data-fs-error></div>
+          <form id="contactForm">
+            <div class="form-grid">
+              <div class="group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required data-fs-field />
               </div>
-              <span class="arrow">↘</span>
-            </a>
-            <a class="download-link" href="./assets/PRIVATE TRIP ELRORA 2026.pdf" download>
-              <div>
-                <strong>Option 2: Elrora Liveaboard Spec Sheet</strong>
-                <span>Untuk otak yang nak baca sampai habis, lepas tu tersenyum sendiri.</span>
+              <div class="group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@email.com" required data-fs-field />
+                <span data-fs-error="email"></span>
               </div>
-              <span class="arrow">↘</span>
-            </a>
-          </div>
-        </div>
-        <div class="points-grid reveal d1" aria-label="Trip image grid">
-          <figure class="point-card big">
-            <img src="./assets/Sora-Liveaboard-2.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: deck Sora Liveaboard" />
-            <figcaption class="point-copy">
-              <span class="tag">No stranger drag</span>
-              <h3>Tak payah layan orang luar.</h3>
-              <p>Kita cap trip ni 8-10 orang close friends max. Meaning: tak payah share luxury vessel dengan random tourist yang asyik buat bunyi macam main speaker kat tepi telinga.</p>
-            </figcaption>
-          </figure>
-          <figure class="point-card">
-            <img src="./assets/Freediving.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: freediving di air jernih" />
-            <figcaption class="point-copy">
-              <span class="tag">Glass-ocean</span>
-              <h3>September = air macam kaca.</h3>
-              <p>Tak ada summer trade winds yang kacau. Freediving, snorkeling, semua rasa macam main dalam aquarium premium.</p>
-            </figcaption>
-          </figure>
-          <figure class="point-card">
-            <img src="./assets/Sora-Liveaboard-3.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: private cruising atas laut" />
-            <figcaption class="point-copy">
-              <span class="tag">Ghost park</span>
-              <h3>Manta Point masa bot lain dah blah.</h3>
-              <p>Kita pergi lebih kurang 2:30 PM, lepas speedboats public semua balik mainland. Tinggal kita, manta, dan rasa macam area tu aku punya.</p>
-            </figcaption>
-          </figure>
-          <figure class="point-card">
-            <img src="./assets/Sora-Liveaboard-1.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: luxury boat atmosphere" />
-            <figcaption class="point-copy">
-              <span class="tag">Whale highway</span>
-              <h3>Cetacean migration memang tengah lalu.</h3>
-              <p>Savu Sea ni macam highway besar untuk whale dan geng-geng dia. Kalau rezeki ngam, boleh nampak dari atas boat macam event live yang tak berbayar.</p>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">The Premium Ocean Perks</div>
-        <h2 class="title">Benda-benda yang buat trip ni bukan sekadar “jalan-jalan laut”</h2>
-        <p class="lead">
-          Ini bukan cuti biasa-biasa. Ini jenis trip yang buat group chat hidup semula. Yang diam selama ni pun tiba-tiba boleh jadi editor video paling laju di dunia.
-        </p>
-      </div>
-      <div class="points-grid">
-        <article class="panel point-card big reveal">
-          <img src="./assets/Freediving.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: freediving di kawasan terumbu" />
-          <div class="point-copy">
-            <span class="tag">Freedive / snorkel</span>
-            <h3>Glass-ocean visibility September memang gila.</h3>
-            <p>Air tenang. Jernih. Senang nak appreciate dunia bawah air sampai rasa macam tak sah kalau tak ambil 200 keping gambar walaupun semua orang cakap “jangan lama sangat, makan dulu lah”.</p>
-          </div>
-        </article>
-        <article class="panel point-card reveal d1">
-          <img src="./assets/Sora-Liveaboard-2.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: private luxury deck with sunset" />
-          <div class="point-copy">
-            <span class="tag">Cuti hack</span>
-            <h3>Malaysia Day 2027 jatuh Khamis.</h3>
-            <p>Ambil 1 hari annual leave hari Jumaat. Boom. Terus dapat 4 hari premium trip. Slack pun tak sempat semak kau online ke tak.</p>
-          </div>
-        </article>
-        <article class="panel point-card reveal d2">
-          <img src="./assets/Sora-Liveaboard-3.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: private boat and ocean horizon" />
-          <div class="point-copy">
-            <span class="tag">Tak payah layan</span>
-            <h3>Orang luar? Tak perlu.</h3>
-            <p>Cap 8-10 orang je. Kecil. Intimate. Mewah. Senang nak jadi perangai sendiri tanpa rasa malu depan strangers yang tak mintak pun nak share bunyi bising.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="grid-2">
-        <div class="panel panel-pad reveal">
-          <div class="kicker">Kutip Organik</div>
-          <h2 class="title">No lump-sum shakedowns. Kita kutip cara elok-elok.</h2>
-          <p class="lead">
-            Kita tak buat drama jenis “eh malam ni semua kena transfer sekarang.” Benda ni akan jalan ikut deadline real: boat deposit bila memang kena lock, flight bila promo keluar, balance bila dah dekat. Slow, smooth, tak memualkan.
-          </p>
-          <div class="timeline" aria-label="Commitment timeline">
-            <div class="phase reveal">
-              <div class="dot">1</div>
-              <div class="phase-card">
-                <h3>The 2027 Runway</h3>
-                <p>Target September 2027 supaya semua ada buffer simpan duit dengan tenang. Yang paycheck kecil pun boleh napas. Yang monthly cashflow ketat pun masih boleh join tanpa koyak jiwa.</p>
-                <span class="phase-badge">Jan – Feb 2027</span>
+              <div class="group full">
+                <label for="headcount">Headcount</label>
+                <select id="headcount" name="headcount" data-fs-field>
+                  <option value="">How many people including you?</option>
+                  <option>Just me</option>
+                  <option>2 pax</option>
+                  <option>3 pax</option>
+                  <option>4 pax</option>
+                  <option>5+ pax</option>
+                </select>
+              </div>
+              <div class="group full">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Questions, concerns, random hype" data-fs-field></textarea>
+                <span data-fs-error="message"></span>
               </div>
             </div>
-            <div class="phase reveal d1">
-              <div class="dot">2</div>
-              <div class="phase-card">
-                <h3>Recruit geng, no pressure</h3>
-                <p>Kita kumpul minat, cari close friends yang memang ngam. Tak ada siapa kena paksa. Tak ada hutang persahabatan. Semua chill je.</p>
-                <span class="phase-badge">March – April 2027</span>
-              </div>
-            </div>
-            <div class="phase reveal d2">
-              <div class="dot">3</div>
-              <div class="phase-card">
-                <h3>Lock-in deposit</h3>
-                <p>Bila boat booking dah nak confirm, masa tu baru masuk commitment betul-betul. Kita tak sembang kosong, kita execute.</p>
-                <span class="phase-badge">May 1, 2027</span>
-              </div>
-            </div>
-            <div class="phase reveal d3">
-              <div class="dot">4</div>
-              <div class="phase-card">
-                <h3>Final settle</h3>
-                <p>July 2027 settle habis. Lepas tu tinggal tunggu hari nak pakai sunblock, pakai baju paling lawa, dan pergi buat kenangan yang orang lain akan dengar berulang kali.</p>
-                <span class="phase-badge">July 2027</span>
-              </div>
-            </div>
-          </div>
+            <button type="submit" class="cta" data-fs-submit-btn>Count me in (For now)</button>
+          </form>
         </div>
+      </article>
+    </section>
 
-        <div class="panel panel-pad reveal d1" id="fleet">
-          <div class="kicker">The boat + the vibe</div>
-          <h2 class="title">Gambar hiasan sahaja. Tapi memang bagi orang terus rasa nak join.</h2>
-          <p class="lead">
-            Aku letak gambar ni bukan sebab nak cantik-cantik kosong. Dia untuk buat kau nampak benda ni bukan trip random. Ini private luxury island chaos. Best punya combo.
-          </p>
-          <div class="points-grid" style="margin-top:1.2rem;">
-            <figure class="point-card">
-              <img src="./assets/Sora-Liveaboard-1.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: Sora Liveaboard exterior" />
-              <figcaption class="point-copy">
-                <span class="tag">Sora Liveaboard</span>
-                <h3>Private boat, private mood, private everything.</h3>
-                <p>Tak ada stranger. Tak ada lepak awkward. Tak ada nak cover perangai. Semua orang memang geng sendiri.</p>
-              </figcaption>
-            </figure>
-            <figure class="point-card">
-              <img src="./assets/Phinisi.jpg" alt="Gambar hiasan sahaja untuk set up visual vibe trip: phinisi at sea" />
-              <figcaption class="point-copy">
-                <span class="tag">Main header feature</span>
-                <h3>Phinisi macam ni memang buat orang terus cair.</h3>
-                <p>Kalau tengok gambar ni still tak rasa nak pergi, mungkin kau perlu suntikan semangat laut sikit.</p>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="rsvp">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">RSVP</div>
-        <h2 class="title">Kalau kau dah rasa “ok ini lah”, isi je. Senang.</h2>
-        <p class="lead">
-          Ini form untuk compile minat dulu. No pressure, no weirdness. Cuma bagi nama, email, headcount, nombor WhatsApp, dan apa-apa soalan yang kau rasa penting sebelum kita start buat benda ni betul-betul.
-        </p>
-      </div>
-
-      <div class="form-wrap reveal d1">
-        <div data-fs-success role="status">Wahh ok noted. We’ll keep you in the loop bila benda start bergerak.</div>
-        <div data-fs-error role="alert"></div>
-
-        <form id="contactForm" class="contact-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Nama kau yang sebenar" required data-fs-field />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="email@kamu.com" required data-fs-field />
-              <span data-fs-error="email"></span>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="whatsapp">Whatsapp</label>
-              <input id="whatsapp" name="whatsapp" type="tel" placeholder="+60 12-345 6789" required data-fs-field />
-            </div>
-            <div class="form-group">
-              <label for="headcount">Tentative Headcount</label>
-              <select id="headcount" name="headcount" required data-fs-field>
-                <option value="">Berapa orang join?</option>
-                <option>Just me</option>
-                <option>2 orang</option>
-                <option>3 orang</option>
-                <option>4 orang</option>
-                <option>5 orang ke atas</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message / Questions</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tanya apa-apa je. Nak tahu pasal schedule, payment flow, bilik, gear, semua boleh." data-fs-field></textarea>
-            <span data-fs-error="message"></span>
-          </div>
-
-          <button type="submit" class="submit-btn" data-fs-submit-btn>
-            <span>Count me in (For now)</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z" /></svg>
-          </button>
-          <p class="hint">Tak payah malu. Kita semua kat sini sebab nak buat trip yang memang susah nak lupa.</p>
-        </form>
-
-        <script>
-          window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-          formspree('initForm', { formElement: '#contactForm', formId: 'xjgpzpal' });
-        </script>
-        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <strong>Labuan Bajo 2027</strong>
-      <p>Trip private boat, vibes maksimum, perangai zero malu. Semua ni untuk geng yang memang sedia nak cakap “eh kita buat betul-betul lah”.</p>
-      <div class="footer-links">
-        <a href="#damage">The Damage</a>
-        <a href="#fleet">Fleet Options</a>
-        <a href="#rsvp">Form</a>
-        <a href="#top">Back to top</a>
-      </div>
-    </div>
-  </footer>
+    <p class="footer">Built as standalone page for routing at /labuanbajo.</p>
+  </main>
 
   <script>
-    const nav = document.getElementById('nav');
-    const revealEls = document.querySelectorAll('.reveal');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-    revealEls.forEach((el) => observer.observe(el));
-
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 24);
-    }, { passive: true });
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#contactForm', formId: 'xjgpzpal' });
   </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
