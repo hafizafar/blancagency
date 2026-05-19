@@ -1,998 +1,1101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sail Komodo 2027 — Private Luxury Liveaboard | Malaysia Day Long Weekend</title>
-  <meta name="description" content="Join us for an exclusive private charter of the 34m Sora Liveaboard through Komodo National Park — Malaysia Day long weekend, September 2027. Limited to 10 slots." />
+  <title>Labuan Bajo 2027 — Komodo Trip Gila-Gila Private Boat</title>
+  <meta name="description" content="Landing page standalone untuk trip private Komodo / Labuan Bajo September 2027. Bahasa Pasar, penuh hype, private boat, dan Formspree RSVP." />
   <meta name="robots" content="noindex, nofollow" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    /* ─── CSS VARIABLES ─────────────────────────────────────────────────── */
     :root {
-      --clr-ocean:      #0a1628;
-      --clr-deep:       #0d1f3c;
-      --clr-navy:       #1a3a5c;
-      --clr-teal:       #0e7490;
-      --clr-turquoise:  #06b6d4;
-      --clr-aqua:       #22d3ee;
-      --clr-gold:       #c9a96e;
-      --clr-gold-light: #e2c68a;
-      --clr-sand:       #f5e6c8;
-      --clr-cream:      #fdfaf5;
-      --clr-white:      #ffffff;
-      --clr-text:       #1a2b45;
-      --clr-muted:      #64748b;
-
+      --bg: #f8f4ec;
+      --paper: #fffdf8;
+      --navy: #071a2d;
+      --navy-2: #0d2b46;
+      --teal: #10b7c9;
+      --aqua: #59d7e6;
+      --gold: #c9a86a;
+      --gold-2: #e3c88b;
+      --sand: #ead8b3;
+      --text: #14273c;
+      --muted: #5f7287;
+      --line: rgba(7,26,45,.09);
+      --shadow: 0 20px 60px rgba(7,26,45,.14);
+      --shadow-soft: 0 10px 30px rgba(7,26,45,.08);
+      --r-sm: 14px;
+      --r-md: 22px;
+      --r-lg: 30px;
+      --r-xl: 40px;
       --font-head: 'Space Grotesk', sans-serif;
       --font-body: 'Inter', sans-serif;
-
-      --r-sm: 8px;
-      --r-md: 16px;
-      --r-lg: 24px;
-      --r-xl: 32px;
-
-      --shadow-sm: 0 2px 8px rgba(10,22,40,.07);
-      --shadow-md: 0 8px 32px rgba(10,22,40,.11);
-      --shadow-lg: 0 24px 64px rgba(10,22,40,.17);
-
       --ease: cubic-bezier(.16,1,.3,1);
-      --t:    all .4s var(--ease);
-      --tf:   all .2s ease;
     }
 
-    /* ─── RESET ─────────────────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html   { scroll-behavior: smooth; font-size: 16px; }
-    body   { font-family: var(--font-body); color: var(--clr-text); background: var(--clr-cream); line-height: 1.65; overflow-x: hidden; }
-    img    { max-width: 100%; height: auto; display: block; }
-    a      { color: inherit; text-decoration: none; }
-    button { font-family: inherit; }
-    ul, ol { list-style: none; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(89,215,230,.14), transparent 30%),
+        radial-gradient(circle at 80% 0%, rgba(201,168,106,.16), transparent 26%),
+        linear-gradient(180deg, #fdfaf4 0%, #f7f1e6 100%);
+      overflow-x: hidden;
+      line-height: 1.65;
+    }
+    img { display: block; width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    ::selection { background: rgba(16,183,201,.18); }
 
-    /* ─── TYPE ──────────────────────────────────────────────────────────── */
-    h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.12; letter-spacing: -.025em; }
+    .container { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; }
+    .section { padding: 92px 0; }
 
     .eyebrow {
-      display: inline-flex; align-items: center; gap: .5rem;
-      font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--clr-turquoise);
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--teal);
     }
     .eyebrow::before {
-      content: ''; display: block; width: 22px; height: 1.5px; background: currentColor;
+      content: '';
+      width: 22px;
+      height: 1.5px;
+      background: currentColor;
+      display: inline-block;
+    }
+    .title {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 3.7rem);
+      line-height: 1.04;
+      letter-spacing: -.04em;
+      margin: .7rem 0 1rem;
+      color: var(--navy);
+    }
+    .lead {
+      font-size: 1.04rem;
+      color: var(--muted);
+      max-width: 66ch;
+      margin: 0;
+    }
+    .accent {
+      color: var(--gold);
+    }
+    .accent2 {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--aqua) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .gradient-text {
-      background: linear-gradient(135deg, var(--clr-gold) 0%, var(--clr-aqua) 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-
-    /* ─── LAYOUT ────────────────────────────────────────────────────────── */
-    .container { max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
-    .section   { padding: 100px 0; }
-
-    /* ─── SCROLL REVEAL ─────────────────────────────────────────────────── */
-    .reveal {
-      opacity: 0; transform: translateY(36px);
-      transition: opacity .75s var(--ease), transform .75s var(--ease);
-    }
-    .reveal.visible { opacity: 1; transform: none; }
-    .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; }
-    .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
-    .d5 { transition-delay: .5s; }
-
-    /* ─── NAV ───────────────────────────────────────────────────────────── */
-    .lnav {
-      position: fixed; inset: 0 0 auto;
-      z-index: 200; padding: 1.4rem 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      transition: var(--t);
-    }
-    .lnav.scrolled {
-      background: rgba(10,22,40,.88);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      padding: .9rem 2rem;
-      box-shadow: 0 1px 0 rgba(255,255,255,.05);
-    }
-    .lnav-logo { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; color: #fff; }
-    .lnav-logo em { color: var(--clr-gold); font-style: normal; }
-    .lnav-links { display: flex; gap: 2rem; align-items: center; }
-    .lnav-links a { font-size: .875rem; font-weight: 500; color: rgba(255,255,255,.75); transition: var(--tf); }
-    .lnav-links a:hover { color: var(--clr-gold); }
-    .lnav-cta {
-      background: var(--clr-gold); color: var(--clr-ocean) !important; font-weight: 700 !important;
-      padding: .45rem 1.2rem; border-radius: 100px;
-    }
-    .lnav-cta:hover { background: var(--clr-gold-light) !important; }
-
-    /* ─── BUTTONS ───────────────────────────────────────────────────────── */
     .btn {
-      display: inline-flex; align-items: center; gap: .55rem;
-      padding: .875rem 2rem; border-radius: 100px; border: none; cursor: pointer;
-      font-size: .95rem; font-weight: 600; transition: var(--t); text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      padding: .92rem 1.25rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease), border-color .35s var(--ease);
+      cursor: pointer;
+      white-space: nowrap;
     }
-    .btn svg { width: 17px; height: 17px; flex-shrink: 0; }
-    .btn-gold {
-      background: linear-gradient(135deg, var(--clr-gold), #e8c47a);
-      color: var(--clr-ocean);
-      box-shadow: 0 4px 24px rgba(201,169,110,.35);
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-2) 100%);
+      color: var(--navy);
+      box-shadow: 0 12px 28px rgba(201,168,106,.32);
     }
-    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(201,169,110,.5); }
-    .btn-ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.32); }
-    .btn-ghost:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.6); }
+    .btn-secondary {
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      border-color: rgba(255,255,255,.14);
+      backdrop-filter: blur(10px);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,.12); }
 
-    /* ─── HERO ──────────────────────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      padding: 1rem 0;
+      transition: background .35s var(--ease), box-shadow .35s var(--ease), padding .35s var(--ease);
+    }
+    .nav.scrolled {
+      background: rgba(7,26,45,.9);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 1px 0 rgba(255,255,255,.06);
+      padding: .75rem 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: .1rem;
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+    .brand small {
+      font-weight: 600;
+      color: rgba(255,255,255,.55);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .68rem;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      color: rgba(255,255,255,.72);
+      font-size: .92rem;
+      font-weight: 600;
+    }
+    .nav-links a:hover { color: var(--gold-2); }
+    .nav-cta { color: var(--navy) !important; }
+
     .hero {
-      position: relative; min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden; background: var(--clr-ocean);
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      color: #fff;
+      overflow: hidden;
+      isolation: isolate;
+      background: var(--navy);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7,26,45,.18) 0%, rgba(7,26,45,.55) 46%, rgba(7,26,45,.92) 100%);
+      z-index: 1;
     }
     .hero-bg {
-      position: absolute; inset: 0;
-      background: url('https://images.unsplash.com/photo-1547393429-2e4ebcee0ee8?w=1920&auto=format&fit=crop&q=85') center/cover no-repeat;
-      transform: scale(1.06);
+      position: absolute;
+      inset: 0;
+      background: url('./assets/Phinisi.jpg') center/cover no-repeat;
+      transform: scale(1.05);
     }
-    .hero-bg::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(10,22,40,.3) 0%, rgba(10,22,40,.55) 50%, rgba(10,22,40,.88) 100%);
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      padding: 9rem 0 5rem;
     }
-    .hero-content {
-      position: relative; z-index: 2;
-      text-align: center; max-width: 860px; padding: 0 2rem;
+    .hero-card {
+      width: min(860px, 100%);
+      background: rgba(7,26,45,.42);
+      border: 1px solid rgba(255,255,255,.1);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      border-radius: var(--r-xl);
+      padding: clamp(1.4rem, 4vw, 2.2rem);
     }
     .hero-pill {
-      display: inline-flex; align-items: center; gap: .5rem;
-      background: rgba(201,169,110,.14); border: 1px solid rgba(201,169,110,.4);
-      color: var(--clr-gold-light); padding: .45rem 1.25rem; border-radius: 100px;
-      font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
-      margin-bottom: 1.75rem; backdrop-filter: blur(8px);
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .45rem .85rem;
+      border-radius: 999px;
+      background: rgba(201,168,106,.12);
+      border: 1px solid rgba(201,168,106,.28);
+      color: var(--gold-2);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
     }
-    .hero-dot { width: 6px; height: 6px; background: var(--clr-gold); border-radius: 50%; animation: blink 2s infinite; }
-    @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.6)} }
-
-    .hero-title {
-      font-size: clamp(2.6rem, 7vw, 5.2rem); font-weight: 700; color: #fff;
-      margin-bottom: 1.1rem; letter-spacing: -.03em;
+    .hero-pill .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold-2);
+      box-shadow: 0 0 0 6px rgba(201,168,106,.14);
     }
-    .hero-sub {
-      font-size: clamp(.95rem, 2vw, 1.2rem); color: rgba(255,255,255,.72);
-      max-width: 600px; margin: 0 auto 2.25rem; line-height: 1.75;
+    .hero h1 {
+      margin: 0;
+      font-family: var(--font-head);
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      line-height: .95;
+      letter-spacing: -.05em;
+      max-width: 12ch;
     }
-    .hero-dates {
-      display: inline-flex; align-items: center; gap: 1.5rem;
-      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.11);
-      backdrop-filter: blur(12px); padding: .95rem 2rem; border-radius: var(--r-md);
-      margin-bottom: 2.5rem;
+    .hero .sub {
+      margin: 1rem 0 1.5rem;
+      max-width: 62ch;
+      color: rgba(255,255,255,.8);
+      font-size: 1.02rem;
     }
-    .hd-item { text-align: center; }
-    .hd-label { font-size: .65rem; color: rgba(255,255,255,.45); letter-spacing: .1em; text-transform: uppercase; margin-bottom: .2rem; }
-    .hd-val { font-family: var(--font-head); font-size: .95rem; font-weight: 600; color: #fff; }
-    .hd-sep { width: 1px; height: 38px; background: rgba(255,255,255,.14); }
-    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-    .hero-scroll {
-      position: absolute; bottom: 2.25rem; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: .4rem;
-      color: rgba(255,255,255,.35); font-size: .65rem; letter-spacing: .12em; text-transform: uppercase;
-      z-index: 2;
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 1.4rem 0 1.8rem;
     }
-    .scroll-bar {
-      width: 1px; height: 44px;
-      background: linear-gradient(to bottom, rgba(255,255,255,.4), transparent);
-      animation: scrollpulse 2.2s var(--ease) infinite;
+    .chip {
+      padding: .62rem .9rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.09);
+      color: rgba(255,255,255,.88);
+      font-size: .84rem;
+      font-weight: 700;
     }
-    @keyframes scrollpulse {
-      0%   { transform: scaleY(0); transform-origin: top; }
-      49%  { transform: scaleY(1); transform-origin: top; }
-      50%  { transform: scaleY(1); transform-origin: bottom; }
-      100% { transform: scaleY(0); transform-origin: bottom; }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 1rem;
     }
-
-    /* ─── STATS STRIP ───────────────────────────────────────────────────── */
-    .stats-strip {
-      background: var(--clr-ocean); padding: 1.5rem 0;
-      border-bottom: 1px solid rgba(255,255,255,.05);
-    }
-    .stats-inner { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; }
-    .stat { display: flex; flex-direction: column; align-items: center; gap: .2rem; }
-    .stat-num { font-family: var(--font-head); font-size: 1.45rem; font-weight: 700; color: var(--clr-gold); }
-    .stat-lbl { font-size: .7rem; color: rgba(255,255,255,.4); letter-spacing: .1em; text-transform: uppercase; }
-    .stat-sep { width: 1px; height: 40px; background: rgba(255,255,255,.07); }
-
-    /* ─── SECTION HEADER UTILITY ────────────────────────────────────────── */
-    .sec-head { max-width: 680px; }
-    .sec-head.center { margin: 0 auto; text-align: center; }
-    .sec-head.center .eyebrow { justify-content: center; }
-    .sec-title { font-size: clamp(1.9rem, 4vw, 2.9rem); font-weight: 700; color: var(--clr-ocean); margin-bottom: 1.1rem; }
-    .sec-desc  { font-size: 1.05rem; color: var(--clr-muted); line-height: 1.8; }
-
-    /* ─── BOAT SECTION ──────────────────────────────────────────────────── */
-    .boat-section { background: var(--clr-cream); }
-    .boat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    .boat-grid .sec-title { margin-bottom: 1rem; }
-
-    .check-list { display: flex; flex-direction: column; gap: .65rem; margin-top: 1.75rem; }
-    .check-list li { display: flex; align-items: center; gap: .75rem; font-size: .94rem; font-weight: 500; color: var(--clr-text); }
-    .check-list li::before {
-      content: ''; flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--clr-turquoise), var(--clr-aqua));
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a1628' stroke-width='3'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
-      background-size: 11px; background-repeat: no-repeat; background-position: center;
+    .hero-note {
+      margin-top: 1rem;
+      font-size: .86rem;
+      color: rgba(255,255,255,.68);
     }
 
-    .boat-visuals { position: relative; }
-    .boat-main {
-      width: 100%; height: 520px; object-fit: cover;
-      border-radius: var(--r-xl); box-shadow: var(--shadow-lg);
+    .stats {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      padding: 1.1rem 0;
     }
-    .boat-secondary {
-      position: absolute; bottom: -2rem; right: -2rem;
-      width: 52%; height: 200px; object-fit: cover;
-      border-radius: var(--r-lg); box-shadow: var(--shadow-lg);
-      border: 4px solid var(--clr-cream);
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .9rem;
     }
-    .boat-badge {
-      position: absolute; top: 1.75rem; left: -1.5rem;
-      background: var(--clr-ocean); border-radius: var(--r-md);
-      padding: 1rem 1.25rem; text-align: center; box-shadow: var(--shadow-lg);
+    .stat {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: var(--r-md);
+      padding: .95rem 1rem;
+      color: #fff;
     }
-    .boat-badge .bb-num { font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--clr-gold); line-height: 1; }
-    .boat-badge .bb-lbl { font-size: .65rem; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .09em; margin-top: .2rem; }
+    .stat strong {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 1.35rem;
+      color: var(--gold-2);
+      line-height: 1;
+      margin-bottom: .25rem;
+    }
+    .stat span { color: rgba(255,255,255,.56); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
 
-    /* ─── WHY JOIN (REASONS) ─────────────────────────────────────────────── */
-    .why-section { background: linear-gradient(180deg, var(--clr-cream) 0%, #e8f4f8 100%); }
-    .why-grid-header { text-align: center; max-width: 640px; margin: 0 auto 4rem; }
-
-    .reasons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
-    .reason-card {
-      border-radius: var(--r-xl); overflow: hidden;
-      position: relative; cursor: default;
-    }
-    .reason-img {
-      width: 100%; height: 360px; object-fit: cover;
-      transition: transform .65s var(--ease);
-    }
-    .reason-card:hover .reason-img { transform: scale(1.06); }
-    .reason-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(10,22,40,.92) 0%, rgba(10,22,40,.38) 55%, rgba(10,22,40,.04) 100%);
-      display: flex; flex-direction: column; justify-content: flex-end; padding: 1.6rem;
-    }
-    .reason-tag {
-      display: inline-block; width: fit-content;
-      background: rgba(6,182,212,.18); border: 1px solid rgba(6,182,212,.4);
-      color: var(--clr-aqua); padding: .2rem .7rem; border-radius: 100px;
-      font-size: .68rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
-      margin-bottom: .6rem;
-    }
-    .reason-title { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: .4rem; }
-    .reason-desc {
-      font-size: .82rem; color: rgba(255,255,255,.68); line-height: 1.65;
-      opacity: 0; transform: translateY(7px); transition: var(--t);
-    }
-    .reason-card:hover .reason-desc { opacity: 1; transform: none; }
-
-    /* Wide card in second row */
-    .reasons-grid-b { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; }
-    .reason-card.wide .reason-img { height: 340px; }
-
-    /* ─── NIGHTLIFE STRIP ───────────────────────────────────────────────── */
-    .nightlife { background: var(--clr-ocean); padding: 90px 0; }
-    .nightlife-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .nightlife .sec-title { color: #fff; }
-    .nightlife .sec-desc  { color: rgba(255,255,255,.58); }
-    .nightlife .check-list li { color: rgba(255,255,255,.8); }
-    .nightlife-img { width: 100%; height: 420px; object-fit: cover; border-radius: var(--r-xl); box-shadow: var(--shadow-lg); }
-
-    /* ─── VALUE SECTION ─────────────────────────────────────────────────── */
-    .value-section {
-      background: linear-gradient(140deg, var(--clr-ocean) 0%, #0d2744 100%);
-      padding: 90px 0;
-    }
-    .value-section .sec-title { color: #fff; }
-    .value-section .sec-desc  { color: rgba(255,255,255,.55); }
-
-    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
-    .price-card {
-      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
-      border-radius: var(--r-xl); padding: 2.25rem 1.75rem;
-      backdrop-filter: blur(8px);
-    }
-    .price-card.featured-pc {
-      background: linear-gradient(135deg, rgba(201,169,110,.16), rgba(201,169,110,.04));
-      border-color: rgba(201,169,110,.3);
-    }
-    .pc-pax   { font-size: .72rem; color: rgba(255,255,255,.38); text-transform: uppercase; letter-spacing: .1em; margin-bottom: .4rem; }
-    .pc-price { font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--clr-gold); line-height: 1.1; }
-    .pc-idr   { font-size: .85rem; color: rgba(255,255,255,.4); margin: .2rem 0 1.25rem; }
-    .pc-perks { font-size: .82rem; color: rgba(255,255,255,.58); line-height: 2.1; }
-    .pc-perks li::before { content: '✓  '; color: var(--clr-turquoise); }
-
-    /* ─── TIMELINE ──────────────────────────────────────────────────────── */
-    .timeline-section { background: var(--clr-cream); }
-    .tl-wrap { position: relative; max-width: 780px; margin: 0 auto; }
-    .tl-wrap::before {
-      content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
-      background: linear-gradient(to bottom, var(--clr-turquoise) 0%, var(--clr-gold) 70%, transparent 100%);
-      transform: translateX(-50%);
-    }
-    .tl-item {
-      display: grid; grid-template-columns: 1fr 58px 1fr;
-      align-items: start; margin-bottom: 2.75rem; gap: 1.5rem;
-    }
-    /* Odd items: content | dot | empty */
-    .tl-item:nth-child(odd) .tl-content { text-align: right; }
-    .tl-item:nth-child(odd) .tl-spacer  { order: 3; }
-    /* Even items: empty | dot | content */
-    .tl-item:nth-child(even) .tl-spacer  { order: 1; }
-    .tl-item:nth-child(even) .tl-dot     { order: 2; }
-    .tl-item:nth-child(even) .tl-content { order: 3; text-align: left; }
-
-    .tl-dot {
-      width: 52px; height: 52px; border-radius: 50%;
-      background: var(--clr-ocean); border: 3px solid var(--clr-turquoise);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--clr-gold);
-      justify-self: center; box-shadow: 0 0 0 6px rgba(6,182,212,.1); flex-shrink: 0;
-      position: relative; z-index: 2;
-    }
-    .tl-content {
-      background: var(--clr-white); border-radius: var(--r-lg);
-      padding: 1.6rem; box-shadow: var(--shadow-md); border: 1px solid rgba(10,22,40,.06);
-    }
-    .tl-phase { font-size: .68rem; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--clr-turquoise); margin-bottom: .3rem; }
-    .tl-date  { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--clr-ocean); margin-bottom: .45rem; }
-    .tl-text  { font-size: .875rem; color: var(--clr-muted); line-height: 1.75; }
-    .tl-tag-green {
-      display: inline-block; margin-top: .6rem;
-      background: rgba(16,185,129,.1); color: #059669; border: 1px solid rgba(16,185,129,.25);
-      padding: .18rem .65rem; border-radius: 100px; font-size: .68rem; font-weight: 600;
-    }
-    .tl-tag-gold {
-      display: inline-block; margin-top: .6rem;
-      background: rgba(201,169,110,.12); color: #b8892a; border: 1px solid rgba(201,169,110,.3);
-      padding: .18rem .65rem; border-radius: 100px; font-size: .68rem; font-weight: 600;
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 2rem;
+      align-items: center;
     }
 
-    /* ─── FORM SECTION ──────────────────────────────────────────────────── */
-    .cta-section { background: linear-gradient(180deg, #e8f4f8 0%, var(--clr-cream) 100%); }
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r-xl);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+    .panel-pad { padding: clamp(1.4rem, 3vw, 2.2rem); }
+    .kicker {
+      display: inline-flex;
+      padding: .28rem .68rem;
+      border-radius: 999px;
+      background: rgba(16,183,201,.09);
+      color: var(--teal);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: .8rem;
+    }
+
+    .glass-list {
+      margin: 1.3rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: .85rem;
+    }
+    .glass-list li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .glass-list li::before {
+      content: '✓';
+      flex: 0 0 auto;
+      color: var(--teal);
+      font-weight: 900;
+    }
+
+    .mood-image {
+      position: relative;
+      min-height: 540px;
+      background: #dbe7ef;
+    }
+    .mood-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 540px;
+    }
+    .mood-tag {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      background: rgba(7,26,45,.76);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.1);
+      padding: .7rem .9rem;
+      border-radius: 16px;
+      max-width: 240px;
+      backdrop-filter: blur(10px);
+    }
+    .mood-tag strong { display: block; color: var(--gold-2); margin-bottom: .2rem; }
+
+    .section-head {
+      max-width: 760px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .damage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .damage-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .damage-card h3 {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      margin: 0 0 .45rem;
+      color: var(--navy);
+    }
+    .damage-card p {
+      margin: 0;
+      color: var(--text);
+      font-weight: 600;
+      line-height: 1.7;
+    }
+    .damage-card em {
+      font-style: normal;
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .points-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .point-card {
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      position: relative;
+      min-height: 300px;
+      box-shadow: var(--shadow);
+      background: var(--navy);
+    }
+    .point-card.big { min-height: 380px; }
+    .point-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .88;
+      transform: scale(1.03);
+      transition: transform .7s var(--ease), opacity .7s var(--ease);
+    }
+    .point-card:hover img { transform: scale(1.08); opacity: 1; }
+    .point-copy {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 1rem 1rem 1.2rem;
+      background: linear-gradient(180deg, transparent 0%, rgba(7,26,45,.84) 40%, rgba(7,26,45,.96) 100%);
+      color: #fff;
+    }
+    .point-copy .tag {
+      display: inline-flex;
+      padding: .25rem .55rem;
+      border-radius: 999px;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold-2);
+      background: rgba(201,168,106,.12);
+      border: 1px solid rgba(201,168,106,.26);
+      margin-bottom: .5rem;
+    }
+    .point-copy h3 {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      margin: 0 0 .3rem;
+      line-height: 1.1;
+    }
+    .point-copy p {
+      margin: 0;
+      color: rgba(255,255,255,.72);
+      font-size: .93rem;
+      line-height: 1.55;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--teal), var(--gold));
+      opacity: .35;
+    }
+    .phase {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    .phase .dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--navy);
+      border: 3px solid var(--teal);
+      color: var(--gold-2);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      position: relative;
+      z-index: 1;
+      margin-top: .15rem;
+    }
+    .phase-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: 1.15rem 1.2rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .phase-card h3 {
+      margin: 0 0 .25rem;
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      color: var(--navy);
+    }
+    .phase-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: .96rem;
+    }
+    .phase-badge {
+      display: inline-block;
+      margin-top: .65rem;
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    .downloads {
+      display: grid;
+      gap: .9rem;
+      margin-top: 1.4rem;
+    }
+    .download-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.05rem;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .35s var(--ease), border-color .35s var(--ease);
+    }
+    .download-link:hover { transform: translateY(-2px); border-color: rgba(16,183,201,.35); }
+    .download-link strong { display: block; color: var(--navy); margin-bottom: .15rem; }
+    .download-link span { color: var(--muted); font-size: .92rem; }
+    .download-link .arrow { color: var(--gold); font-weight: 900; }
+
     .form-wrap {
-      background: var(--clr-white); border-radius: var(--r-xl);
-      padding: 3rem 3rem 2.5rem; box-shadow: var(--shadow-lg);
-      border: 1px solid rgba(10,22,40,.06); max-width: 680px; margin: 0 auto;
-      text-align: left;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r-xl);
+      padding: clamp(1.3rem, 3vw, 2rem);
+      box-shadow: var(--shadow);
     }
-    .form-success { display: none; }
-    .form-success[style*="display"] { }
-
-    /* Formspree shows/hides [data-fs-success] and [data-fs-error] natively */
     [data-fs-success] {
-      padding: 1.25rem; background: rgba(16,185,129,.08); border: 1px solid rgba(16,185,129,.25);
-      border-radius: var(--r-md); color: #059669; font-weight: 600; font-size: .95rem;
-      margin-bottom: 1.25rem; text-align: center; display: none;
+      display: none;
+      margin-bottom: 1rem;
+      padding: .95rem 1rem;
+      border-radius: 16px;
+      background: rgba(16,185,129,.08);
+      border: 1px solid rgba(16,185,129,.22);
+      color: #0f8a5b;
+      font-weight: 700;
     }
     [data-fs-error]:not(:empty) {
-      color: #dc2626; font-size: .8rem; padding: .65rem 1rem;
-      background: rgba(220,38,38,.06); border-radius: var(--r-sm);
-      margin-bottom: 1.25rem; display: block;
+      display: block;
+      margin-bottom: 1rem;
+      padding: .85rem 1rem;
+      border-radius: 16px;
+      background: rgba(220,38,38,.06);
+      color: #dc2626;
+      font-weight: 600;
+      font-size: .92rem;
     }
-
-    .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-    .fgroup { display: flex; flex-direction: column; gap: .45rem; margin-bottom: 1.25rem; }
-    .fgroup label { font-size: .83rem; font-weight: 600; color: var(--clr-ocean); }
-    .fgroup input,
-    .fgroup select,
-    .fgroup textarea {
-      padding: .85rem 1rem; border: 1.5px solid #e2e8f0; border-radius: var(--r-sm);
-      font-family: var(--font-body); font-size: .95rem; color: var(--clr-text);
-      background: var(--clr-cream); transition: var(--tf); outline: none; width: 100%;
-      appearance: none;
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
     }
-    .fgroup input:focus,
-    .fgroup select:focus,
-    .fgroup textarea:focus {
-      border-color: var(--clr-turquoise); background: #fff;
-      box-shadow: 0 0 0 3px rgba(6,182,212,.12);
+    .form-group {
+      display: grid;
+      gap: .45rem;
+      margin-bottom: 1rem;
     }
-    .fgroup textarea { resize: vertical; min-height: 116px; }
+    .form-group label {
+      font-size: .84rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      border: 1.5px solid #d8e1ea;
+      background: #fff;
+      border-radius: 16px;
+      padding: .92rem 1rem;
+      color: var(--text);
+      transition: border-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: rgba(16,183,201,.6);
+      box-shadow: 0 0 0 4px rgba(16,183,201,.11);
+    }
+    .form-group textarea { min-height: 130px; resize: vertical; }
+    .hint {
+      margin: .35rem 0 0;
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.5;
+    }
 
     .submit-btn {
-      width: 100%; padding: 1rem 1.5rem;
-      background: linear-gradient(135deg, var(--clr-ocean), var(--clr-navy));
-      color: #fff; border: none; border-radius: var(--r-md);
-      font-size: 1rem; font-weight: 600; cursor: pointer;
-      display: flex; align-items: center; justify-content: center; gap: .5rem;
-      transition: var(--t); letter-spacing: .01em;
+      width: 100%;
+      padding: 1rem 1.15rem;
+      border: none;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: .01em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(7,26,45,.2);
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease);
     }
-    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(10,22,40,.24); }
-    .submit-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
-    .form-note { text-align: center; font-size: .78rem; color: var(--clr-muted); margin-top: .9rem; }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(7,26,45,.24); }
+    .submit-btn svg { width: 18px; height: 18px; }
 
-    /* ─── FOOTER ────────────────────────────────────────────────────────── */
-    .lbj-footer { background: var(--clr-ocean); padding: 3.5rem 0 2rem; border-top: 1px solid rgba(255,255,255,.05); }
-    .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center; }
-    .footer-logo { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; color: #fff; }
-    .footer-logo em { color: var(--clr-gold); font-style: normal; }
-    .footer-tagline { font-size: .85rem; color: rgba(255,255,255,.38); max-width: 420px; line-height: 1.7; }
-    .footer-links { display: flex; gap: 2rem; }
-    .footer-links a { font-size: .85rem; color: rgba(255,255,255,.45); transition: var(--tf); }
-    .footer-links a:hover { color: var(--clr-gold); }
-    .footer-copy { border-top: 1px solid rgba(255,255,255,.05); padding-top: 1.5rem; font-size: .75rem; color: rgba(255,255,255,.22); }
+    .footer {
+      padding: 3rem 0 2rem;
+      color: rgba(255,255,255,.72);
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-inner {
+      display: grid;
+      gap: 1rem;
+      justify-items: center;
+      text-align: center;
+    }
+    .footer-inner strong {
+      font-family: var(--font-head);
+      color: #fff;
+      font-size: 1.2rem;
+    }
+    .footer-inner p { margin: 0; max-width: 54ch; }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.2rem;
+      justify-content: center;
+      font-size: .88rem;
+      color: rgba(255,255,255,.5);
+    }
+    .footer-links a:hover { color: var(--gold-2); }
 
-    /* ─── RESPONSIVE ────────────────────────────────────────────────────── */
-    @media (max-width: 960px) {
-      .boat-grid,
-      .nightlife-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .boat-visuals { order: -1; }
-      .boat-secondary { right: 1rem; bottom: -1.5rem; }
-      .boat-badge { left: 1rem; }
-      .reasons-grid   { grid-template-columns: 1fr 1fr; }
-      .reasons-grid-b { grid-template-columns: 1fr; }
-      .price-grid     { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
-      .tl-wrap::before { left: 26px; }
-      .tl-item { grid-template-columns: 54px 1fr; }
-      .tl-item:nth-child(odd) .tl-content,
-      .tl-item:nth-child(even) .tl-content { text-align: left; order: 2; }
-      .tl-dot   { order: 1 !important; justify-self: start; }
-      .tl-spacer { display: none; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .75s var(--ease), transform .75s var(--ease);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .d1 { transition-delay: .1s; }
+    .d2 { transition-delay: .2s; }
+    .d3 { transition-delay: .3s; }
+    .d4 { transition-delay: .4s; }
+
+    @media (max-width: 980px) {
+      .grid-2,
+      .stats-grid,
+      .damage-grid,
+      .points-grid,
+      .form-row { grid-template-columns: 1fr; }
+      .hero h1 { max-width: 14ch; }
+      .hero-inner { padding-top: 8rem; }
+      .nav-links { display: none; }
+      .mood-image img, .mood-image { min-height: 420px; }
+      .point-card.big, .point-card { min-height: 280px; }
     }
     @media (max-width: 680px) {
-      .section, .nightlife, .value-section { padding: 72px 0; }
-      .lnav-links { display: none; }
-      .hero-dates { flex-direction: column; gap: .85rem; }
-      .hd-sep { width: 60px; height: 1px; }
-      .stats-inner { gap: 1.25rem; }
-      .stat-sep { display: none; }
-      .reasons-grid { grid-template-columns: 1fr; }
-      .frow { grid-template-columns: 1fr; }
-      .form-wrap { padding: 2rem 1.5rem; }
-      .footer-links { flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
+      .section { padding: 74px 0; }
+      .container { width: min(100% - 1.1rem, 1180px); }
+      .hero-card { border-radius: 28px; }
+      .hero h1 { font-size: clamp(2.2rem, 11vw, 4rem); }
+      .hero .sub { font-size: .98rem; }
+      .hero-badges { gap: .55rem; }
+      .chip { font-size: .76rem; }
+      .title { font-size: clamp(1.8rem, 8vw, 3rem); }
+      .lead { font-size: .98rem; }
+      .download-link { align-items: flex-start; flex-direction: column; }
     }
   </style>
 </head>
 <body>
-
-  <!-- ── NAV ──────────────────────────────────────────────────────────────── -->
-  <nav class="lnav" id="lnav" aria-label="Page navigation">
-    <div class="lnav-logo">Komodo <em>2027</em></div>
-    <div class="lnav-links" role="list">
-      <a href="#boat" role="listitem">The Boat</a>
-      <a href="#experiences" role="listitem">Experiences</a>
-      <a href="#timeline" role="listitem">Timeline</a>
-      <a href="#rsvp" class="lnav-cta" role="listitem">Secure a Slot</a>
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <div class="brand">
+        Labuan Bajo 2027
+        <small>private boat chaos</small>
+      </div>
+      <div class="nav-links">
+        <a href="#damage">The Damage</a>
+        <a href="#vibe">Vibe</a>
+        <a href="#fleet">Fleet Options</a>
+        <a href="#rsvp" class="btn btn-primary nav-cta">Count me in</a>
+      </div>
     </div>
   </nav>
 
-  <!-- ── HERO ─────────────────────────────────────────────────────────────── -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-bg" id="heroBg" role="img" aria-label="Aerial view of Komodo National Park"></div>
-
-    <div class="hero-content">
-      <div class="hero-pill reveal">
-        <span class="hero-dot" aria-hidden="true"></span>
-        10 Slots Only — Private Charter
-      </div>
-
-      <h1 class="hero-title reveal d1" id="hero-title">
-        Sail Komodo<br>
-        <span class="gradient-text">In Absolute Exclusivity</span>
-      </h1>
-
-      <p class="hero-sub reveal d2">
-        A fully private 34-metre luxury liveaboard through the world's most breathtaking island chain — timed perfectly for the Malaysia Day long weekend.
-      </p>
-
-      <div class="hero-dates reveal d3" role="group" aria-label="Trip dates">
-        <div class="hd-item">
-          <div class="hd-label">Fly In</div>
-          <div class="hd-val">Wed, 15 Sept</div>
-        </div>
-        <div class="hd-sep" aria-hidden="true"></div>
-        <div class="hd-item">
-          <div class="hd-label">On The Water</div>
-          <div class="hd-val">16 – 18 Sept 2027</div>
-        </div>
-        <div class="hd-sep" aria-hidden="true"></div>
-        <div class="hd-item">
-          <div class="hd-label">Fly Home</div>
-          <div class="hd-val">Sun, 19 Sept</div>
-        </div>
-      </div>
-
-      <div class="hero-actions reveal d4">
-        <a href="#rsvp" class="btn btn-gold">
-          Secure Your Slot
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#experiences" class="btn btn-ghost">See What Awaits</a>
-      </div>
-    </div>
-
-    <div class="hero-scroll" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="scroll-bar"></div>
-    </div>
-  </section>
-
-  <!-- ── STATS STRIP ───────────────────────────────────────────────────────── -->
-  <div class="stats-strip" role="region" aria-label="Trip highlights">
-    <div class="container">
-      <div class="stats-inner">
-        <div class="stat reveal"><span class="stat-num">34m</span><span class="stat-lbl">Private Phinisi</span></div>
-        <div class="stat-sep reveal d1" aria-hidden="true"></div>
-        <div class="stat reveal d1"><span class="stat-num">10</span><span class="stat-lbl">Max Exclusive Slots</span></div>
-        <div class="stat-sep reveal d2" aria-hidden="true"></div>
-        <div class="stat reveal d2"><span class="stat-num">3D2N</span><span class="stat-lbl">All-Inclusive</span></div>
-        <div class="stat-sep reveal d3" aria-hidden="true"></div>
-        <div class="stat reveal d3"><span class="stat-num">RM 2,100</span><span class="stat-lbl">Per Person From</span></div>
-        <div class="stat-sep reveal d4" aria-hidden="true"></div>
-        <div class="stat reveal d4"><span class="stat-num">1 Day</span><span class="stat-lbl">Annual Leave Needed</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── THE BOAT ──────────────────────────────────────────────────────────── -->
-  <section class="boat-section section" id="boat" aria-labelledby="boat-heading">
-    <div class="container">
-      <div class="boat-grid">
-
-        <div>
-          <div class="sec-head">
-            <div class="eyebrow reveal">The Vessel</div>
-            <h2 class="sec-title reveal d1" id="boat-heading">
-              Your Home for Three Days:<br>
-              <span class="gradient-text">Sora Liveaboard</span>
-            </h2>
-            <p class="sec-desc reveal d2">
-              No strangers. No group tours. No compromises. The Sora is a 34-metre traditional Phinisi schooner, fully retrofitted for luxury — private en-suite cabins, an open-air sun deck, and a chef crafting fresh meals three times a day. This is your private floating villa, anchored wherever the sunset is most perfect.
-            </p>
-          </div>
-          <ul class="check-list reveal d3" aria-label="Sora liveaboard features">
-            <li>Fully air-conditioned private cabins for every guest</li>
-            <li>Panoramic open sun deck — social hour every evening</li>
-            <li>All meals, fresh snacks &amp; filtered drinking water included</li>
-            <li>Full snorkelling &amp; freediving gear kit provided</li>
-            <li>Kayaks &amp; stand-up paddleboards on board</li>
-            <li>Dedicated crew: captain, chef, dive guides &amp; deckhands</li>
-            <li>Bluetooth sound system for golden-hour sundowners</li>
-          </ul>
-        </div>
-
-        <div class="boat-visuals reveal d2">
-          <img
-            src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=900&auto=format&fit=crop&q=82"
-            alt="Luxury Phinisi sailing vessel on calm turquoise waters"
-            class="boat-main" loading="lazy"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1501949997128-2fdb9f6428f1?w=600&auto=format&fit=crop&q=80"
-            alt="Sun deck of a luxury liveaboard yacht"
-            class="boat-secondary" loading="lazy"
-          />
-          <div class="boat-badge" aria-label="Maximum 10 guests, exclusive">
-            <div class="bb-num">10</div>
-            <div class="bb-lbl">Max Guests</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── EXPERIENCES ───────────────────────────────────────────────────────── -->
-  <section class="why-section section" id="experiences" aria-labelledby="exp-heading">
-    <div class="container">
-
-      <div class="why-grid-header">
-        <div class="eyebrow reveal">What Awaits You</div>
-        <h2 class="sec-title reveal d1" id="exp-heading">
-          5 Reasons Your Friends<br>
-          <span class="gradient-text">Will Never Forgive You for Missing This</span>
-        </h2>
-        <p class="sec-desc reveal d2">
-          Komodo in September is a different world — crystal visibility, calm seas, zero crowds, and nature performing at its absolute peak.
+  <header class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-card reveal">
+        <div class="hero-pill"><span class="dot"></span> September 2027 · 4-day block, jangan sia-sia</div>
+        <h1>
+          Trip ni bukan main-main.
+          <span class="accent2">Sail Komodo dengan geng sendiri</span>.
+        </h1>
+        <p class="sub">
+          Bayangkan dia macam WhatsApp pukul 12 malam tapi versi mewah: <strong>"eh korang, jom buat benda padu ni"</strong>. September 2027 ni memang runway paling ngam. Simpan duit elok-elok, tak payah panik, lepas tu boom terus lari ke laut.
         </p>
+        <div class="hero-badges" aria-label="Trip highlights">
+          <span class="chip">Malaysia Day jatuh Khamis</span>
+          <span class="chip">Cuti 1 hari saja</span>
+          <span class="chip">Private boat, no random people</span>
+          <span class="chip">Glass-ocean visibility</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#rsvp">Aku nak slot</a>
+          <a class="btn btn-secondary" href="#damage">Skim cash dulu</a>
+        </div>
+        <p class="hero-note">PS: page ni memang khas untuk orang yang jenis suka plan awal tapi jalan tetap gempak.</p>
       </div>
+    </div>
+  </header>
 
-      <!-- Row 1: 3 cards -->
-      <div class="reasons-grid" role="list">
-
-        <article class="reason-card reveal" role="listitem" tabindex="0">
-          <img
-            src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&auto=format&fit=crop&q=82"
-            alt="Manta ray gliding through crystal clear blue water"
-            class="reason-img" loading="lazy"
-          />
-          <div class="reason-overlay">
-            <span class="reason-tag">🤿 Reason 01</span>
-            <h3 class="reason-title">Freedive with Giant Manta Rays at Manta Point</h3>
-            <p class="reason-desc">September brings peak underwater visibility — up to 30m of clarity. Manta Point delivers schools of oceanic mantas in their natural habitat. No cages, no barriers. Just you, the ocean, and the most graceful creature on Earth.</p>
-          </div>
-        </article>
-
-        <article class="reason-card reveal d1" role="listitem" tabindex="0">
-          <img
-            src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=800&auto=format&fit=crop&q=82"
-            alt="Tropical pink sand beach with turquoise water"
-            class="reason-img" loading="lazy"
-          />
-          <div class="reason-overlay">
-            <span class="reason-tag">🏖️ Reason 02</span>
-            <h3 class="reason-title">Pink Beach — One of Earth's Seven Pink Sand Beaches</h3>
-            <p class="reason-desc">A surreal stretch of rose-tinted sand coloured by crushed red coral. Swim in water so clear you can count the fish below your feet. Private access straight from the liveaboard.</p>
-          </div>
-        </article>
-
-        <article class="reason-card reveal d2" role="listitem" tabindex="0">
-          <img
-            src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&auto=format&fit=crop&q=82"
-            alt="Padar Island three-bay panorama at sunrise"
-            class="reason-img" loading="lazy"
-          />
-          <div class="reason-overlay">
-            <span class="reason-tag">🌅 Reason 03</span>
-            <h3 class="reason-title">Sunrise Trek on Padar Island — That View</h3>
-            <p class="reason-desc">The legendary three-bay panorama at first light. A 20-minute hike rewards you with one of Southeast Asia's most photographed landscapes — with just your group and nobody else.</p>
-          </div>
-        </article>
-
-      </div>
-
-      <!-- Row 2: wide + narrow -->
-      <div class="reasons-grid-b" role="list" style="margin-top: 1.5rem;">
-
-        <article class="reason-card wide reveal" role="listitem" tabindex="0">
-          <img
-            src="https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=1100&auto=format&fit=crop&q=82"
-            alt="Humpback whale breaching at the ocean surface"
-            class="reason-img" loading="lazy"
-          />
-          <div class="reason-overlay">
-            <span class="reason-tag">🐋 Reason 04</span>
-            <h3 class="reason-title">Witness the September Whale Migration Through the Deep Channels</h3>
-            <p class="reason-desc">September is the secret window — blue whales and sperm whales pass through Komodo's deep straits on their annual migration. You'll watch from the bow of your private yacht as they surface and breach. Zero crowds. Pure magic.</p>
-          </div>
-        </article>
-
-        <article class="reason-card reveal d1" role="listitem" tabindex="0">
-          <img
-            src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=600&auto=format&fit=crop&q=82"
-            alt="Komodo dragon resting on a rocky path"
-            class="reason-img" loading="lazy"
-          />
-          <div class="reason-overlay">
-            <span class="reason-tag">🦎 Reason 05</span>
-            <h3 class="reason-title">Face to Face with Komodo Dragons</h3>
-            <p class="reason-desc">The world's largest living lizard — up to 3 metres long. A ranger-guided trek through Rinca Island to see them up close. Naturally terrifying. Absolutely unmissable.</p>
-          </div>
-        </article>
-
+  <section class="stats" aria-label="Trip quick facts">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat reveal"><strong>10 pax</strong><span>kalau ngam-ngam full squad</span></div>
+        <div class="stat reveal d1"><strong>8 pax</strong><span>kalau group kecik sikit</span></div>
+        <div class="stat reveal d2"><strong>4 hari</strong><span>cuti hack level dewa</span></div>
+        <div class="stat reveal d3"><strong>Sep 2027</strong><span>runway financial paling santai</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ── LABUAN BAJO NIGHTLIFE ──────────────────────────────────────────────── -->
-  <section class="nightlife" id="nightlife" aria-labelledby="nightlife-heading">
+  <section class="section" id="vibe">
     <div class="container">
-      <div class="nightlife-grid">
-
-        <div>
-          <div class="eyebrow reveal" style="color:var(--clr-gold)">Night One — Before You Board</div>
-          <h2 class="sec-title reveal d1" id="nightlife-heading">
-            Land First.<br>
-            <span class="gradient-text">Labuan Bajo Rooftop Vibes.</span>
-          </h2>
-          <p class="sec-desc reveal d2">
-            Before you set sail, spend your first night living it up on land. Labuan Bajo has become one of Indonesia's hottest emerging destinations — a string of rooftop bars and sunset restaurants perched above a glittering harbour where the drinks are cold and the sky puts on a show every evening. Consider it the opening act.
+      <div class="grid-2">
+        <div class="panel panel-pad reveal">
+          <div class="kicker">Kenapa September 2027 ni padu gila</div>
+          <h2 class="title">The 2027 Runway memang sengaja kita pilih. Bukan random.</h2>
+          <p class="lead">
+            Sebab dia bagi semua orang ruang bernafas. Yang gaji belum besar, yang cashflow tiap bulan memang suka buat drama, semua boleh kumpul slow-slow. Tak ada stress, tak ada “eh kenapa tiba-tiba kena bayar banyak ni?”. Kita jalan <strong>kalau perlu</strong>, bukan main rampas akaun bank orang.
           </p>
-          <ul class="check-list reveal d3">
-            <li>Sunset dinner overlooking the harbour marina</li>
-            <li>Rooftop cocktail bars with panoramic bay views</li>
-            <li>Fresh local seafood from the night market</li>
-            <li>Boutique hotels and guesthouses steps from the dock</li>
+          <ul class="glass-list">
+            <li>Saving runway panjang sampai September 2027. Kau sempat siap-siap tanpa koyak.</li>
+            <li>Tak payah lump-sum jump scare. Kutip organik ikut deadline booking betul-betul.</li>
+            <li>Deposit boat, flight promo, benda penting saja. Yang lain as-and-when.</li>
           </ul>
         </div>
-
-        <div class="reveal d2">
-          <img
-            src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=900&auto=format&fit=crop&q=82"
-            alt="Rooftop bar at sunset with harbour view"
-            class="nightlife-img" loading="lazy"
-          />
+        <div class="panel mood-image reveal d1">
+          <img src="./assets/Sora-Liveaboard-1.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: luxury liveaboard di laut tenang" />
+          <div class="mood-tag">
+            <strong>Gambar hiasan sahaja</strong>
+            untuk set up visual vibe trip. Memang nak bagi kau terus rasa macam, “ok ni aku boleh join”.
+          </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ── VALUE ─────────────────────────────────────────────────────────────── -->
-  <section class="value-section" aria-labelledby="value-heading">
+  <section class="section" id="damage">
     <div class="container">
-      <div class="sec-head center">
-        <div class="eyebrow reveal" style="color:var(--clr-turquoise)">The Numbers</div>
-        <h2 class="sec-title reveal d1" id="value-heading">
-          Private Luxury.<br>
-          <span class="gradient-text">Surprisingly Affordable.</span>
-        </h2>
-        <p class="sec-desc reveal d2">
-          The more of us, the better the deal. A fully private 34-metre yacht, split fairly — this is what group travel should feel like.
+      <div class="section-head reveal">
+        <div class="eyebrow">The Damage</div>
+        <h2 class="title">Benda paling orang terus tanya: habis berapa?</h2>
+        <p class="lead">
+          Senang cerita, ini breakdown dia. Kita bagi direct, tak payah putar belit macam sales agent. Yang penting kau boleh fikir awal-awal, plan makan gaji, plan simpan, plan ugut kawan baik sekali.
         </p>
       </div>
-
-      <div class="price-grid" role="list">
-
-        <div class="price-card reveal d1" role="listitem">
-          <p class="pc-pax">10 Pax — Full Boat</p>
-          <p class="pc-price">RM 2,100</p>
-          <p class="pc-idr">≈ IDR 7,500,000 / person</p>
-          <ul class="pc-perks">
-            <li>3D2N private cruise</li>
-            <li>All meals &amp; snacks</li>
-            <li>Snorkel &amp; freedive gear</li>
-            <li>All park &amp; ranger fees</li>
-            <li>Guided island treks</li>
-          </ul>
+      <div class="damage-grid">
+        <div class="damage-card reveal">
+          <h3>Kalau squad ngam-ngam 10 orang</h3>
+          <p>Harga sewa boat jatuh dalam <em>RM1,680.50</em> seorang. Ini kira versi ramai-ramai, paling sedap untuk rasa boat ni milik kita sendiri.</p>
         </div>
-
-        <div class="price-card featured-pc reveal d2" role="listitem">
-          <p class="pc-pax">8 Pax — Sweet Spot</p>
-          <p class="pc-price">RM 2,500</p>
-          <p class="pc-idr">≈ IDR 9,375,000 / person</p>
-          <ul class="pc-perks">
-            <li>3D2N private cruise</li>
-            <li>All meals &amp; snacks</li>
-            <li>Snorkel &amp; freedive gear</li>
-            <li>All park &amp; ranger fees</li>
-            <li>Guided island treks</li>
-          </ul>
+        <div class="damage-card reveal d1">
+          <h3>Kalau group kecik sikit 8 orang</h3>
+          <p>Harga sewa boat jatuh dalam <em>RM2,100.60</em> seorang. Still padu. Still private. Cuma jangan datang bawa 3 orang member yang entah-kenapa selalu hilang.</p>
         </div>
-
-        <div class="price-card reveal d3" role="listitem">
-          <p class="pc-pax">What You'd Miss Instead</p>
-          <p class="pc-price" style="color:rgba(255,255,255,.25);text-decoration:line-through;font-size:1.4rem;">RM 8,000+</p>
-          <p class="pc-idr">Typical luxury resort weekend</p>
-          <ul class="pc-perks" style="color:rgba(255,255,255,.35)">
-            <li>Strangers everywhere</li>
-            <li>Zero whale sightings</li>
-            <li>No Komodo Dragons</li>
-            <li>No private phinisi</li>
-            <li>Staying boring, basically</li>
-          </ul>
+        <div class="damage-card reveal d2">
+          <h3>Anggaran total door-to-door</h3>
+          <p>Siap masuk flight AirAsia direct sendiri, entrance park fees, dengan hotel malam pertama share berdua: safe range lebih kurang <em>RM3,200 ke RM3,700 total</em>.</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ── TIMELINE ───────────────────────────────────────────────────────────── -->
-  <section class="timeline-section section" id="timeline" aria-labelledby="tl-heading">
+  <section class="section">
     <div class="container">
-
-      <div class="sec-head center" style="margin-bottom:4.5rem;">
-        <div class="eyebrow reveal">No Pressure. Seriously.</div>
-        <h2 class="sec-title reveal d1" id="tl-heading">
-          The Safe-Zone<br>
-          <span class="gradient-text">Commitment Timeline</span>
-        </h2>
-        <p class="sec-desc reveal d2">
-          Expressing interest right now costs you absolutely nothing. Here's exactly how this works — with full transparency and zero awkward surprises.
-        </p>
-      </div>
-
-      <div class="tl-wrap" role="list">
-
-        <!-- Phase 1 -->
-        <div class="tl-item reveal" role="listitem">
-          <div class="tl-content">
-            <p class="tl-phase">Phase 1</p>
-            <p class="tl-date">Jan – Feb 2027</p>
-            <p class="tl-text">
-              This is the vibe check. We're gathering soft interest — no money, no commitment, no awkward group chats. Just a casual "yes, I'm curious." The fact that you're reading this counts.
-            </p>
-            <span class="tl-tag-green">100% Free to Cancel</span>
-          </div>
-          <div class="tl-dot" aria-hidden="true">1</div>
-          <div class="tl-spacer" aria-hidden="true"></div>
-        </div>
-
-        <!-- Phase 2 -->
-        <div class="tl-item reveal d1" role="listitem">
-          <div class="tl-spacer" aria-hidden="true"></div>
-          <div class="tl-dot" aria-hidden="true">2</div>
-          <div class="tl-content">
-            <p class="tl-phase">Phase 2</p>
-            <p class="tl-date">March – April 2027</p>
-            <p class="tl-text">
-              Bring a friend. Recruit anyone you think would love this — the more the merrier, and the cheaper per person. The window to drop out remains fully open. No guilt, no questions asked.
-            </p>
-            <span class="tl-tag-green">Still 100% Safe to Cancel</span>
+      <div class="grid-2">
+        <div class="panel panel-pad reveal">
+          <div class="kicker">The Fleet Options</div>
+          <h2 class="title">Download official boat specs kalau korang sejenis nerd.</h2>
+          <p class="lead">
+            Aku sayang orang yang suka baca spec sheet. Serius. Lagi cepat kau tengok options ni, lagi cepat kau boleh cakap, “ok, ni yang paling ngam dengan vibe kita.”
+          </p>
+          <div class="downloads" aria-label="Boat specification downloads">
+            <a class="download-link" href="./assets/SOE BESAR VANREI 2026.pdf" download>
+              <div>
+                <strong>Option 1: Soe Besar Vanrei Brochure</strong>
+                <span>Download official boat specs untuk check style, layout, dan feel.</span>
+              </div>
+              <span class="arrow">↘</span>
+            </a>
+            <a class="download-link" href="./assets/PRIVATE BOAT CHARTER LIST 2026.pdf" download>
+              <div>
+                <strong>Option 2: Tara Boat Charter List</strong>
+                <span>Kalau jenis suka compare semua details sebelum buat keputusan.</span>
+              </div>
+              <span class="arrow">↘</span>
+            </a>
+            <a class="download-link" href="./assets/PRIVATE TRIP ELRORA 2026.pdf" download>
+              <div>
+                <strong>Option 3: Elrora Liveaboard Spec Sheet</strong>
+                <span>Untuk otak yang nak baca sampai habis, lepas tu tersenyum sendiri.</span>
+              </div>
+              <span class="arrow">↘</span>
+            </a>
           </div>
         </div>
-
-        <!-- Phase 3 -->
-        <div class="tl-item reveal d2" role="listitem">
-          <div class="tl-content">
-            <p class="tl-phase">Phase 3</p>
-            <p class="tl-date">May 1, 2027</p>
-            <p class="tl-text">
-              This is the first real step. A 50% deposit locks in your cabin. We book the Sora, confirm the crew and itinerary. This is the "I'm actually doing this" moment — and it feels incredible.
-            </p>
-            <span class="tl-tag-gold">50% Deposit Required</span>
-          </div>
-          <div class="tl-dot" aria-hidden="true">3</div>
-          <div class="tl-spacer" aria-hidden="true"></div>
+        <div class="points-grid reveal d1" aria-label="Trip image grid">
+          <figure class="point-card big">
+            <img src="./assets/Sora-Liveaboard-2.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: deck Sora Liveaboard" />
+            <figcaption class="point-copy">
+              <span class="tag">No stranger drag</span>
+              <h3>Tak payah layan orang luar.</h3>
+              <p>Kita cap trip ni 8-10 orang close friends max. Meaning: tak payah share luxury vessel dengan random tourist yang asyik buat bunyi macam main speaker kat tepi telinga.</p>
+            </figcaption>
+          </figure>
+          <figure class="point-card">
+            <img src="./assets/Freediving.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: freediving di air jernih" />
+            <figcaption class="point-copy">
+              <span class="tag">Glass-ocean</span>
+              <h3>September = air macam kaca.</h3>
+              <p>Tak ada summer trade winds yang kacau. Freediving, snorkeling, semua rasa macam main dalam aquarium premium.</p>
+            </figcaption>
+          </figure>
+          <figure class="point-card">
+            <img src="./assets/Sora-Liveaboard-3.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: private cruising atas laut" />
+            <figcaption class="point-copy">
+              <span class="tag">Ghost park</span>
+              <h3>Manta Point masa bot lain dah blah.</h3>
+              <p>Kita pergi lebih kurang 2:30 PM, lepas speedboats public semua balik mainland. Tinggal kita, manta, dan rasa macam area tu aku punya.</p>
+            </figcaption>
+          </figure>
+          <figure class="point-card">
+            <img src="./assets/Sora-Liveaboard-1.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: luxury boat atmosphere" />
+            <figcaption class="point-copy">
+              <span class="tag">Whale highway</span>
+              <h3>Cetacean migration memang tengah lalu.</h3>
+              <p>Savu Sea ni macam highway besar untuk whale dan geng-geng dia. Kalau rezeki ngam, boleh nampak dari atas boat macam event live yang tak berbayar.</p>
+            </figcaption>
+          </figure>
         </div>
-
-        <!-- Phase 4 -->
-        <div class="tl-item reveal d3" role="listitem">
-          <div class="tl-spacer" aria-hidden="true"></div>
-          <div class="tl-dot" aria-hidden="true">4</div>
-          <div class="tl-content">
-            <p class="tl-phase">Phase 4</p>
-            <p class="tl-date">July 2027</p>
-            <p class="tl-text">
-              Final balance settled. Passports dusted off. Swim trunks packed. Snorkel masks tested in the bathroom mirror. Two months before departure — everything locked, crew briefed, adventure imminent.
-            </p>
-            <span class="tl-tag-gold">Final Balance Due</span>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ── FORM / CTA ─────────────────────────────────────────────────────────── -->
-  <section class="cta-section section" id="rsvp" aria-labelledby="rsvp-heading">
+  <section class="section">
     <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">The Premium Ocean Perks</div>
+        <h2 class="title">Benda-benda yang buat trip ni bukan sekadar “jalan-jalan laut”</h2>
+        <p class="lead">
+          Ini bukan cuti biasa-biasa. Ini jenis trip yang buat group chat hidup semula. Yang diam selama ni pun tiba-tiba boleh jadi editor video paling laju di dunia.
+        </p>
+      </div>
+      <div class="points-grid">
+        <article class="panel point-card big reveal">
+          <img src="./assets/Freediving.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: freediving di kawasan terumbu" />
+          <div class="point-copy">
+            <span class="tag">Freedive / snorkel</span>
+            <h3>Glass-ocean visibility September memang gila.</h3>
+            <p>Air tenang. Jernih. Senang nak appreciate dunia bawah air sampai rasa macam tak sah kalau tak ambil 200 keping gambar walaupun semua orang cakap “jangan lama sangat, makan dulu lah”.</p>
+          </div>
+        </article>
+        <article class="panel point-card reveal d1">
+          <img src="./assets/Sora-Liveaboard-2.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: private luxury deck with sunset" />
+          <div class="point-copy">
+            <span class="tag">Cuti hack</span>
+            <h3>Malaysia Day 2027 jatuh Khamis.</h3>
+            <p>Ambil 1 hari annual leave hari Jumaat. Boom. Terus dapat 4 hari premium trip. Slack pun tak sempat semak kau online ke tak.</p>
+          </div>
+        </article>
+        <article class="panel point-card reveal d2">
+          <img src="./assets/Sora-Liveaboard-3.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: private boat and ocean horizon" />
+          <div class="point-copy">
+            <span class="tag">Tak payah layan</span>
+            <h3>Orang luar? Tak perlu.</h3>
+            <p>Cap 8-10 orang je. Kecil. Intimate. Mewah. Senang nak jadi perangai sendiri tanpa rasa malu depan strangers yang tak mintak pun nak share bunyi bising.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-      <div class="sec-head center" style="margin-bottom:3rem;">
-        <div class="eyebrow reveal" style="justify-content:center;">Secure Your Spot</div>
-        <h2 class="sec-title reveal d1" id="rsvp-heading">
-          Ready to Sail?<br>
-          <span class="gradient-text">Express Your Interest.</span>
-        </h2>
-        <p class="sec-desc reveal d2">
-          This is a soft expression of interest — no payment required, no hard commitment. Just tell us you're in the conversation so we can keep you in the loop as planning progresses.
+  <section class="section">
+    <div class="container">
+      <div class="grid-2">
+        <div class="panel panel-pad reveal">
+          <div class="kicker">Kutip Organik</div>
+          <h2 class="title">No lump-sum shakedowns. Kita kutip cara elok-elok.</h2>
+          <p class="lead">
+            Kita tak buat drama jenis “eh malam ni semua kena transfer sekarang.” Benda ni akan jalan ikut deadline real: boat deposit bila memang kena lock, flight bila promo keluar, balance bila dah dekat. Slow, smooth, tak memualkan.
+          </p>
+          <div class="timeline" aria-label="Commitment timeline">
+            <div class="phase reveal">
+              <div class="dot">1</div>
+              <div class="phase-card">
+                <h3>The 2027 Runway</h3>
+                <p>Target September 2027 supaya semua ada buffer simpan duit dengan tenang. Yang paycheck kecil pun boleh napas. Yang monthly cashflow ketat pun masih boleh join tanpa koyak jiwa.</p>
+                <span class="phase-badge">Jan – Feb 2027</span>
+              </div>
+            </div>
+            <div class="phase reveal d1">
+              <div class="dot">2</div>
+              <div class="phase-card">
+                <h3>Recruit geng, no pressure</h3>
+                <p>Kita kumpul minat, cari close friends yang memang ngam. Tak ada siapa kena paksa. Tak ada hutang persahabatan. Semua chill je.</p>
+                <span class="phase-badge">March – April 2027</span>
+              </div>
+            </div>
+            <div class="phase reveal d2">
+              <div class="dot">3</div>
+              <div class="phase-card">
+                <h3>Lock-in deposit</h3>
+                <p>Bila boat booking dah nak confirm, masa tu baru masuk commitment betul-betul. Kita tak sembang kosong, kita execute.</p>
+                <span class="phase-badge">May 1, 2027</span>
+              </div>
+            </div>
+            <div class="phase reveal d3">
+              <div class="dot">4</div>
+              <div class="phase-card">
+                <h3>Final settle</h3>
+                <p>July 2027 settle habis. Lepas tu tinggal tunggu hari nak pakai sunblock, pakai baju paling lawa, dan pergi buat kenangan yang orang lain akan dengar berulang kali.</p>
+                <span class="phase-badge">July 2027</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-pad reveal d1" id="fleet">
+          <div class="kicker">The boat + the vibe</div>
+          <h2 class="title">Gambar hiasan sahaja. Tapi memang bagi orang terus rasa nak join.</h2>
+          <p class="lead">
+            Aku letak gambar ni bukan sebab nak cantik-cantik kosong. Dia untuk buat kau nampak benda ni bukan trip random. Ini private luxury island chaos. Best punya combo.
+          </p>
+          <div class="points-grid" style="margin-top:1.2rem;">
+            <figure class="point-card">
+              <img src="./assets/Sora-Liveaboard-1.webp" alt="Gambar hiasan sahaja untuk set up visual vibe trip: Sora Liveaboard exterior" />
+              <figcaption class="point-copy">
+                <span class="tag">Sora Liveaboard</span>
+                <h3>Private boat, private mood, private everything.</h3>
+                <p>Tak ada stranger. Tak ada lepak awkward. Tak ada nak cover perangai. Semua orang memang geng sendiri.</p>
+              </figcaption>
+            </figure>
+            <figure class="point-card">
+              <img src="./assets/Phinisi.jpg" alt="Gambar hiasan sahaja untuk set up visual vibe trip: phinisi at sea" />
+              <figcaption class="point-copy">
+                <span class="tag">Main header feature</span>
+                <h3>Phinisi macam ni memang buat orang terus cair.</h3>
+                <p>Kalau tengok gambar ni still tak rasa nak pergi, mungkin kau perlu suntikan semangat laut sikit.</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="rsvp">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">RSVP</div>
+        <h2 class="title">Kalau kau dah rasa “ok ini lah”, isi je. Senang.</h2>
+        <p class="lead">
+          Ini form untuk compile minat dulu. No pressure, no weirdness. Cuma bagi nama, email, headcount, nombor WhatsApp, dan apa-apa soalan yang kau rasa penting sebelum kita start buat benda ni betul-betul.
         </p>
       </div>
 
-      <div class="form-wrap reveal d3">
-
-        <div data-fs-success role="status">
-          🎉 You're in! We'll be in touch as planning progresses. Get ready for the adventure of a lifetime.
-        </div>
+      <div class="form-wrap reveal d1">
+        <div data-fs-success role="status">Wahh ok noted. We’ll keep you in the loop bila benda start bergerak.</div>
         <div data-fs-error role="alert"></div>
 
-        <form id="komodoForm" novalidate>
-
-          <div class="frow">
-            <div class="fgroup">
-              <label for="k-name">Your Name</label>
-              <input
-                type="text" id="k-name" name="name"
-                placeholder="e.g. Amir Hamzah"
-                required autocomplete="name" data-fs-field
-              />
+        <form id="contactForm" class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Nama kau yang sebenar" required data-fs-field />
             </div>
-            <div class="fgroup">
-              <label for="k-email">Email Address</label>
-              <input
-                type="email" id="k-email" name="email"
-                placeholder="you@example.com"
-                required autocomplete="email" data-fs-field
-              />
-              <span data-fs-error="email" style="color:#dc2626;font-size:.78rem;"></span>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="email@kamu.com" required data-fs-field />
+              <span data-fs-error="email"></span>
             </div>
           </div>
 
-          <div class="fgroup">
-            <label for="k-pax">Number of Pax (Including You)</label>
-            <select id="k-pax" name="pax" required data-fs-field>
-              <option value="">How many people are you bringing?</option>
-              <option value="Just me (solo)">Just me (solo) — I'll vibe with everyone</option>
-              <option value="2 pax (me + 1)">2 pax — me &amp; one other</option>
-              <option value="3 pax (me + 2)">3 pax — small squad</option>
-              <option value="4 pax (me + 3)">4 pax — full clique</option>
-              <option value="5+ pax">5+ pax — I'm a legend</option>
-            </select>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="whatsapp">Whatsapp</label>
+              <input id="whatsapp" name="whatsapp" type="tel" placeholder="+60 12-345 6789" required data-fs-field />
+            </div>
+            <div class="form-group">
+              <label for="headcount">Tentative Headcount</label>
+              <select id="headcount" name="headcount" required data-fs-field>
+                <option value="">Berapa orang join?</option>
+                <option>Just me</option>
+                <option>2 orang</option>
+                <option>3 orang</option>
+                <option>4 orang</option>
+                <option>5 orang ke atas</option>
+              </select>
+            </div>
           </div>
 
-          <div class="fgroup">
-            <label for="k-message">Questions, Thoughts or Pure Hype</label>
-            <textarea
-              id="k-message" name="message" rows="4"
-              placeholder="Tell us anything — questions, concerns, or just how excited you are..."
-              data-fs-field
-            ></textarea>
-            <span data-fs-error="message" style="color:#dc2626;font-size:.78rem;"></span>
+          <div class="form-group">
+            <label for="message">Message / Questions</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tanya apa-apa je. Nak tahu pasal schedule, payment flow, bilik, gear, semua boleh." data-fs-field></textarea>
+            <span data-fs-error="message"></span>
           </div>
 
           <button type="submit" class="submit-btn" data-fs-submit-btn>
-            <span>Count Me In — Secure a Tentative Slot</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-              <path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/>
-            </svg>
+            <span>Count me in (For now)</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z" /></svg>
           </button>
-
+          <p class="hint">Tak payah malu. Kita semua kat sini sebab nak buat trip yang memang susah nak lupa.</p>
         </form>
 
-        <p class="form-note">No payment required at this stage. This is a soft interest registration only. 🌊</p>
-
+        <script>
+          window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+          formspree('initForm', { formElement: '#contactForm', formId: 'xjgpzpal' });
+        </script>
+        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
       </div>
     </div>
-
-    <!-- Formspree integration (same form ID as main site) -->
-    <script>
-      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-      formspree('initForm', { formElement: '#komodoForm', formId: 'xjgpzpal' });
-    </script>
-    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
   </section>
 
-  <!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
-  <footer class="lbj-footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-logo">Komodo <em>2027</em></div>
-        <p class="footer-tagline">
-          A private luxury liveaboard through Komodo National Park — Malaysia Day long weekend, 16–18 September 2027.
-        </p>
-        <nav aria-label="Footer navigation">
-          <ul class="footer-links">
-            <li><a href="#boat">The Boat</a></li>
-            <li><a href="#experiences">Experiences</a></li>
-            <li><a href="#timeline">Timeline</a></li>
-            <li><a href="#rsvp">Reserve a Slot</a></li>
-          </ul>
-        </nav>
-        <p class="footer-copy">
-          Organised with love by your slightly-too-enthusiastic trip planner · Labuan Bajo, Flores, Indonesia
-        </p>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <strong>Labuan Bajo 2027</strong>
+      <p>Trip private boat, vibes maksimum, perangai zero malu. Semua ni untuk geng yang memang sedia nak cakap “eh kita buat betul-betul lah”.</p>
+      <div class="footer-links">
+        <a href="#damage">The Damage</a>
+        <a href="#fleet">Fleet Options</a>
+        <a href="#rsvp">Form</a>
+        <a href="#top">Back to top</a>
       </div>
     </div>
   </footer>
 
-  <!-- ── SCRIPTS ───────────────────────────────────────────────────────────── -->
   <script>
-    // Scroll reveal via IntersectionObserver
+    const nav = document.getElementById('nav');
     const revealEls = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -52px 0px' });
-    revealEls.forEach(el => io.observe(el));
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-    // Nav scroll style
-    const nav = document.getElementById('lnav');
+    revealEls.forEach((el) => observer.observe(el));
+
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
+      nav.classList.toggle('scrolled', window.scrollY > 24);
     }, { passive: true });
-
-    // Hero parallax bg
-    const heroBg = document.getElementById('heroBg');
-    if (heroBg) {
-      window.addEventListener('scroll', () => {
-        heroBg.style.transform = `scale(1.06) translateY(${window.scrollY * 0.14}px)`;
-      }, { passive: true });
-    }
-
-    // Trigger hero reveals on load
-    document.addEventListener('DOMContentLoaded', () => {
-      const heroReveals = document.querySelectorAll('.hero .reveal');
-      heroReveals.forEach((el, i) => {
-        setTimeout(() => el.classList.add('visible'), 180 + i * 140);
-      });
-    });
   </script>
-
 </body>
 </html>
