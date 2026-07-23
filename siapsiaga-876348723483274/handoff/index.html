@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Siapsiaga — Demo Setup</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #0f1115;
+    --card: #171a21;
+    --border: #2a2e38;
+    --text: #e8e9ec;
+    --muted: #9aa0ac;
+    --accent: #5b8cff;
+    --accent-hover: #3f74f5;
+    --success: #38c172;
+    --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    --warn-bg: #3a2a10;
+    --warn-border: #8a5a12;
+    --warn-text: #f5c563;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f4f5f7;
+      --card: #ffffff;
+      --border: #e1e4ea;
+      --text: #1b1e25;
+      --muted: #6b7280;
+      --warn-bg: #fff6e5;
+      --warn-border: #f0c674;
+      --warn-text: #8a5a12;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 2.5rem 1.25rem;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  .wrap {
+    width: 100%;
+    max-width: 720px;
+  }
+  .notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    color: var(--warn-text);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+  .notice svg { flex: 0 0 auto; margin-top: 0.15rem; width: 16px; height: 16px; }
+  .notice strong { font-weight: 700; }
+  header { margin-bottom: 1.75rem; }
+  h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .card h2 {
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+  }
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.9rem 1.15rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.98rem;
+    transition: background 0.15s ease;
+  }
+  .download-btn:hover { background: var(--accent-hover); }
+  .download-hint {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-top: 0.65rem;
+    text-align: center;
+  }
+  .pw-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .pw-reveal {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    background: rgba(128,128,128,0.12);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 0.7rem 0.9rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .pw-reveal code {
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+  }
+  .pw-reveal .tap-label {
+    color: var(--muted);
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+  .copy-btn {
+    flex: 0 0 auto;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .copy-btn:hover { color: var(--text); border-color: var(--accent); }
+  .copy-btn.copied { color: #fff; background: var(--success); border-color: var(--success); }
+  .copy-btn svg { width: 15px; height: 15px; pointer-events: none; }
+  ol {
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  ol li { margin-bottom: 0.55rem; }
+  ol li:last-child { margin-bottom: 0; }
+  ol code, p code {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    background: rgba(128,128,128,0.12);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+  }
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1.25rem 0;
+  }
+  footer {
+    margin-top: 0.5rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    <span>This link is unlisted — please don't share it publicly.</span>
+  </div>
+  <header>
+    <h1>Siapsiaga Demo Setup</h1>
+    <div class="subtitle">Everything you need to run demos on this laptop</div>
+  </header>
+
+  <div class="card">
+    <h2>1. Download</h2>
+    <a class="download-btn" href="./siapsiaga-handoff.zip" download>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download setup files (.zip)
+    </a>
+    <div class="download-hint">Password-protected — see below</div>
+  </div>
+
+  <div class="card">
+    <h2>2. Zip password</h2>
+    <div class="pw-row">
+      <div class="pw-reveal" id="pwReveal" role="button" tabindex="0" aria-label="Tap to reveal password">
+        <code id="pwText">•••••••••</code>
+        <span class="tap-label" id="pwHint">tap to reveal</span>
+      </div>
+      <button class="copy-btn" id="pwCopyBtn" type="button" aria-label="Copy password" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>3. One-time setup</h2>
+    <ol>
+      <li>Install <strong>Docker Desktop for Windows</strong> (docker.com/products/docker-desktop — default install options are fine).</li>
+      <li>Unzip the file you downloaded into one folder — anywhere is fine, e.g. your Desktop.</li>
+      <li>Open Docker Desktop and wait until it says it's running.</li>
+      <li>Double-click <code>update.bat</code> inside that folder. First run takes a few minutes (downloading everything) — it'll say "Update complete" when done.</li>
+    </ol>
+    <hr class="section-divider">
+    <h2>Every time before a demo</h2>
+    <ol>
+      <li>Open the Docker Desktop app (it does <strong>not</strong> start automatically on login). Wait about a minute.</li>
+      <li>Open a browser to <code>https://localhost:8443</code>.</li>
+      <li>A security warning is expected and normal — it's a self-signed certificate, not a real problem. Click "Advanced" → "Proceed" (Chrome) or equivalent.</li>
+      <li>Log in with the Super Admin email/password you were given separately.</li>
+    </ol>
+  </div>
+
+  <footer>Not indexed for search engines · A ready-made demo simulation is seeded automatically on first boot</footer>
+</div>
+
+<script>
+  const PW = "time0844";
+  const pwReveal = document.getElementById('pwReveal');
+  const pwText = document.getElementById('pwText');
+  const pwHint = document.getElementById('pwHint');
+  const copyBtn = document.getElementById('pwCopyBtn');
+  const copyIcon = copyBtn.innerHTML;
+  const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+  let revealed = false;
+
+  function reveal() {
+    if (revealed) return;
+    revealed = true;
+    pwText.textContent = PW;
+    pwHint.textContent = 'tap to hide';
+    copyBtn.disabled = false;
+  }
+
+  function hide() {
+    if (!revealed) return;
+    revealed = false;
+    pwText.textContent = '•••••••••';
+    pwHint.textContent = 'tap to reveal';
+    copyBtn.disabled = true;
+  }
+
+  pwReveal.addEventListener('click', () => revealed ? hide() : reveal());
+  pwReveal.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      revealed ? hide() : reveal();
+    }
+  });
+
+  copyBtn.addEventListener('click', () => {
+    if (!revealed) return;
+    navigator.clipboard.writeText(PW).then(() => {
+      copyBtn.innerHTML = checkIcon;
+      copyBtn.classList.add('copied');
+      setTimeout(() => {
+        copyBtn.innerHTML = copyIcon;
+        copyBtn.classList.remove('copied');
+      }, 1200);
+    });
+  });
+</script>
+</body>
+</html>
