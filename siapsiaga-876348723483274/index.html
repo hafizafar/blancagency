@@ -17,6 +17,9 @@
     --accent-hover: #3f74f5;
     --success: #38c172;
     --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    --warn-bg: #3a2a10;
+    --warn-border: #8a5a12;
+    --warn-text: #f5c563;
   }
   @media (prefers-color-scheme: light) {
     :root {
@@ -25,6 +28,9 @@
       --border: #e1e4ea;
       --text: #1b1e25;
       --muted: #6b7280;
+      --warn-bg: #fff6e5;
+      --warn-border: #f0c674;
+      --warn-text: #8a5a12;
     }
   }
   * { box-sizing: border-box; }
@@ -41,6 +47,21 @@
     width: 100%;
     max-width: 880px;
   }
+  .notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    color: var(--warn-text);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+  .notice svg { flex: 0 0 auto; margin-top: 0.15rem; width: 16px; height: 16px; }
+  .notice strong { font-weight: 700; }
   header {
     display: flex;
     flex-wrap: wrap;
@@ -62,6 +83,7 @@
   .site-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     background: var(--accent);
     color: #fff;
@@ -159,10 +181,55 @@
     padding: 0.1rem 0.4rem;
     border-radius: 4px;
   }
+
+  @media (max-width: 640px) {
+    body { padding: 1.5rem 1rem; }
+    header { flex-direction: column; align-items: stretch; }
+    .site-btn { width: 100%; padding: 0.85rem 1.15rem; }
+
+    /* Stack table rows into cards */
+    .table-scroll { overflow-x: visible; }
+    table { min-width: 0; }
+    thead { display: none; }
+    tr {
+      display: block;
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    tr:last-child { border-bottom: none; }
+    td {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.35rem 0;
+      border-bottom: none;
+    }
+    td.role {
+      display: block;
+      padding-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    td::before {
+      content: attr(data-label);
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      flex: 0 0 auto;
+    }
+    .cell-copy { flex: 1 1 auto; justify-content: flex-end; min-width: 0; }
+    .cell-copy code { word-break: break-all; text-align: right; }
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    <span><strong>Staging server is live until 31 July only.</strong> Please complete your testing before then — access will be taken down after this date.</span>
+  </div>
   <header>
     <div>
       <h1>Dev Credentials</h1>
@@ -218,8 +285,9 @@
     });
   }
 
-  function makeCell(value) {
+  function makeCell(value, label) {
     const td = document.createElement('td');
+    td.setAttribute('data-label', label);
     const wrap = document.createElement('div');
     wrap.className = 'cell-copy';
     const code = document.createElement('code');
@@ -250,8 +318,8 @@
       roleTd.appendChild(tag);
     }
     tr.appendChild(roleTd);
-    tr.appendChild(makeCell(c.email));
-    tr.appendChild(makeCell(c.password));
+    tr.appendChild(makeCell(c.email, 'Email'));
+    tr.appendChild(makeCell(c.password, 'Password'));
     tbody.appendChild(tr);
   });
 </script>
