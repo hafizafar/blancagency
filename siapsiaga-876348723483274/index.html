@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Siapsiaga — Dev Credentials</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #0f1115;
+    --card: #171a21;
+    --border: #2a2e38;
+    --text: #e8e9ec;
+    --muted: #9aa0ac;
+    --accent: #5b8cff;
+    --accent-hover: #3f74f5;
+    --success: #38c172;
+    --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f4f5f7;
+      --card: #ffffff;
+      --border: #e1e4ea;
+      --text: #1b1e25;
+      --muted: #6b7280;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 2.5rem 1.25rem;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  .wrap {
+    width: 100%;
+    max-width: 880px;
+  }
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+  h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
+  .site-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.7rem 1.15rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: background 0.15s ease;
+    white-space: nowrap;
+  }
+  .site-btn:hover { background: var(--accent-hover); }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .table-scroll {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem;
+  }
+  th {
+    color: var(--muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+  }
+  tr:last-child td { border-bottom: none; }
+  .role { font-weight: 500; }
+  .role-tag {
+    display: block;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 400;
+    margin-top: 0.15rem;
+  }
+  .cell-copy {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .cell-copy code {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    background: rgba(128,128,128,0.12);
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    word-break: break-all;
+  }
+  .copy-btn {
+    flex: 0 0 auto;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .copy-btn:hover {
+    color: var(--text);
+    border-color: var(--accent);
+  }
+  .copy-btn.copied {
+    color: #fff;
+    background: var(--success);
+    border-color: var(--success);
+  }
+  .copy-btn svg { width: 15px; height: 15px; pointer-events: none; }
+  footer {
+    margin-top: 1.5rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  footer code {
+    font-family: var(--mono);
+    background: rgba(128,128,128,0.12);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Dev Credentials</h1>
+      <div class="subtitle">Staging environment access — Siapsiaga</div>
+    </div>
+    <a class="site-btn" href="https://siapsiaga-staging.ibbs.com.my" target="_blank" rel="noopener noreferrer">
+      Go to staging site
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+    </a>
+  </header>
+
+  <div class="card">
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>Email</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody id="cred-table"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>Not indexed for search engines · Link is unlisted, please don't share publicly</footer>
+</div>
+
+<script>
+  const creds = [
+    { role: "Super Admin", tag: "", email: "superadmin@siapsiaga.local", password: "time0204" },
+    { role: "Dev User 1", tag: "Admin, team", email: "devuser1@siapsiaga.local", password: "devPassword" },
+    { role: "Dev User 2", tag: "Admin, basic, Trainer in 1,5", email: "devuser2@siapsiaga.local", password: "devPassword" },
+    { role: "Dev User 3", tag: "Admin, solo", email: "devuser3@siapsiaga.local", password: "devPassword" },
+    { role: "Dev User 4", tag: "Admin, basic", email: "devuser4@siapsiaga.local", password: "devPassword" },
+    { role: "Dev User 5", tag: "Admin, enterprise", email: "devuser5@siapsiaga.local", password: "devPassword" },
+    { role: "Dev User 6", tag: "Admin, basic, Trainer in 5", email: "devuser6@siapsiaga.local", password: "devPassword" },
+    { role: "Dev User 7", tag: "Admin, basic, no modules enabled", email: "devuser7@siapsiaga.local", password: "devPassword" },
+  ];
+
+  const copyIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+  const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+
+  function copyCell(value, btn) {
+    navigator.clipboard.writeText(value).then(() => {
+      btn.innerHTML = checkIcon;
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = copyIcon;
+        btn.classList.remove('copied');
+      }, 1200);
+    });
+  }
+
+  function makeCell(value) {
+    const td = document.createElement('td');
+    const wrap = document.createElement('div');
+    wrap.className = 'cell-copy';
+    const code = document.createElement('code');
+    code.textContent = value;
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.type = 'button';
+    btn.innerHTML = copyIcon;
+    btn.setAttribute('aria-label', 'Copy ' + value);
+    btn.addEventListener('click', () => copyCell(value, btn));
+    wrap.appendChild(code);
+    wrap.appendChild(btn);
+    td.appendChild(wrap);
+    return td;
+  }
+
+  const tbody = document.getElementById('cred-table');
+  creds.forEach(c => {
+    const tr = document.createElement('tr');
+
+    const roleTd = document.createElement('td');
+    roleTd.className = 'role';
+    roleTd.textContent = c.role;
+    if (c.tag) {
+      const tag = document.createElement('span');
+      tag.className = 'role-tag';
+      tag.textContent = c.tag;
+      roleTd.appendChild(tag);
+    }
+    tr.appendChild(roleTd);
+    tr.appendChild(makeCell(c.email));
+    tr.appendChild(makeCell(c.password));
+    tbody.appendChild(tr);
+  });
+</script>
+</body>
+</html>
