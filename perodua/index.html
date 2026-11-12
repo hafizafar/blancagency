@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Sam — Perodua Sales Broker | Cari Kereta, Cari Sam!</title>
+<meta name="description" content="Sam bantu anda cari kereta Perodua baru — semak harga, kelayakan loan, trade-in & urusan dokumentasi, terus di WhatsApp." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://blanc.my/perodua" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blanc.my/perodua" />
+<meta property="og:site_name" content="Cari Kereta, Cari Sam" />
+<meta property="og:title" content="Cari Kereta, Cari Sam! — Perodua Sales Broker" />
+<meta property="og:description" content="Semak harga, kelayakan loan & trade-in kereta Perodua terus dengan Sam di WhatsApp." />
+<meta property="og:locale" content="ms_MY" />
+
+<style>
+  :root {
+    --ink: #14161c;
+    --ink-soft: #3a3f4a;
+    --muted: #6b7180;
+    --line: #e7e8ec;
+    --surface: #ffffff;
+    --canvas: #f6f6f8;
+    --brand: #d81324;
+    --brand-dark: #a80f1c;
+    --brand-tint: #fdeceb;
+    --navy: #12172b;
+    --whatsapp: #22c55e;
+    --whatsapp-dark: #189146;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --shadow-sm: 0 1px 2px rgba(20,22,28,.06), 0 1px 1px rgba(20,22,28,.04);
+    --shadow-md: 0 8px 24px rgba(20,22,28,.08);
+    --container: 920px;
+    --gutter: clamp(20px, 5vw, 48px);
+    --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font); background: var(--canvas); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; color: inherit; }
+
+  .wrap { max-width: var(--container); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+  .section { padding: 48px 0; }
+  .section-surface { background: var(--surface); }
+
+  header.site-header {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--navy);
+    color: #fff;
+  }
+  header.site-header .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; }
+  .wordmark { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.01em; }
+  .wordmark .accent { color: var(--brand); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-whatsapp { background: var(--whatsapp); color: #fff; }
+  .btn-whatsapp:hover { background: var(--whatsapp-dark); }
+  .btn-whatsapp svg { width: 18px; height: 18px; }
+  .btn-sm { padding: 9px 16px; font-size: 0.82rem; }
+
+  .hero {
+    background: linear-gradient(160deg, var(--navy) 0%, #1c2340 60%, var(--brand-dark) 140%);
+    color: #fff;
+    padding: 64px 0 56px;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #ffd9d9; opacity: 0.85; margin-bottom: 14px;
+  }
+  .hero h1 { font-size: clamp(1.9rem, 1.4rem + 2.2vw, 2.8rem); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 14px; }
+  .hero h1 .accent { color: #ff6b6b; }
+  .hero p.lead { font-size: 1rem; color: rgba(255,255,255,0.82); max-width: 520px; margin: 0 auto 28px; line-height: 1.6; }
+  .hero-cta { margin-bottom: 18px; }
+  .hero-note { font-size: 0.78rem; color: rgba(255,255,255,0.6); }
+
+  .model-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 28px 0 0; }
+  .model-chip {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #fff;
+    font-size: 0.8rem; font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 999px;
+  }
+
+  .section-head { text-align: center; max-width: 560px; margin: 0 auto 32px; }
+  .eyebrow { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brand); margin-bottom: 8px; }
+  .section-title { font-size: clamp(1.3rem, 1.05rem + 1.1vw, 1.7rem); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .section-desc { color: var(--muted); font-size: 0.92rem; line-height: 1.6; margin: 0; }
+
+  .checklist-grid {
+    list-style: none; padding: 0; margin: 0 auto; max-width: 560px;
+    display: grid; gap: 14px;
+  }
+  .checklist-grid li {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: var(--canvas);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
+  }
+  .checklist-grid .tick {
+    flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+    background: var(--brand-tint); color: var(--brand-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 0.8rem;
+  }
+  .checklist-grid .body strong { display: block; font-size: 0.92rem; }
+  .checklist-grid .body span { font-size: 0.8rem; color: var(--muted); }
+
+  .promise-box {
+    max-width: 560px; margin: 0 auto 28px;
+    background: var(--brand-tint);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+    text-align: center;
+  }
+  .promise-box p { margin: 0; font-size: 0.95rem; color: var(--ink-soft); line-height: 1.6; }
+
+  .final-cta {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    padding: 52px 0;
+  }
+  .final-cta h2 { font-size: clamp(1.3rem, 1.05rem + 1.1vw, 1.7rem); font-weight: 800; margin: 0 0 10px; }
+  .final-cta p { color: rgba(255,255,255,0.75); margin: 0 0 24px; font-size: 0.92rem; }
+
+  footer.site-footer {
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    padding: 28px 0;
+    text-align: center;
+  }
+  footer.site-footer .footer-name { font-weight: 800; font-size: 0.95rem; }
+  footer.site-footer .footer-role { font-size: 0.8rem; color: var(--muted); margin: 2px 0 10px; }
+  footer.site-footer .footer-disclaimer { font-size: 0.72rem; color: var(--muted); max-width: 440px; margin: 14px auto 0; line-height: 1.6; }
+
+  .sticky-cta {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    padding: 10px var(--gutter);
+    display: flex; justify-content: center;
+    box-shadow: 0 -4px 16px rgba(20,22,28,.08);
+  }
+  .sticky-cta .btn-whatsapp { width: 100%; max-width: 420px; justify-content: center; padding: 13px 20px; }
+  body { padding-bottom: 64px; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <span class="wordmark">SAM<span class="accent">.</span></span>
+    <a class="btn btn-whatsapp btn-sm" href="https://wa.me/60176121586?text=Hi%20Sam%2C%20saya%20berminat%20nak%20tahu%20lanjut%20pasal%20kereta%20Perodua" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.48 1.34 5L2 22l5.17-1.36A9.96 9.96 0 0012.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.2c-1.6 0-3.17-.43-4.54-1.24l-.33-.2-3.07.8.82-3-.21-.34a8.19 8.19 0 01-1.27-4.38c0-4.53 3.68-8.21 8.21-8.21s8.21 3.68 8.21 8.21-3.68 8.21-8.21 8.21zm4.5-6.15c-.25-.12-1.46-.72-1.68-.8-.23-.08-.4-.12-.56.12-.17.25-.65.8-.79.96-.15.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.21-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01s-.44.06-.67.31c-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.6c.12.17 1.78 2.72 4.32 3.81.6.26 1.07.42 1.44.53.6.19 1.15.17 1.59.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+      WhatsApp Sam
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="hero-eyebrow">Nak Beli Kereta Perodua?</span>
+    <h1>Cari Kereta, <span class="accent">Cari Sam!</span></h1>
+    <p class="lead">Sedang cari kereta baru yang sesuai? Saya boleh bantu anda dari A sampai Z — pilih model, semak kelayakan loan &amp; urusan pendaftaran.</p>
+    <div class="hero-cta">
+      <a class="btn btn-whatsapp" href="https://wa.me/60176121586?text=Hi%20Sam%2C%20saya%20berminat%20nak%20tahu%20lanjut%20pasal%20kereta%20Perodua" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.48 1.34 5L2 22l5.17-1.36A9.96 9.96 0 0012.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.2c-1.6 0-3.17-.43-4.54-1.24l-.33-.2-3.07.8.82-3-.21-.34a8.19 8.19 0 01-1.27-4.38c0-4.53 3.68-8.21 8.21-8.21s8.21 3.68 8.21 8.21-3.68 8.21-8.21 8.21zm4.5-6.15c-.25-.12-1.46-.72-1.68-.8-.23-.08-.4-.12-.56.12-.17.25-.65.8-.79.96-.15.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.21-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01s-.44.06-.67.31c-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.6c.12.17 1.78 2.72 4.32 3.81.6.26 1.07.42 1.44.53.6.19 1.15.17 1.59.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+        WhatsApp Sam Sekarang
+      </a>
+    </div>
+    <p class="hero-note">Survey dulu pun boleh. Tiada tekanan untuk terus booking.</p>
+    <div class="model-strip">
+      <span class="model-chip">Axia</span>
+      <span class="model-chip">Bezza</span>
+      <span class="model-chip">Myvi</span>
+      <span class="model-chip">Ativa</span>
+      <span class="model-chip">Alza</span>
+      <span class="model-chip">Aruz</span>
+      <span class="model-chip">Traz</span>
+    </div>
+  </div>
+</section>
+
+<section class="section section-surface">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Kenapa Pilih Sam</span>
+      <h2 class="section-title">Why Choose Sam?</h2>
+      <p class="section-desc">Saya sedia membantu dari A–Z, klu commitment tinggi ke CTOS.</p>
+    </div>
+    <ul class="checklist-grid">
+      <li><span class="tick">✓</span><div class="body"><strong>Check Model Sedia-Ada</strong></div></li>
+      <li><span class="tick">✓</span><div class="body"><strong>Process Loan Mudah A–Z</strong></div></li>
+      <li><span class="tick">✓</span><div class="body"><strong>Trade-in Kereta Lama</strong></div></li>
+      <li><span class="tick">✓</span><div class="body"><strong>Uruskan Serahkan Kunci</strong></div></li>
+      <li><span class="tick">✓</span><div class="body"><strong>After-Sales Support</strong><span>Klu ada apa-apa issue, saya sedia membantu.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Komited Bantu Awak</span>
+      <h2 class="section-title">Bukan Sekadar Jual Kereta.</h2>
+      <p class="section-desc">Mencari kereta Perodua? Saya sedia membantu dari awal hingga selesai!</p>
+    </div>
+    <ul class="checklist-grid">
+      <li><span class="tick">✓</span><div class="body"><strong>Sebut Harga &amp; Anggaran Bayaran Bulanan</strong></div></li>
+      <li><span class="tick">✓</span><div class="body"><strong>Bantuan Permohonan Pinjaman Bank</strong></div></li>
+      <li><span class="tick">✓</span><div class="body"><strong>Semakan Nilai Trade-In Kereta</strong></div></li>
+      <li><span class="tick">✓</span><div class="body"><strong>Urusan Booking &amp; Dokumentasi</strong></div></li>
+      <li><span class="tick">✓</span><div class="body"><strong>Kemaskini Status Kereta</strong></div></li>
+      <li><span class="tick">✓</span><div class="body"><strong>Bantuan Sehingga Serahan Kunci</strong></div></li>
+    </ul>
+    <div class="promise-box" style="margin-top:28px;">
+      <p>Anda Pilih Kereta, Saya Uruskan Selebihnya!</p>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Nak Tahu Harga &amp; Monthly Awak?</h2>
+    <p>Chat terus dengan Sam di WhatsApp — survey dulu pun boleh.</p>
+    <a class="btn btn-whatsapp" href="https://wa.me/60176121586?text=Hi%20Sam%2C%20saya%20berminat%20nak%20tahu%20lanjut%20pasal%20kereta%20Perodua" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.48 1.34 5L2 22l5.17-1.36A9.96 9.96 0 0012.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.2c-1.6 0-3.17-.43-4.54-1.24l-.33-.2-3.07.8.82-3-.21-.34a8.19 8.19 0 01-1.27-4.38c0-4.53 3.68-8.21 8.21-8.21s8.21 3.68 8.21 8.21-3.68 8.21-8.21 8.21zm4.5-6.15c-.25-.12-1.46-.72-1.68-.8-.23-.08-.4-.12-.56.12-.17.25-.65.8-.79.96-.15.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.21-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01s-.44.06-.67.31c-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.6c.12.17 1.78 2.72 4.32 3.81.6.26 1.07.42 1.44.53.6.19 1.15.17 1.59.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+      WhatsApp Sam Sekarang
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-name">Sam</div>
+    <div class="footer-role">Perodua Sales Broker</div>
+    <a class="btn btn-whatsapp btn-sm" href="https://wa.me/60176121586" target="_blank" rel="noopener">+60 17-612 1586</a>
+    <p class="footer-disclaimer">Sam membantu urusan pembelian kereta Perodua sebagai broker pihak ketiga, bekerjasama dengan Sales Advisor rasmi Perodua untuk proses pembelian.</p>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="btn btn-whatsapp" href="https://wa.me/60176121586?text=Hi%20Sam%2C%20saya%20berminat%20nak%20tahu%20lanjut%20pasal%20kereta%20Perodua" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.48 1.34 5L2 22l5.17-1.36A9.96 9.96 0 0012.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.2c-1.6 0-3.17-.43-4.54-1.24l-.33-.2-3.07.8.82-3-.21-.34a8.19 8.19 0 01-1.27-4.38c0-4.53 3.68-8.21 8.21-8.21s8.21 3.68 8.21 8.21-3.68 8.21-8.21 8.21zm4.5-6.15c-.25-.12-1.46-.72-1.68-.8-.23-.08-.4-.12-.56.12-.17.25-.65.8-.79.96-.15.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.21-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01s-.44.06-.67.31c-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.6c.12.17 1.78 2.72 4.32 3.81.6.26 1.07.42 1.44.53.6.19 1.15.17 1.59.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+    WhatsApp Sam Sekarang
+  </a>
+</div>
+
+</body>
+</html>
