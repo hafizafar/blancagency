@@ -146,7 +146,7 @@
 }());
 
 /* ---- Intersection Observer Reveal ---- */
-(function () {
+function initRevealObserver() {
   const targets = document.querySelectorAll('.reveal-up, .reveal-right');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -157,10 +157,10 @@
     });
   }, { threshold: 0.12 });
   targets.forEach(el => observer.observe(el));
-}());
+}
 
 /* ---- Counter Animation ---- */
-(function () {
+function initCounterAnimation() {
   const statNums = document.querySelectorAll('.stat-num');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -181,7 +181,15 @@
     });
   }, { threshold: 0.5 });
   statNums.forEach(el => observer.observe(el));
-}());
+}
+
+/* initRevealObserver/initCounterAnimation run after content.js finishes
+   populating dynamic sections (services/about/process/faq), so the
+   reveal-up/stat-num elements it creates are observed too. */
+document.addEventListener('content:rendered', () => {
+  initRevealObserver();
+  initCounterAnimation();
+});
 
 /* ---- Smooth scroll for anchor links ---- */
 document.querySelectorAll('a[href^="#"]').forEach(a => {

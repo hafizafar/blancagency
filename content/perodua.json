@@ -1,0 +1,36 @@
+{
+  "name": "Sam",
+  "whatsapp": "60176121586",
+  "hero": {
+    "eyebrow": "Nak Beli Kereta Perodua?",
+    "lead": "Sedang cari kereta baru yang sesuai? Saya boleh bantu anda dari A sampai Z — pilih model, semak kelayakan loan & urusan pendaftaran.",
+    "note": "Survey dulu pun boleh. Tiada tekanan untuk terus booking."
+  },
+  "models": ["Axia", "Bezza", "Myvi", "Ativa", "Alza", "Aruz", "Traz"],
+  "whyChoose": {
+    "desc": "Saya sedia membantu dari A–Z, klu commitment tinggi ke CTOS.",
+    "items": [
+      { "title": "Check Model Sedia-Ada" },
+      { "title": "Process Loan Mudah A–Z" },
+      { "title": "Trade-in Kereta Lama" },
+      { "title": "Uruskan Serahkan Kunci" },
+      { "title": "After-Sales Support", "desc": "Klu ada apa-apa issue, saya sedia membantu." }
+    ]
+  },
+  "notJustSelling": {
+    "desc": "Mencari kereta Perodua? Saya sedia membantu dari awal hingga selesai!",
+    "items": [
+      { "title": "Sebut Harga & Anggaran Bayaran Bulanan" },
+      { "title": "Bantuan Permohonan Pinjaman Bank" },
+      { "title": "Semakan Nilai Trade-In Kereta" },
+      { "title": "Urusan Booking & Dokumentasi" },
+      { "title": "Kemaskini Status Kereta" },
+      { "title": "Bantuan Sehingga Serahan Kunci" }
+    ],
+    "closing": "Anda Pilih Kereta, Saya Uruskan Selebihnya!"
+  },
+  "footer": {
+    "role": "Perodua Sales Broker",
+    "disclaimer": "Sam membantu urusan pembelian kereta Perodua sebagai broker pihak ketiga, bekerjasama dengan Sales Advisor rasmi Perodua untuk proses pembelian."
+  }
+}

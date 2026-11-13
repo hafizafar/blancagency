@@ -1,0 +1,118 @@
+backend:
+  name: github
+  repo: hafizafar/blancagency
+  branch: main
+  base_url: https://REPLACE-WITH-YOUR-OAUTH-PROXY-SITE.netlify.app
+  auth_endpoint: .netlify/functions/auth
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blanc"
+    label: "Blanc Agency — Laman Utama"
+    files:
+      - file: "content/blanc.json"
+        label: "Kandungan Laman Utama"
+        name: "blanc"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Badge (atas tajuk)", name: "badge", widget: "string" }
+              - { label: "Tajuk — Baris 1", name: "titleLine1", widget: "string" }
+              - { label: "Tajuk — Perkataan Aksen (warna gradient)", name: "titleAccent", widget: "string" }
+              - { label: "Tajuk — Baris 2", name: "titleLine2", widget: "string" }
+              - { label: "Sub-tajuk", name: "sub", widget: "text" }
+          - label: "Perkhidmatan"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Ikon (satu simbol, cth: ✦)", name: "icon", widget: "string" }
+              - { label: "Tajuk", name: "title", widget: "string" }
+              - { label: "Penerangan", name: "desc", widget: "text" }
+              - { label: "Senarai", name: "list", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+          - label: "Tentang Kami"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Perenggan 1", name: "text1", widget: "text" }
+              - { label: "Perenggan 2", name: "text2", widget: "text" }
+              - label: "Statistik"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "Nombor", name: "number", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+              - label: "Pillars (Nilai Kami)"
+                name: "pillars"
+                widget: "list"
+                fields:
+                  - { label: "Ikon (satu simbol)", name: "icon", widget: "string" }
+                  - { label: "Tajuk", name: "title", widget: "string" }
+                  - { label: "Penerangan", name: "desc", widget: "text" }
+          - label: "Proses Kerja"
+            name: "process"
+            widget: "list"
+            fields:
+              - { label: "Tajuk", name: "title", widget: "string" }
+              - { label: "Penerangan", name: "desc", widget: "text" }
+          - label: "Soalan Lazim (FAQ)"
+            name: "faq"
+            widget: "list"
+            fields:
+              - { label: "Soalan", name: "question", widget: "string" }
+              - { label: "Jawapan", name: "answer", widget: "text" }
+          - label: "Hubungi Kami"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Penerangan", name: "desc", widget: "text" }
+
+  - name: "sam"
+    label: "Sam — Laman Perodua"
+    files:
+      - file: "content/perodua.json"
+        label: "Kandungan Laman Sam"
+        name: "sam"
+        fields:
+          - { label: "Nama", name: "name", widget: "string", hint: "Papar di wordmark, tajuk & label butang WhatsApp" }
+          - { label: "Nombor WhatsApp", name: "whatsapp", widget: "string", hint: "Format: 60176121586 — tiada + atau simbol lain" }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow (atas tajuk)", name: "eyebrow", widget: "string" }
+              - { label: "Ayat Utama", name: "lead", widget: "text" }
+              - { label: "Nota (bawah butang WhatsApp)", name: "note", widget: "string" }
+          - { label: "Model Kereta", name: "models", widget: "list", field: { label: "Model", name: "model", widget: "string" } }
+          - label: "Kenapa Pilih Sam"
+            name: "whyChoose"
+            widget: "object"
+            fields:
+              - { label: "Penerangan", name: "desc", widget: "string" }
+              - label: "Senarai"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Tajuk", name: "title", widget: "string" }
+                  - { label: "Penerangan (opsyenal)", name: "desc", widget: "string", required: false }
+          - label: "Bukan Sekadar Jual Kereta"
+            name: "notJustSelling"
+            widget: "object"
+            fields:
+              - { label: "Penerangan", name: "desc", widget: "string" }
+              - label: "Senarai"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Tajuk", name: "title", widget: "string" }
+                  - { label: "Penerangan (opsyenal)", name: "desc", widget: "string", required: false }
+              - { label: "Ayat Penutup", name: "closing", widget: "string" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Jawatan (cth: Perodua Sales Broker)", name: "role", widget: "string" }
+              - { label: "Disclaimer", name: "disclaimer", widget: "text" }
