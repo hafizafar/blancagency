@@ -2,6 +2,12 @@
    SAM — PERODUA PAGE — Content Renderer (reads content/perodua.json)
    ============================================================ */
 
+/* TODO: replace with the real Formspree form ID once created
+   (formspree.io -> New Form, under the same account Blanc Agency
+   already uses). Until then, lead emails won't actually send —
+   the WhatsApp fallback still works regardless. */
+var FORMSPREE_FORM_ID = "REPLACE_WITH_SAM_FORMSPREE_ID";
+
 function escHtml(str) {
   return String(str == null ? "" : str).replace(/[&<>"']/g, function (c) {
     return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
@@ -33,14 +39,83 @@ function checklistItemHTML(item) {
   );
 }
 
+function composeWaMessage(name, phone, model) {
+  return (
+    "Hi, saya " + name + " (" + phone + "). " +
+    "Saya berminat dengan Perodua " + model + ", boleh bantu saya semak harga & monthly?"
+  );
+}
+
+function submitLeadAndOpenWhatsApp(waNumber, payload) {
+  var waLink = "https://wa.me/" + waNumber + "?text=" + encodeURIComponent(composeWaMessage(payload.name, payload.phone, payload.model));
+
+  if (FORMSPREE_FORM_ID && FORMSPREE_FORM_ID.indexOf("REPLACE_WITH") !== 0) {
+    var formData = new FormData();
+    Object.keys(payload).forEach(function (k) { formData.append(k, payload[k]); });
+    fetch("https://formspree.io/f/" + FORMSPREE_FORM_ID, {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: formData,
+    }).catch(function () {});
+  }
+
+  window.open(waLink, "_blank");
+}
+
+function wireCtaModal(waNumber, models) {
+  var modal = document.getElementById("cta-modal");
+  var form = document.getElementById("cta-modal-form");
+  if (!modal || !form) return;
+
+  var modelSelect = document.getElementById("cta-modal-model");
+  var ctaInput = document.getElementById("cta-modal-cta");
+
+  var modelOptions = '<option value="">Pilih model</option>' +
+    (models || []).map(function (m) { return '<option value="' + escHtml(m) + '">' + escHtml(m) + "</option>"; }).join("") +
+    '<option value="Lain-lain / Belum Pasti">Lain-lain / Belum Pasti</option>';
+
+  function openModal(ctaLabel) {
+    ctaInput.value = ctaLabel || "";
+    modelSelect.innerHTML = modelOptions;
+    modal.classList.add("cta-modal-active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.remove("cta-modal-active");
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".js-wa-link").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      openModal(a.getAttribute("data-cta") || "");
+    });
+  });
+
+  document.getElementById("cta-modal-close").addEventListener("click", closeModal);
+  document.getElementById("cta-modal-overlay").addEventListener("click", closeModal);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.classList.contains("cta-modal-active")) closeModal();
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = form.querySelector('[name="name"]').value.trim();
+    var phone = form.querySelector('[name="phone"]').value.trim();
+    var model = form.querySelector('[name="model"]').value.trim();
+
+    submitLeadAndOpenWhatsApp(waNumber, { name: name, phone: phone, model: model, cta: ctaInput.value });
+    form.reset();
+    closeModal();
+  });
+}
+
 fetch("/content/perodua.json")
   .then(function (res) { return res.json(); })
   .then(function (data) {
     var name = data.name || "Sam";
     var waNumber = data.whatsapp || "";
-    var greetingMsg = encodeURIComponent(data.whatsappMessage || ("Hi " + name + ", saya berminat nak tahu lanjut pasal kereta Perodua"));
-    var greetingHref = "https://wa.me/" + waNumber + "?text=" + greetingMsg;
-    var plainHref = "https://wa.me/" + waNumber;
 
     setText("wordmark-name", name.toUpperCase());
     document.title = name + " — Perodua Sales Broker | Cari Kereta, Cari " + name + "!";
@@ -56,9 +131,8 @@ fetch("/content/perodua.json")
     var bannerRoleEl = document.getElementById("banner-role");
     if (bannerRoleEl && data.footer && data.footer.role) bannerRoleEl.textContent = data.footer.role;
 
-    document.querySelectorAll(".js-wa-link").forEach(function (a) {
-      a.href = a.dataset.waText === "plain" ? plainHref : greetingHref;
-    });
+    wireCtaModal(waNumber, data.models);
+    setText("cta-modal-sub", "Lengkapkan maklumat ni, terus disambungkan ke WhatsApp " + name + ".");
 
     setText("wa-label-1", "WhatsApp " + name);
     ["wa-label-2", "wa-label-3", "wa-label-4"].forEach(function (id) { setText(id, "WhatsApp " + name + " Sekarang"); });

@@ -161,11 +161,11 @@ header.site-header .wrap { display: flex; align-items: center; justify-content: 
 .promise-box p { margin: 0; font-size: 0.95rem; color: var(--ink-soft); line-height: 1.6; }
 
 .section-head-sticker { position: relative; }
-.section-sticker { width: 86px; margin: 0 auto 4px; }
+.section-sticker { width: 92px; margin: 0 auto 4px; }
 
-.final-cta-sticker { width: 100px; margin: 0 auto 8px; }
+.final-cta-sticker { width: 104px; margin: 0 auto 8px; }
 
-.footer-sticker { width: 110px; margin: 0 auto 6px; }
+.footer-sticker { width: 148px; margin: 0 auto 6px; }
 
 .final-cta {
   background: var(--navy);
@@ -196,3 +196,77 @@ footer.site-footer .footer-disclaimer { font-size: 0.72rem; color: var(--muted);
 }
 .sticky-cta .btn-whatsapp { width: 100%; max-width: 420px; justify-content: center; padding: 13px 20px; }
 body { padding-bottom: 64px; }
+
+.cta-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+}
+.cta-modal.cta-modal-active { opacity: 1; visibility: visible; }
+.cta-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(18,23,43,0.6);
+  backdrop-filter: blur(2px);
+}
+.cta-modal-panel {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: clamp(24px, 5vw, 32px);
+  transform: translateY(10px);
+  transition: transform 0.2s ease;
+}
+.cta-modal.cta-modal-active .cta-modal-panel { transform: translateY(0); }
+.cta-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: var(--canvas);
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cta-modal-panel h3 { margin: 0 0 6px; font-size: 1.15rem; font-weight: 800; padding-right: 24px; color: var(--ink); }
+.cta-modal-sub { margin: 0 0 20px; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+
+.field { margin-bottom: 14px; }
+.field label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--ink-soft); margin-bottom: 6px; }
+.field input,
+.field select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm, 10px);
+  font-size: 0.92rem;
+  font-family: inherit;
+  color: var(--ink);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  background: var(--canvas);
+}
+.field select { appearance: auto; }
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px var(--brand-tint);
+}
+.btn-block { width: 100%; justify-content: center; }

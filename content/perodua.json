@@ -7,7 +7,6 @@
     "lead": "Sedang cari kereta baru yang sesuai? Saya boleh bantu anda dari A sampai Z — pilih model, semak kelayakan loan & urusan pendaftaran.",
     "note": "Survey dulu pun boleh. Tiada tekanan untuk terus booking."
   },
-  "whatsappMessage": "Hi Sam, saya berminat nak tahu lanjut pasal kereta Perodua",
   "models": ["Axia", "Bezza", "Myvi", "Ativa", "Alza", "Aruz", "Traz"],
   "whyChoose": {
     "desc": "Saya sedia membantu dari A–Z, klu commitment tinggi ke CTOS.",

@@ -79,7 +79,6 @@ collections:
         fields:
           - { label: "Nama", name: "name", widget: "string", hint: "Papar di wordmark, tajuk & label butang WhatsApp" }
           - { label: "Nombor WhatsApp", name: "whatsapp", widget: "string", hint: "Format: 60176121586 — tiada + atau simbol lain" }
-          - { label: "Mesej WhatsApp Automatik", name: "whatsappMessage", widget: "string", hint: "Mesej yang terus diisi bila pelanggan tekan butang WhatsApp" }
           - { label: "Gambar Banner (Atas Laman)", name: "photo", widget: "image", required: false, hint: "Papar sebagai banner penuh di bahagian paling atas laman, dengan nama & jawatan Sam di atasnya" }
           - label: "Hero"
             name: "hero"
