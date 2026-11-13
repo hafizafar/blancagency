@@ -2,12 +2,6 @@
    SAM — PERODUA PAGE — Content Renderer (reads content/perodua.json)
    ============================================================ */
 
-/* TODO: replace with the real Formspree form ID once created
-   (formspree.io -> New Form, under the same account Blanc Agency
-   already uses). Until then, lead emails won't actually send —
-   the WhatsApp fallback still works regardless. */
-var FORMSPREE_FORM_ID = "REPLACE_WITH_SAM_FORMSPREE_ID";
-
 function escHtml(str) {
   return String(str == null ? "" : str).replace(/[&<>"']/g, function (c) {
     return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
@@ -49,15 +43,14 @@ function composeWaMessage(name, phone, model) {
 function submitLeadAndOpenWhatsApp(waNumber, payload) {
   var waLink = "https://wa.me/" + waNumber + "?text=" + encodeURIComponent(composeWaMessage(payload.name, payload.phone, payload.model));
 
-  if (FORMSPREE_FORM_ID && FORMSPREE_FORM_ID.indexOf("REPLACE_WITH") !== 0) {
-    var formData = new FormData();
-    Object.keys(payload).forEach(function (k) { formData.append(k, payload[k]); });
-    fetch("https://formspree.io/f/" + FORMSPREE_FORM_ID, {
-      method: "POST",
-      headers: { Accept: "application/json" },
-      body: formData,
-    }).catch(function () {});
-  }
+  var body = new URLSearchParams({ "form-name": "sam-lead-form" });
+  Object.keys(payload).forEach(function (k) { body.append(k, payload[k]); });
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: body.toString(),
+    keepalive: true,
+  }).catch(function () {});
 
   window.open(waLink, "_blank");
 }

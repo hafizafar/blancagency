@@ -118,8 +118,10 @@
     <button type="button" class="cta-modal-close" id="cta-modal-close" aria-label="Tutup">&times;</button>
     <h3 id="cta-modal-title">Isi maklumat ringkas</h3>
     <p class="cta-modal-sub" id="cta-modal-sub">Lengkapkan maklumat ni, terus disambungkan ke WhatsApp Sam.</p>
-    <form id="cta-modal-form" name="sam-lead-form">
+    <form id="cta-modal-form" name="sam-lead-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="sam-lead-form">
       <input type="hidden" name="cta" id="cta-modal-cta" value="">
+      <p style="display:none;"><label>Jangan isi ini: <input name="bot-field"></label></p>
       <div class="field">
         <label for="cta-modal-name">Nama Penuh</label>
         <input type="text" id="cta-modal-name" name="name" placeholder="Nama anda" minlength="2" required>
