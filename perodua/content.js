@@ -37,12 +37,16 @@ fetch("/content/perodua.json")
     setText("wordmark-name", name.toUpperCase());
     document.title = name + " — Perodua Sales Broker | Cari Kereta, Cari " + name + "!";
 
-    var photoEl = document.getElementById("header-photo");
-    if (photoEl && data.photo) {
-      photoEl.src = data.photo;
-      photoEl.alt = name;
-      photoEl.hidden = false;
+    var heroPhotoEl = document.getElementById("hero-photo");
+    var heroBannerWrapEl = document.getElementById("hero-banner-wrap");
+    if (heroPhotoEl && heroBannerWrapEl && data.photo) {
+      heroPhotoEl.src = data.photo;
+      heroPhotoEl.alt = name;
+      heroBannerWrapEl.hidden = false;
     }
+    setText("banner-name", name.toUpperCase());
+    var bannerRoleEl = document.getElementById("banner-role");
+    if (bannerRoleEl && data.footer && data.footer.role) bannerRoleEl.textContent = data.footer.role;
 
     document.querySelectorAll(".js-wa-link").forEach(function (a) {
       a.href = a.dataset.waText === "plain" ? plainHref : greetingHref;

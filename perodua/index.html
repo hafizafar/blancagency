@@ -55,8 +55,6 @@
     color: #fff;
   }
   header.site-header .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; }
-  .header-brand { display: flex; align-items: center; gap: 10px; }
-  .header-photo { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; object-position: top center; border: 1.5px solid rgba(255,255,255,0.25); }
   .wordmark { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.01em; }
   .wordmark .accent { color: var(--brand); }
 
@@ -74,16 +72,60 @@
   .btn-whatsapp svg { width: 18px; height: 18px; }
   .btn-sm { padding: 9px 16px; font-size: 0.82rem; }
 
+  .hero-banner-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-banner {
+    display: block;
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    object-position: center 25%;
+  }
+  .hero-banner-caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 28px var(--gutter) 14px;
+    background: linear-gradient(to top, rgba(18,23,43,0.95) 0%, rgba(18,23,43,0.75) 55%, rgba(18,23,43,0) 100%);
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .hero-banner-name {
+    font-family: var(--font);
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 0.01em;
+    color: #fff;
+  }
+  .hero-banner-role {
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--brand);
+  }
+  .hero-banner-role::before { content: "— "; color: rgba(255,255,255,0.5); }
   .hero {
+    position: relative;
     background: linear-gradient(160deg, var(--navy) 0%, #1c2340 60%, var(--brand-dark) 140%);
     color: #fff;
-    padding: 64px 0 56px;
     text-align: center;
   }
+  .hero-content {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
   .hero-eyebrow {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    border-radius: 999px;
     font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-    color: #ffd9d9; opacity: 0.85; margin-bottom: 14px;
+    color: #ffd9d9; margin-bottom: 14px;
   }
   .hero h1 { font-size: clamp(1.9rem, 1.4rem + 2.2vw, 2.8rem); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 14px; }
   .hero h1 .accent { color: #ff6b6b; }
@@ -91,15 +133,17 @@
   .hero-cta { margin-bottom: 18px; }
   .hero-note { font-size: 0.78rem; color: rgba(255,255,255,0.6); }
 
-  .model-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 28px 0 0; }
-  .model-chip {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.18);
-    color: #fff;
-    font-size: 0.8rem; font-weight: 600;
-    padding: 7px 14px;
-    border-radius: 999px;
+  .model-strip {
+    margin: 26px 0 0;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.14);
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    color: rgba(255,255,255,0.55);
   }
+  .model-strip-label { text-transform: uppercase; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); display: block; margin-bottom: 6px; }
+  .model-chip { color: #fff; font-weight: 600; }
+  .model-chip:not(:last-child)::after { content: "·"; color: rgba(255,255,255,0.35); margin: 0 8px; font-weight: 400; }
 
   .section-head { text-align: center; max-width: 560px; margin: 0 auto 32px; }
   .eyebrow { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brand); margin-bottom: 8px; }
@@ -134,6 +178,13 @@
     text-align: center;
   }
   .promise-box p { margin: 0; font-size: 0.95rem; color: var(--ink-soft); line-height: 1.6; }
+
+  .section-head-sticker { position: relative; }
+  .section-sticker { width: 86px; margin: 0 auto 4px; }
+
+  .final-cta-sticker { width: 100px; margin: 0 auto 8px; }
+
+  .footer-sticker { width: 110px; margin: 0 auto 6px; }
 
   .final-cta {
     background: var(--navy);
@@ -170,10 +221,7 @@
 
 <header class="site-header">
   <div class="wrap">
-    <div class="header-brand">
-      <img class="header-photo" id="header-photo" src="" alt="" hidden>
-      <span class="wordmark"><span id="wordmark-name">SAM</span><span class="accent">.</span></span>
-    </div>
+    <span class="wordmark"><span id="wordmark-name">SAM</span><span class="accent">.</span></span>
     <a class="btn btn-whatsapp btn-sm js-wa-link" data-wa-text="greeting" href="#" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.48 1.34 5L2 22l5.17-1.36A9.96 9.96 0 0012.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.2c-1.6 0-3.17-.43-4.54-1.24l-.33-.2-3.07.8.82-3-.21-.34a8.19 8.19 0 01-1.27-4.38c0-4.53 3.68-8.21 8.21-8.21s8.21 3.68 8.21 8.21-3.68 8.21-8.21 8.21zm4.5-6.15c-.25-.12-1.46-.72-1.68-.8-.23-.08-.4-.12-.56.12-.17.25-.65.8-.79.96-.15.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.21-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01s-.44.06-.67.31c-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.6c.12.17 1.78 2.72 4.32 3.81.6.26 1.07.42 1.44.53.6.19 1.15.17 1.59.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
       <span id="wa-label-1">WhatsApp Sam</span>
@@ -181,8 +229,16 @@
   </div>
 </header>
 
+<div class="hero-banner-wrap" id="hero-banner-wrap" hidden>
+  <img class="hero-banner" id="hero-photo" src="" alt="">
+  <div class="hero-banner-caption">
+    <span class="hero-banner-name" id="banner-name">SAM</span>
+    <span class="hero-banner-role" id="banner-role">Perodua Sales Broker</span>
+  </div>
+</div>
+
 <section class="hero">
-  <div class="wrap">
+  <div class="wrap hero-content">
     <span class="hero-eyebrow" id="hero-eyebrow">Nak Beli Kereta Perodua?</span>
     <h1>Cari Kereta, <span class="accent" id="hero-name-accent">Cari Sam!</span></h1>
     <p class="lead" id="hero-lead">Sedang cari kereta baru yang sesuai? Saya boleh bantu anda dari A sampai Z — pilih model, semak kelayakan loan &amp; urusan pendaftaran.</p>
@@ -193,13 +249,17 @@
       </a>
     </div>
     <p class="hero-note" id="hero-note">Survey dulu pun boleh. Tiada tekanan untuk terus booking.</p>
-    <div class="model-strip" id="model-strip"></div>
+    <div class="model-strip">
+      <span class="model-strip-label">Model Tersedia</span>
+      <span id="model-strip"></span>
+    </div>
   </div>
 </section>
 
 <section class="section section-surface">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head section-head-sticker">
+      <img class="section-sticker" src="img/sam-sticker-car.png" alt="" aria-hidden="true">
       <span class="eyebrow" id="why-eyebrow">Kenapa Pilih Sam</span>
       <h2 class="section-title" id="why-title">Why Choose Sam?</h2>
       <p class="section-desc" id="why-desc">Saya sedia membantu dari A–Z, klu commitment tinggi ke CTOS.</p>
@@ -224,6 +284,7 @@
 
 <section class="final-cta">
   <div class="wrap">
+    <img class="final-cta-sticker" src="img/sam-sticker-key.png" alt="" aria-hidden="true">
     <h2>Nak Tahu Harga &amp; Monthly Awak?</h2>
     <p id="final-cta-sub">Chat terus dengan Sam di WhatsApp — survey dulu pun boleh.</p>
     <a class="btn btn-whatsapp js-wa-link" data-wa-text="greeting" href="#" target="_blank" rel="noopener">
@@ -235,6 +296,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
+    <img class="footer-sticker" src="img/sam-sticker-standing.png" alt="" aria-hidden="true">
     <div class="footer-name" id="footer-name">Sam</div>
     <div class="footer-role" id="footer-role">Perodua Sales Broker</div>
     <a class="btn btn-whatsapp btn-sm js-wa-link" data-wa-text="plain" href="#" target="_blank" rel="noopener" id="footer-wa-number">+60 17-612 1586</a>
