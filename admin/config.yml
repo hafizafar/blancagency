@@ -79,6 +79,7 @@ collections:
         fields:
           - { label: "Nama", name: "name", widget: "string", hint: "Papar di wordmark, tajuk & label butang WhatsApp" }
           - { label: "Nombor WhatsApp", name: "whatsapp", widget: "string", hint: "Format: 60176121586 — tiada + atau simbol lain" }
+          - { label: "Gambar (Header)", name: "photo", widget: "image", required: false, hint: "Papar sebagai gambar bulat kecil di header" }
           - label: "Hero"
             name: "hero"
             widget: "object"

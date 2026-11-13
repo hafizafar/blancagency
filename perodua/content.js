@@ -37,6 +37,13 @@ fetch("/content/perodua.json")
     setText("wordmark-name", name.toUpperCase());
     document.title = name + " — Perodua Sales Broker | Cari Kereta, Cari " + name + "!";
 
+    var photoEl = document.getElementById("header-photo");
+    if (photoEl && data.photo) {
+      photoEl.src = data.photo;
+      photoEl.alt = name;
+      photoEl.hidden = false;
+    }
+
     document.querySelectorAll(".js-wa-link").forEach(function (a) {
       a.href = a.dataset.waText === "plain" ? plainHref : greetingHref;
     });
