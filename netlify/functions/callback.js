@@ -1,5 +1,6 @@
 exports.handler = async (event) => {
   const { code, state } = event.queryStringParameters || {};
+  const host = (event.headers || {})["x-forwarded-host"] || (event.headers || {}).host;
 
   let targetOrigin = "*";
   if (state) {
@@ -24,7 +25,7 @@ exports.handler = async (event) => {
         client_id: process.env.OAUTH_CLIENT_ID,
         client_secret: process.env.OAUTH_CLIENT_SECRET,
         code,
-        redirect_uri: process.env.URL + "/.netlify/functions/callback",
+        redirect_uri: (host ? "https://" + host : process.env.URL) + "/.netlify/functions/callback",
       }),
     });
     tokenData = await tokenRes.json();

@@ -13,7 +13,10 @@ exports.handler = async (event) => {
     JSON.stringify({ n: crypto.randomBytes(8).toString("hex"), o: origin })
   ).toString("base64url");
 
-  const redirectUri = process.env.URL + "/.netlify/functions/callback";
+  // Build the callback from the host this request arrived on, so the login
+  // popup stays on the same origin as admin/config.yml's base_url.
+  const host = (event.headers || {})["x-forwarded-host"] || (event.headers || {}).host;
+  const redirectUri = (host ? "https://" + host : process.env.URL) + "/.netlify/functions/callback";
 
   const params = new URLSearchParams({
     client_id: clientId,

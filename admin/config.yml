@@ -2,7 +2,7 @@ backend:
   name: github
   repo: hafizafar/blancagency
   branch: main
-  base_url: https://blancky.netlify.app
+  base_url: https://blanc.my
   auth_endpoint: .netlify/functions/auth
 
 media_folder: "uploads"
