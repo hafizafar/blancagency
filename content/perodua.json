@@ -7,6 +7,7 @@
     "lead": "Sedang cari kereta baru yang sesuai? Saya boleh bantu anda dari A sampai Z — pilih model, semak kelayakan loan & urusan pendaftaran.",
     "note": "Survey dulu pun boleh. Tiada tekanan untuk terus booking."
   },
+  "whatsappMessage": "Hi Sam, saya berminat nak tahu lanjut pasal kereta Perodua",
   "models": ["Axia", "Bezza", "Myvi", "Ativa", "Alza", "Aruz", "Traz"],
   "whyChoose": {
     "desc": "Saya sedia membantu dari A–Z, klu commitment tinggi ke CTOS.",
@@ -19,6 +20,8 @@
     ]
   },
   "notJustSelling": {
+    "eyebrow": "Komited Bantu Awak",
+    "title": "Bukan Sekadar Jual Kereta.",
     "desc": "Mencari kereta Perodua? Saya sedia membantu dari awal hingga selesai!",
     "items": [
       { "title": "Sebut Harga & Anggaran Bayaran Bulanan" },
@@ -33,5 +36,13 @@
   "footer": {
     "role": "Perodua Sales Broker",
     "disclaimer": "Sam membantu urusan pembelian kereta Perodua sebagai broker pihak ketiga, bekerjasama dengan Sales Advisor rasmi Perodua untuk proses pembelian."
+  },
+  "finalCta": {
+    "title": "Nak Tahu Harga & Monthly Awak?"
+  },
+  "stickers": {
+    "whyChoose": "/perodua/img/sam-sticker-car.png",
+    "finalCta": "/perodua/img/sam-sticker-key.png",
+    "footer": "/perodua/img/sam-sticker-standing.png"
   }
 }

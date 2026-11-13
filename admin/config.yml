@@ -79,7 +79,8 @@ collections:
         fields:
           - { label: "Nama", name: "name", widget: "string", hint: "Papar di wordmark, tajuk & label butang WhatsApp" }
           - { label: "Nombor WhatsApp", name: "whatsapp", widget: "string", hint: "Format: 60176121586 — tiada + atau simbol lain" }
-          - { label: "Gambar (Header)", name: "photo", widget: "image", required: false, hint: "Papar sebagai gambar bulat kecil di header" }
+          - { label: "Mesej WhatsApp Automatik", name: "whatsappMessage", widget: "string", hint: "Mesej yang terus diisi bila pelanggan tekan butang WhatsApp" }
+          - { label: "Gambar Banner (Atas Laman)", name: "photo", widget: "image", required: false, hint: "Papar sebagai banner penuh di bahagian paling atas laman, dengan nama & jawatan Sam di atasnya" }
           - label: "Hero"
             name: "hero"
             widget: "object"
@@ -103,6 +104,8 @@ collections:
             name: "notJustSelling"
             widget: "object"
             fields:
+              - { label: "Eyebrow (label kecil atas tajuk)", name: "eyebrow", widget: "string" }
+              - { label: "Tajuk", name: "title", widget: "string" }
               - { label: "Penerangan", name: "desc", widget: "string" }
               - label: "Senarai"
                 name: "items"
@@ -117,3 +120,16 @@ collections:
             fields:
               - { label: "Jawatan (cth: Perodua Sales Broker)", name: "role", widget: "string" }
               - { label: "Disclaimer", name: "disclaimer", widget: "text" }
+          - label: "Bahagian CTA Akhir"
+            name: "finalCta"
+            widget: "object"
+            fields:
+              - { label: "Tajuk", name: "title", widget: "string" }
+          - label: "Ilustrasi Hiasan (Opsyenal)"
+            name: "stickers"
+            widget: "object"
+            hint: "Kosongkan mana-mana untuk sembunyikan ilustrasi di bahagian tu"
+            fields:
+              - { label: "Ilustrasi — Kenapa Pilih Sam", name: "whyChoose", widget: "image", required: false }
+              - { label: "Ilustrasi — CTA Akhir", name: "finalCta", widget: "image", required: false }
+              - { label: "Ilustrasi — Footer", name: "footer", widget: "image", required: false }

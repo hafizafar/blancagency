@@ -17,6 +17,14 @@ function modelChipHTML(name) {
   return '<span class="model-chip">' + escHtml(name) + "</span>";
 }
 
+function showImg(id, src) {
+  var el = document.getElementById(id);
+  if (el && src) {
+    el.src = src;
+    el.hidden = false;
+  }
+}
+
 function checklistItemHTML(item) {
   return (
     "<li><span class=\"tick\">✓</span><div class=\"body\"><strong>" + escHtml(item.title) + "</strong>" +
@@ -30,7 +38,7 @@ fetch("/content/perodua.json")
   .then(function (data) {
     var name = data.name || "Sam";
     var waNumber = data.whatsapp || "";
-    var greetingMsg = encodeURIComponent("Hi " + name + ", saya berminat nak tahu lanjut pasal kereta Perodua");
+    var greetingMsg = encodeURIComponent(data.whatsappMessage || ("Hi " + name + ", saya berminat nak tahu lanjut pasal kereta Perodua"));
     var greetingHref = "https://wa.me/" + waNumber + "?text=" + greetingMsg;
     var plainHref = "https://wa.me/" + waNumber;
 
@@ -72,12 +80,21 @@ fetch("/content/perodua.json")
     if (whyList && why.items) whyList.innerHTML = why.items.map(checklistItemHTML).join("");
 
     var njs = data.notJustSelling || {};
+    setText("njs-eyebrow", njs.eyebrow);
+    setText("njs-title", njs.title);
     setText("njs-desc", njs.desc);
     var njsList = document.getElementById("njs-list");
     if (njsList && njs.items) njsList.innerHTML = njs.items.map(checklistItemHTML).join("");
     setText("njs-closing", njs.closing);
 
+    var finalCta = data.finalCta || {};
+    setText("final-cta-title", finalCta.title);
     setText("final-cta-sub", "Chat terus dengan " + name + " di WhatsApp — survey dulu pun boleh.");
+
+    var stickers = data.stickers || {};
+    showImg("why-sticker", stickers.whyChoose);
+    showImg("final-cta-sticker", stickers.finalCta);
+    showImg("footer-sticker", stickers.footer);
 
     var footer = data.footer || {};
     setText("footer-name", name);
