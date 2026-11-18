@@ -1,2 +1,29 @@
 [functions]
   directory = "netlify/functions"
+
+# ── sam.blanc.my ─────────────────────────────────────────────
+# Serve Sam's page at the root of sam.blanc.my (URL stays the same).
+[[redirects]]
+  from = "https://sam.blanc.my/"
+  to = "/perodua/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://sam.blanc.my/favicon.ico"
+  to = "/perodua/favicon.ico"
+  status = 200
+  force = true
+
+# Old address -> new address (one URL for Google, no duplicate page).
+[[redirects]]
+  from = "https://blanc.my/perodua"
+  to = "https://sam.blanc.my/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://blanc.my/perodua/"
+  to = "https://sam.blanc.my/"
+  status = 301
+  force = true

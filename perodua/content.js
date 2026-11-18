@@ -69,7 +69,7 @@ function submitLeadAndOpenWhatsApp(waNumber, payload) {
 
   var body = new URLSearchParams({ "form-name": "sam-lead-form" });
   Object.keys(payload).forEach(function (k) { body.append(k, payload[k]); });
-  fetch("/", {
+  fetch("/perodua/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: body.toString(),
