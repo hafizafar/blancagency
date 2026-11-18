@@ -169,7 +169,6 @@ fetch("/content/perodua.json")
     var waNumber = data.whatsapp || "";
 
     setText("wordmark-name", name.toUpperCase());
-    document.title = name + " — Perodua Sales Broker | Cari Kereta, Cari " + name + "!";
 
     wireStickyBar();
 
