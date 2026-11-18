@@ -86,7 +86,9 @@ collections:
             fields:
               - { label: "Eyebrow (atas tajuk)", name: "eyebrow", widget: "string" }
               - { label: "Ayat Utama", name: "lead", widget: "text" }
-              - { label: "Nota (bawah butang WhatsApp)", name: "note", widget: "string" }
+              - { label: "Teks Butang Kedua (pergi ke harga monthly)", name: "secondaryButton", widget: "string", required: false, hint: "Kosongkan untuk sembunyikan butang ini" }
+              - { label: "Nota (bawah butang)", name: "note", widget: "string", required: false }
+              - { label: "Poin Kepercayaan (bawah nota)", name: "points", widget: "list", required: false, hint: "Ayat pendek 2-4 patah perkataan, cth: Semak harga & monthly", field: { label: "Poin", name: "point", widget: "string" } }
           - { label: "Model Kereta", name: "models", widget: "list", field: { label: "Model", name: "model", widget: "string" } }
           - label: "Kira Monthly (Harga Anggaran)"
             name: "monthly"
@@ -103,6 +105,7 @@ collections:
                   - { label: "Model", name: "model", widget: "string" }
                   - { label: "Bayaran Bulanan (RM, nombor sahaja)", name: "monthly", widget: "string", hint: "Cth: 475" }
                   - { label: "Butiran (opsyenal)", name: "detail", widget: "string", required: false, hint: "Cth: Deposit RM 0 · Full Loan" }
+              - { label: "Disclaimer / Penafian (tulisan kecil bawah kad harga)", name: "disclaimer", widget: "text", required: false, hint: "Cth: *Anggaran bulanan berdasarkan ... Kosongkan untuk sembunyikan" }
               - { label: "Nota (atas butang)", name: "note", widget: "string", required: false }
               - { label: "Teks Butang", name: "buttonMain", widget: "string" }
               - { label: "Teks Kecil Butang", name: "buttonSub", widget: "string", required: false }
@@ -117,9 +120,10 @@ collections:
                 fields:
                   - { label: "Tajuk", name: "title", widget: "string" }
                   - { label: "Penerangan (opsyenal)", name: "desc", widget: "string", required: false }
-          - label: "Bukan Sekadar Jual Kereta"
+          - label: "Bukan Sekadar Jual Kereta (Langkah Proses)"
             name: "notJustSelling"
             widget: "object"
+            hint: "Dipapar sebagai langkah bernombor 1, 2, 3... ikut susunan senarai"
             fields:
               - { label: "Eyebrow (label kecil atas tajuk)", name: "eyebrow", widget: "string" }
               - { label: "Tajuk", name: "title", widget: "string" }
@@ -131,12 +135,26 @@ collections:
                   - { label: "Tajuk", name: "title", widget: "string" }
                   - { label: "Penerangan (opsyenal)", name: "desc", widget: "string", required: false }
               - { label: "Ayat Penutup", name: "closing", widget: "string" }
+          - label: "Soalan Lazim (FAQ)"
+            name: "faq"
+            widget: "object"
+            hint: "Kosongkan senarai untuk sembunyikan bahagian FAQ"
+            fields:
+              - { label: "Eyebrow (label kecil atas tajuk)", name: "eyebrow", widget: "string" }
+              - { label: "Tajuk", name: "title", widget: "string" }
+              - label: "Senarai Soalan"
+                name: "items"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Soalan", name: "question", widget: "string" }
+                  - { label: "Jawapan", name: "answer", widget: "text" }
           - label: "Footer"
             name: "footer"
             widget: "object"
             fields:
               - { label: "Jawatan (cth: Perodua Sales Broker)", name: "role", widget: "string" }
-              - { label: "Disclaimer", name: "disclaimer", widget: "text" }
+              - { label: "Disclaimer / Penafian (footer)", name: "disclaimer", widget: "text" }
           - label: "Bahagian CTA Akhir"
             name: "finalCta"
             widget: "object"

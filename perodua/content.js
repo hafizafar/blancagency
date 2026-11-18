@@ -13,10 +13,6 @@ function setText(id, val) {
   if (el && val != null) el.textContent = val;
 }
 
-function modelChipHTML(name) {
-  return '<span class="model-chip">' + escHtml(name) + "</span>";
-}
-
 function showImg(id, src) {
   var el = document.getElementById(id);
   if (el && src) {
@@ -33,14 +29,31 @@ function checklistItemHTML(item) {
   );
 }
 
+function pointHTML(text) {
+  return '<li><span class="tick">✓</span>' + escHtml(text) + "</li>";
+}
+
+function timelineItemHTML(item, i) {
+  return (
+    '<li><span class="step-num">' + (i + 1) + '</span><div class="body"><strong>' + escHtml(item.title) + "</strong>" +
+    (item.desc ? "<span>" + escHtml(item.desc) + "</span>" : "") +
+    "</div></li>"
+  );
+}
+
+function faqItemHTML(item) {
+  return '<details class="faq-item"><summary>' + escHtml(item.question) + "</summary><p>" + escHtml(item.answer) + "</p></details>";
+}
+
 function monthlyCardHTML(item) {
   return (
-    '<div class="price-scroll-card">' +
+    '<button type="button" class="price-scroll-card" data-model="' + escHtml(item.model) + '">' +
       "<h4>" + escHtml(item.model) + "</h4>" +
       '<span class="price-scroll-label">Anggaran</span>' +
       '<span class="price-scroll-amount">RM ' + escHtml(item.monthly) + "<small>/bulan*</small></span>" +
       (item.detail ? '<span class="price-scroll-deposit">' + escHtml(item.detail) + "</span>" : "") +
-    "</div>"
+      '<span class="price-scroll-ask">Tanya model ni &rarr;</span>' +
+    "</button>"
   );
 }
 
@@ -78,9 +91,10 @@ function wireCtaModal(waNumber, models) {
     (models || []).map(function (m) { return '<option value="' + escHtml(m) + '">' + escHtml(m) + "</option>"; }).join("") +
     '<option value="Lain-lain / Belum Pasti">Lain-lain / Belum Pasti</option>';
 
-  function openModal(ctaLabel) {
+  function openModal(ctaLabel, model) {
     ctaInput.value = ctaLabel || "";
     modelSelect.innerHTML = modelOptions;
+    if (model) modelSelect.value = model;
     modal.classList.add("cta-modal-active");
     document.body.style.overflow = "hidden";
   }
@@ -96,6 +110,16 @@ function wireCtaModal(waNumber, models) {
       openModal(a.getAttribute("data-cta") || "");
     });
   });
+
+  var monthlyTrackEl = document.getElementById("monthly-track");
+  if (monthlyTrackEl) {
+    monthlyTrackEl.addEventListener("click", function (e) {
+      var card = e.target.closest ? e.target.closest(".price-scroll-card") : null;
+      if (!card) return;
+      var model = card.getAttribute("data-model") || "";
+      openModal("Kira Monthly — " + model, model);
+    });
+  }
 
   document.getElementById("cta-modal-close").addEventListener("click", closeModal);
   document.getElementById("cta-modal-overlay").addEventListener("click", closeModal);
@@ -115,6 +139,29 @@ function wireCtaModal(waNumber, models) {
   });
 }
 
+function wireStickyBar() {
+  var bar = document.getElementById("sticky-cta");
+  var heroCta = document.querySelector(".hero-cta");
+  var finalCta = document.querySelector(".final-cta");
+  if (!bar || !heroCta || !("IntersectionObserver" in window)) {
+    if (bar) bar.classList.add("is-visible");
+    return;
+  }
+  var heroPassed = false, finalVisible = false;
+  function update() { bar.classList.toggle("is-visible", heroPassed && !finalVisible); }
+  new IntersectionObserver(function (entries) {
+    var en = entries[0];
+    heroPassed = !en.isIntersecting && en.boundingClientRect.top < 0;
+    update();
+  }).observe(heroCta);
+  if (finalCta) {
+    new IntersectionObserver(function (entries) {
+      finalVisible = entries[0].isIntersecting;
+      update();
+    }).observe(finalCta);
+  }
+}
+
 fetch("/content/perodua.json")
   .then(function (res) { return res.json(); })
   .then(function (data) {
@@ -123,6 +170,8 @@ fetch("/content/perodua.json")
 
     setText("wordmark-name", name.toUpperCase());
     document.title = name + " — Perodua Sales Broker | Cari Kereta, Cari " + name + "!";
+
+    wireStickyBar();
 
     var heroPhotoEl = document.getElementById("hero-photo");
     var heroBannerWrapEl = document.getElementById("hero-banner-wrap");
@@ -147,13 +196,19 @@ fetch("/content/perodua.json")
     setText("hero-lead", hero.lead);
     setText("hero-note", hero.note);
 
-    var modelStrip = document.getElementById("model-strip");
-    if (modelStrip && data.models) modelStrip.innerHTML = data.models.map(modelChipHTML).join("");
+    var heroPoints = document.getElementById("hero-points");
+    if (heroPoints && hero.points) heroPoints.innerHTML = hero.points.map(pointHTML).join("");
+    var heroSecondary = document.getElementById("hero-secondary");
+    if (heroSecondary) {
+      if (hero.secondaryButton) heroSecondary.firstChild.textContent = hero.secondaryButton + " ";
+      else heroSecondary.hidden = true;
+    }
 
     var monthly = data.monthly || {};
     setText("monthly-eyebrow", monthly.eyebrow);
     setText("monthly-title", monthly.title);
     setText("monthly-desc", monthly.desc);
+    setText("monthly-disclaimer", monthly.disclaimer);
     setText("monthly-note", monthly.note);
     setText("monthly-btn-main", monthly.buttonMain);
     setText("monthly-btn-sub", monthly.buttonSub);
@@ -172,8 +227,17 @@ fetch("/content/perodua.json")
     setText("njs-title", njs.title);
     setText("njs-desc", njs.desc);
     var njsList = document.getElementById("njs-list");
-    if (njsList && njs.items) njsList.innerHTML = njs.items.map(checklistItemHTML).join("");
+    if (njsList && njs.items) njsList.innerHTML = njs.items.map(timelineItemHTML).join("");
     setText("njs-closing", njs.closing);
+
+    var faq = data.faq || {};
+    var faqSection = document.getElementById("faq-section");
+    if (faqSection && faq.items && faq.items.length) {
+      faqSection.hidden = false;
+      setText("faq-eyebrow", faq.eyebrow);
+      setText("faq-title", faq.title);
+      document.getElementById("faq-list").innerHTML = faq.items.map(faqItemHTML).join("");
+    }
 
     var finalCta = data.finalCta || {};
     setText("final-cta-title", finalCta.title);

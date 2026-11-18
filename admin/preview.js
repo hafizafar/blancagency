@@ -118,9 +118,6 @@ function buildBlancPreviewHTML(data) {
 
 /* ---------------- Sam / Perodua page (content/perodua.json) ---------------- */
 
-function modelChipHTML(name) {
-  return '<span class="model-chip">' + esc(name) + "</span>";
-}
 function checklistItemHTML(item) {
   return (
     "<li><span class=\"tick\">✓</span><div class=\"body\"><strong>" + esc(item.title) + "</strong>" +
@@ -131,12 +128,20 @@ function checklistItemHTML(item) {
 
 function monthlyCardHTML(item) {
   return (
-    '<div class="price-scroll-card">' +
+    '<button type="button" class="price-scroll-card">' +
       "<h4>" + esc(item.model) + "</h4>" +
       '<span class="price-scroll-label">Anggaran</span>' +
       '<span class="price-scroll-amount">RM ' + esc(item.monthly) + "<small>/bulan*</small></span>" +
       (item.detail ? '<span class="price-scroll-deposit">' + esc(item.detail) + "</span>" : "") +
-    "</div>"
+      '<span class="price-scroll-ask">Tanya model ni &rarr;</span>' +
+    "</button>"
+  );
+}
+
+function timelineItemHTML(item, i) {
+  return (
+    '<li><span class="step-num">' + (i + 1) + '</span><div class="body"><strong>' + esc(item.title) + "</strong>" +
+    (item.desc ? "<span>" + esc(item.desc) + "</span>" : "") + "</div></li>"
   );
 }
 
@@ -146,9 +151,14 @@ function buildSamPreviewHTML(data) {
   var monthly = data.monthly || {};
   var why = data.whyChoose || {};
   var njs = data.notJustSelling || {};
+  var faq = data.faq || {};
   var footer = data.footer || {};
   var finalCta = data.finalCta || {};
   var stickers = data.stickers || {};
+  var points = (hero.points || []).map(function (t) { return '<li><span class="tick">✓</span>' + esc(t) + "</li>"; }).join("");
+  var faqItems = (faq.items || []).map(function (it) {
+    return '<details class="faq-item"><summary>' + esc(it.question) + "</summary><p>" + esc(it.answer) + "</p></details>";
+  }).join("");
 
   return (
     '<header class="site-header" style="position:relative;">' +
@@ -157,21 +167,21 @@ function buildSamPreviewHTML(data) {
         '<a class="btn btn-whatsapp btn-sm">WhatsApp ' + esc(name) + "</a>" +
       "</div>" +
     "</header>" +
-    (data.photo
-      ? '<div class="hero-banner-wrap"><img class="hero-banner" src="' + esc(data.photo) + '" alt="">' +
-        '<div class="hero-banner-caption"><span class="hero-banner-name">' + esc(name.toUpperCase()) + '</span>' +
-        '<span class="hero-banner-role">' + esc(footer.role || "") + "</span></div></div>"
-      : "") +
     '<section class="hero">' +
+      (data.photo
+        ? '<div class="hero-photo-wrap"><img class="hero-photo" src="' + esc(data.photo) + '" alt="">' +
+          '<div class="hero-photo-fade"></div>' +
+          '<div class="hero-badge"><span class="hero-badge-dot"></span><span class="hero-badge-name">' + esc(name.toUpperCase()) + '</span>' +
+          '<span class="hero-badge-role">' + esc(footer.role || "") + "</span></div></div>"
+        : "") +
       '<div class="wrap hero-content">' +
         '<span class="hero-eyebrow">' + esc(hero.eyebrow) + "</span>" +
         "<h1>Cari Kereta, <span class=\"accent\">Cari " + esc(name) + "!</span></h1>" +
         '<p class="lead">' + esc(hero.lead) + "</p>" +
-        '<div class="hero-cta"><a class="btn btn-whatsapp">WhatsApp ' + esc(name) + " Sekarang</a></div>" +
-        '<p class="hero-note">' + esc(hero.note) + "</p>" +
-        '<div class="model-strip"><span class="model-strip-label">Model Tersedia</span><span>' +
-          (data.models || []).map(modelChipHTML).join("") +
-        "</span></div>" +
+        '<div class="hero-cta"><a class="btn btn-whatsapp btn-lg">WhatsApp ' + esc(name) + " Sekarang</a>" +
+          (hero.secondaryButton ? '<a class="btn btn-ghost btn-lg">' + esc(hero.secondaryButton) + " ↓</a>" : "") + "</div>" +
+        (hero.note ? '<p class="hero-note">' + esc(hero.note) + "</p>" : "") +
+        (points ? '<ul class="hero-points">' + points + "</ul>" : "") +
       "</div>" +
     "</section>" +
     '<section class="section section-surface kira-monthly-section">' +
@@ -182,11 +192,12 @@ function buildSamPreviewHTML(data) {
           '<p class="section-desc">' + esc(monthly.desc) + "</p>" +
         "</div>" +
         '<div class="price-scroll"><div class="price-scroll-track">' + (monthly.items || []).map(monthlyCardHTML).join("") + "</div></div>" +
+        (monthly.disclaimer ? '<p class="monthly-disclaimer">' + esc(monthly.disclaimer) + "</p>" : "") +
         (monthly.note ? '<p class="monthly-note">' + esc(monthly.note) + "</p>" : "") +
         '<p class="monthly-cta"><a class="btn btn-brand btn-stack"><span class="btn-stack-main">' + esc(monthly.buttonMain) + '</span><span class="btn-stack-sub">' + esc(monthly.buttonSub) + "</span></a></p>" +
       "</div>" +
     "</section>" +
-    '<section class="section section-surface">' +
+    '<section class="section">' +
       '<div class="wrap">' +
         '<div class="section-head">' +
           (stickers.whyChoose ? '<img class="section-sticker" src="' + esc(stickers.whyChoose) + '" alt="">' : "") +
@@ -197,23 +208,26 @@ function buildSamPreviewHTML(data) {
         '<ul class="checklist-grid">' + (why.items || []).map(checklistItemHTML).join("") + "</ul>" +
       "</div>" +
     "</section>" +
-    '<section class="section">' +
+    '<section class="section section-surface">' +
       '<div class="wrap">' +
         '<div class="section-head">' +
           '<span class="eyebrow">' + esc(njs.eyebrow) + "</span>" +
           '<h2 class="section-title">' + esc(njs.title) + "</h2>" +
           '<p class="section-desc">' + esc(njs.desc) + "</p>" +
         "</div>" +
-        '<ul class="checklist-grid">' + (njs.items || []).map(checklistItemHTML).join("") + "</ul>" +
-        '<div class="promise-box" style="margin-top:28px;"><p>' + esc(njs.closing) + "</p></div>" +
+        '<ol class="timeline">' + (njs.items || []).map(timelineItemHTML).join("") + "</ol>" +
+        '<div class="promise-box"><p>' + esc(njs.closing) + "</p></div>" +
       "</div>" +
     "</section>" +
+    (faqItems
+      ? '<section class="section"><div class="wrap"><div class="section-head"><span class="eyebrow">' + esc(faq.eyebrow) + '</span><h2 class="section-title">' + esc(faq.title) + '</h2></div><div class="faq-list">' + faqItems + "</div></div></section>"
+      : "") +
     '<section class="final-cta">' +
       '<div class="wrap">' +
         (stickers.finalCta ? '<img class="final-cta-sticker" src="' + esc(stickers.finalCta) + '" alt="">' : "") +
         "<h2>" + esc(finalCta.title) + "</h2>" +
         "<p>Chat terus dengan " + esc(name) + " di WhatsApp — survey dulu pun boleh.</p>" +
-        '<a class="btn btn-whatsapp">WhatsApp ' + esc(name) + " Sekarang</a>" +
+        '<a class="btn btn-whatsapp btn-lg">WhatsApp ' + esc(name) + " Sekarang</a>" +
       "</div>" +
     "</section>" +
     '<footer class="site-footer">' +
@@ -247,5 +261,6 @@ var SamPreview = createClass({
 CMS.registerPreviewStyle("/styles_v2.css");
 CMS.registerPreviewTemplate("blanc", BlancPreview);
 
+CMS.registerPreviewStyle("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 CMS.registerPreviewStyle("/perodua/style.css");
 CMS.registerPreviewTemplate("sam", SamPreview);
