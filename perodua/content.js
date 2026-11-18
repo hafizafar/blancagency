@@ -33,6 +33,17 @@ function checklistItemHTML(item) {
   );
 }
 
+function monthlyCardHTML(item) {
+  return (
+    '<div class="price-scroll-card">' +
+      "<h4>" + escHtml(item.model) + "</h4>" +
+      '<span class="price-scroll-label">Anggaran</span>' +
+      '<span class="price-scroll-amount">RM ' + escHtml(item.monthly) + "<small>/bulan*</small></span>" +
+      (item.detail ? '<span class="price-scroll-deposit">' + escHtml(item.detail) + "</span>" : "") +
+    "</div>"
+  );
+}
+
 function composeWaMessage(name, phone, model) {
   return (
     "Hi, saya " + name + " (" + phone + "). " +
@@ -138,6 +149,16 @@ fetch("/content/perodua.json")
 
     var modelStrip = document.getElementById("model-strip");
     if (modelStrip && data.models) modelStrip.innerHTML = data.models.map(modelChipHTML).join("");
+
+    var monthly = data.monthly || {};
+    setText("monthly-eyebrow", monthly.eyebrow);
+    setText("monthly-title", monthly.title);
+    setText("monthly-desc", monthly.desc);
+    setText("monthly-note", monthly.note);
+    setText("monthly-btn-main", monthly.buttonMain);
+    setText("monthly-btn-sub", monthly.buttonSub);
+    var monthlyTrack = document.getElementById("monthly-track");
+    if (monthlyTrack && monthly.items) monthlyTrack.innerHTML = monthly.items.map(monthlyCardHTML).join("");
 
     var why = data.whyChoose || {};
     setText("why-eyebrow", "Kenapa Pilih " + name);

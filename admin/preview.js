@@ -129,9 +129,21 @@ function checklistItemHTML(item) {
   );
 }
 
+function monthlyCardHTML(item) {
+  return (
+    '<div class="price-scroll-card">' +
+      "<h4>" + esc(item.model) + "</h4>" +
+      '<span class="price-scroll-label">Anggaran</span>' +
+      '<span class="price-scroll-amount">RM ' + esc(item.monthly) + "<small>/bulan*</small></span>" +
+      (item.detail ? '<span class="price-scroll-deposit">' + esc(item.detail) + "</span>" : "") +
+    "</div>"
+  );
+}
+
 function buildSamPreviewHTML(data) {
   var name = data.name || "Sam";
   var hero = data.hero || {};
+  var monthly = data.monthly || {};
   var why = data.whyChoose || {};
   var njs = data.notJustSelling || {};
   var footer = data.footer || {};
@@ -160,6 +172,18 @@ function buildSamPreviewHTML(data) {
         '<div class="model-strip"><span class="model-strip-label">Model Tersedia</span><span>' +
           (data.models || []).map(modelChipHTML).join("") +
         "</span></div>" +
+      "</div>" +
+    "</section>" +
+    '<section class="section section-surface kira-monthly-section">' +
+      '<div class="wrap">' +
+        '<div class="section-head">' +
+          '<span class="eyebrow">' + esc(monthly.eyebrow) + "</span>" +
+          '<h2 class="section-title">' + esc(monthly.title) + "</h2>" +
+          '<p class="section-desc">' + esc(monthly.desc) + "</p>" +
+        "</div>" +
+        '<div class="price-scroll"><div class="price-scroll-track">' + (monthly.items || []).map(monthlyCardHTML).join("") + "</div></div>" +
+        (monthly.note ? '<p class="monthly-note">' + esc(monthly.note) + "</p>" : "") +
+        '<p class="monthly-cta"><a class="btn btn-brand btn-stack"><span class="btn-stack-main">' + esc(monthly.buttonMain) + '</span><span class="btn-stack-sub">' + esc(monthly.buttonSub) + "</span></a></p>" +
       "</div>" +
     "</section>" +
     '<section class="section section-surface">' +

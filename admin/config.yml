@@ -88,6 +88,24 @@ collections:
               - { label: "Ayat Utama", name: "lead", widget: "text" }
               - { label: "Nota (bawah butang WhatsApp)", name: "note", widget: "string" }
           - { label: "Model Kereta", name: "models", widget: "list", field: { label: "Model", name: "model", widget: "string" } }
+          - label: "Kira Monthly (Harga Anggaran)"
+            name: "monthly"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow (label kecil atas tajuk)", name: "eyebrow", widget: "string" }
+              - { label: "Tajuk", name: "title", widget: "string" }
+              - { label: "Penerangan", name: "desc", widget: "text" }
+              - label: "Senarai Harga"
+                name: "items"
+                widget: "list"
+                hint: "Satu kad bagi setiap model. Susunan di sini = susunan di laman."
+                fields:
+                  - { label: "Model", name: "model", widget: "string" }
+                  - { label: "Bayaran Bulanan (RM, nombor sahaja)", name: "monthly", widget: "string", hint: "Cth: 475" }
+                  - { label: "Butiran (opsyenal)", name: "detail", widget: "string", required: false, hint: "Cth: Deposit RM 0 · Full Loan" }
+              - { label: "Nota (atas butang)", name: "note", widget: "string", required: false }
+              - { label: "Teks Butang", name: "buttonMain", widget: "string" }
+              - { label: "Teks Kecil Butang", name: "buttonSub", widget: "string", required: false }
           - label: "Kenapa Pilih Sam"
             name: "whyChoose"
             widget: "object"

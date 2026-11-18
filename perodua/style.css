@@ -197,6 +197,64 @@ footer.site-footer .footer-disclaimer { font-size: 0.72rem; color: var(--muted);
 .sticky-cta .btn-whatsapp { width: 100%; max-width: 420px; justify-content: center; padding: 13px 20px; }
 body { padding-bottom: 64px; }
 
+.btn-brand { background: var(--brand); color: #fff; box-shadow: 0 6px 16px rgba(216, 19, 36, 0.28); }
+.btn-brand:hover { background: var(--brand-dark); }
+.btn-stack { flex-direction: column; gap: 2px; padding: 13px 26px; text-align: center; }
+.btn-stack-main { font-size: 0.98rem; font-weight: 800; }
+.btn-stack-sub { font-size: 0.72rem; font-weight: 600; opacity: 0.85; }
+
+.price-scroll {
+  margin: 0 calc(-1 * var(--gutter));
+  padding: 0 var(--gutter);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.price-scroll::-webkit-scrollbar { display: none; }
+.price-scroll-track {
+  display: flex;
+  gap: 12px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 4px;
+}
+.price-scroll-card {
+  scroll-snap-align: start;
+  flex: 0 0 150px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.price-scroll-card h4 { margin: 0 0 8px; font-size: 0.84rem; font-weight: 800; }
+.price-scroll-label {
+  display: block;
+  font-size: 0.64rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.price-scroll-amount { font-size: 1.25rem; font-weight: 800; color: var(--brand); }
+.price-scroll-amount small { font-size: 0.68rem; font-weight: 600; color: var(--muted); }
+.price-scroll-deposit {
+  display: block;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--line);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.monthly-note { text-align: center; margin: 20px auto 0; max-width: 420px; font-size: 0.86rem; color: var(--ink-soft); line-height: 1.5; }
+.monthly-note:empty { display: none; }
+.monthly-cta { text-align: center; margin: 18px 0 0; }
+@media (min-width: 640px) {
+  .price-scroll { margin: 0; padding: 0; overflow: visible; }
+  .price-scroll-track { flex-wrap: wrap; justify-content: center; }
+  .price-scroll-card { flex: 0 1 160px; }
+}
+
 .cta-modal {
   position: fixed;
   inset: 0;

@@ -7,15 +7,79 @@
     "lead": "Sedang cari kereta baru yang sesuai? Saya boleh bantu anda dari A sampai Z — pilih model, semak kelayakan loan & urusan pendaftaran.",
     "note": "Survey dulu pun boleh. Tiada tekanan untuk terus booking."
   },
-  "models": ["Axia", "Bezza", "Myvi", "Ativa", "Alza", "Aruz", "Traz"],
+  "models": [
+    "Axia",
+    "Bezza",
+    "Myvi",
+    "Ativa",
+    "Alza",
+    "Aruz",
+    "Traz"
+  ],
+  "monthly": {
+    "eyebrow": "🔥 Kira Monthly",
+    "title": "Harga kereta nampak mahal? Tengok monthly dulu.",
+    "desc": "Anggaran bulanan berdasarkan tempoh pembiayaan tertentu. Kiraan sebenar bergantung kepada deposit, kadar bank & kelulusan.",
+    "items": [
+      {
+        "model": "Axia",
+        "monthly": "475",
+        "detail": "Deposit RM 0 · Full Loan"
+      },
+      {
+        "model": "Bezza",
+        "monthly": "451",
+        "detail": "Full Loan"
+      },
+      {
+        "model": "Myvi",
+        "monthly": "590",
+        "detail": "Deposit RM 0 · Full Loan"
+      },
+      {
+        "model": "Ativa",
+        "monthly": "793",
+        "detail": "Full Loan"
+      },
+      {
+        "model": "Alza",
+        "monthly": "737",
+        "detail": "Full Loan"
+      },
+      {
+        "model": "Aruz",
+        "monthly": "860",
+        "detail": "Full Loan"
+      },
+      {
+        "model": "Traz",
+        "monthly": "897",
+        "detail": "Full Loan"
+      }
+    ],
+    "note": "Nak tahu harga? Boleh direct message untuk sebut harga anggaran.",
+    "buttonMain": "🔥 Kira Monthly Saya",
+    "buttonSub": "Dapatkan anggaran ikut situasi anda"
+  },
   "whyChoose": {
     "desc": "Saya sedia membantu dari A–Z, klu commitment tinggi ke CTOS.",
     "items": [
-      { "title": "Check Model Sedia-Ada" },
-      { "title": "Process Loan Mudah A–Z" },
-      { "title": "Trade-in Kereta Lama" },
-      { "title": "Uruskan Serahkan Kunci" },
-      { "title": "After-Sales Support", "desc": "Klu ada apa-apa issue, saya sedia membantu." }
+      {
+        "title": "Check Model Sedia-Ada"
+      },
+      {
+        "title": "Process Loan Mudah A–Z"
+      },
+      {
+        "title": "Trade-in Kereta Lama"
+      },
+      {
+        "title": "Uruskan Serahkan Kunci"
+      },
+      {
+        "title": "After-Sales Support",
+        "desc": "Klu ada apa-apa issue, saya sedia membantu."
+      }
     ]
   },
   "notJustSelling": {
@@ -23,12 +87,24 @@
     "title": "Bukan Sekadar Jual Kereta.",
     "desc": "Mencari kereta Perodua? Saya sedia membantu dari awal hingga selesai!",
     "items": [
-      { "title": "Sebut Harga & Anggaran Bayaran Bulanan" },
-      { "title": "Bantuan Permohonan Pinjaman Bank" },
-      { "title": "Semakan Nilai Trade-In Kereta" },
-      { "title": "Urusan Booking & Dokumentasi" },
-      { "title": "Kemaskini Status Kereta" },
-      { "title": "Bantuan Sehingga Serahan Kunci" }
+      {
+        "title": "Sebut Harga & Anggaran Bayaran Bulanan"
+      },
+      {
+        "title": "Bantuan Permohonan Pinjaman Bank"
+      },
+      {
+        "title": "Semakan Nilai Trade-In Kereta"
+      },
+      {
+        "title": "Urusan Booking & Dokumentasi"
+      },
+      {
+        "title": "Kemaskini Status Kereta"
+      },
+      {
+        "title": "Bantuan Sehingga Serahan Kunci"
+      }
     ],
     "closing": "Anda Pilih Kereta, Saya Uruskan Selebihnya!"
   },
