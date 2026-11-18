@@ -1,3 +1,5 @@
+const { renderPopup } = require("./_popup");
+
 exports.handler = async (event) => {
   const { code, state } = event.queryStringParameters || {};
   const host = (event.headers || {})["x-forwarded-host"] || (event.headers || {}).host;
@@ -44,27 +46,4 @@ exports.handler = async (event) => {
 
 function htmlResponse(body) {
   return { statusCode: 200, headers: { "Content-Type": "text/html; charset=utf-8" }, body };
-}
-
-function renderPopup(kind, jsonPayload, targetOrigin) {
-  return (
-    "<!DOCTYPE html><html><body>" +
-    "<script>" +
-    "(function() {" +
-    "  function send(msg) {" +
-    "    if (window.opener) window.opener.postMessage(msg, " + JSON.stringify(targetOrigin) + ");" +
-    "  }" +
-    "  function receiveMessage(e) {" +
-    "    if (e.data === 'authorizing:github') {" +
-    "      window.removeEventListener('message', receiveMessage, false);" +
-    "      send('authorization:github:" + kind + ":' + " + JSON.stringify(jsonPayload) + ");" +
-    "    }" +
-    "  }" +
-    "  window.addEventListener('message', receiveMessage, false);" +
-    "  send('authorizing:github');" +
-    "})();" +
-    "</script>" +
-    "<p>Authenticating… this window should close automatically.</p>" +
-    "</body></html>"
-  );
 }
