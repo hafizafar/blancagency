@@ -30,7 +30,7 @@
       {
         "model": "Axia",
         "monthly": "475",
-        "detail": "Deposit RM 0 · Full Loan"
+        "detail": "Full Loan"
       },
       {
         "model": "Bezza",
@@ -40,7 +40,7 @@
       {
         "model": "Myvi",
         "monthly": "590",
-        "detail": "Deposit RM 0 · Full Loan"
+        "detail": "Full Loan"
       },
       {
         "model": "Ativa",
@@ -115,25 +115,13 @@
     ],
     "closing": "Anda Pilih Kereta, Saya Uruskan Selebihnya!"
   },
-  "footer": {
-    "role": "Perodua Sales Broker",
-    "disclaimer": "Sam membantu urusan pembelian kereta Perodua sebagai broker pihak ketiga, bekerjasama dengan Sales Advisor rasmi Perodua untuk proses pembelian."
-  },
-  "finalCta": {
-    "title": "Nak Tahu Harga & Monthly Awak?"
-  },
-  "stickers": {
-    "whyChoose": "/perodua/img/sam-sticker-car.png",
-    "finalCta": "/perodua/img/sam-sticker-key.png",
-    "footer": "/perodua/img/sam-sticker-standing.png"
-  },
   "faq": {
     "eyebrow": "Soalan Lazim",
     "title": "Ada Soalan Sebelum Beli?",
     "items": [
       {
-        "question": "Sam ni Sales Advisor Perodua ke?",
-        "answer": "Sam membantu sebagai broker pihak ketiga, dan bekerjasama dengan Sales Advisor rasmi Perodua untuk proses pembelian."
+        "question": "Bagaimana ",
+        "answer": "Sam membantu sebagai broker pihak ketiga, dan bekerjasama dengan Sales Advisor rasmi Perodua untuk proses pembelian sehingga penyerahan kunci kereta kepada anda. "
       },
       {
         "question": "Boleh survey dulu tanpa terus beli?",
@@ -148,5 +136,17 @@
         "answer": "Boleh. Sam bantu semak nilai trade-in kereta lama anda sebagai sebahagian daripada proses."
       }
     ]
+  },
+  "footer": {
+    "role": "Perodua Sales Advisor",
+    "disclaimer": "Sam membantu urusan pembelian kereta Perodua dari pemilihan kereta yang sesuai untuk anda, dapatkan loan approval daripada bank, "
+  },
+  "finalCta": {
+    "title": "Nak Tahu Harga & Monthly Awak?"
+  },
+  "stickers": {
+    "whyChoose": "/perodua/img/sam-sticker-car.png",
+    "finalCta": "/perodua/img/sam-sticker-key.png",
+    "footer": "/perodua/img/sam-sticker-standing.png"
   }
 }
